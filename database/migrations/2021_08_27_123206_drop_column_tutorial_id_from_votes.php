@@ -13,7 +13,7 @@ class DropColumnTutorialIdFromVotes extends Migration
      */
     public function up()
     {
-        Schema::table('votes', function (Blueprint $table) {
+        Schema::table('voters', function (Blueprint $table) {
             $table->dropColumn('tutorial_id');
         });
     }
