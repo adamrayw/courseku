@@ -14,7 +14,7 @@ class AddTutorialsIdToVotes extends Migration
     public function up()
     {
         Schema::table('voters', function (Blueprint $table) {
-            $table->bigInteger('tutorials_id')->after('user_id');
+            $table->bigInteger('tutorials_id')->after('user_id')->nullable();
         });
     }
 
