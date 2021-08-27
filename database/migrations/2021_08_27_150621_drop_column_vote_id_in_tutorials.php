@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DropColumnTutorialIdFromVotes extends Migration
+class DropColumnVoteIdInTutorials extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class DropColumnTutorialIdFromVotes extends Migration
      */
     public function up()
     {
-        Schema::table('voters', function (Blueprint $table) {
-            $table->dropColumn('tutorial_id');
+        Schema::table('tutorials', function (Blueprint $table) {
+            $table->dropColumn('vote_id');
         });
     }
 
@@ -25,7 +25,7 @@ class DropColumnTutorialIdFromVotes extends Migration
      */
     public function down()
     {
-        Schema::table('votes', function (Blueprint $table) {
+        Schema::table('tutorials', function (Blueprint $table) {
             //
         });
     }
