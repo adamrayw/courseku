@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class AddTypeToTutorials extends Migration
 {
@@ -14,8 +15,8 @@ class AddTypeToTutorials extends Migration
     public function up()
     {
         Schema::table('tutorials', function (Blueprint $table) {
-            $table->string('type')->after('name');
-            $table->string('author')->after('name');
+            $table->string('type')->after('name')->nullable();
+            $table->string('author')->after('name')->nullable();
         });
     }
 
