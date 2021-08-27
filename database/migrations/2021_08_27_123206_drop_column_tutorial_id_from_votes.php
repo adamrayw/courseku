@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTutorialsIdToVotes extends Migration
+class DropColumnTutorialIdFromVotes extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddTutorialsIdToVotes extends Migration
     public function up()
     {
         Schema::table('votes', function (Blueprint $table) {
-            $table->bigInteger('tutorials_id')->after('user_id')->nullable();
+            $table->dropColumn('tutorial_id');
         });
     }
 
