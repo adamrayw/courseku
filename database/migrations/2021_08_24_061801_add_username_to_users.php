@@ -14,7 +14,7 @@ class AddUsernameToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('username')->after('name');
+            $table->string('username')->after('name')->nullable();
         });
     }
 

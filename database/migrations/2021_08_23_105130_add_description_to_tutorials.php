@@ -14,7 +14,7 @@ class AddDescriptionToTutorials extends Migration
     public function up()
     {
         Schema::table('tutorials', function (Blueprint $table) {
-            $table->text('description')->after('slug');
+            $table->text('description')->after('slug')->nullable();
         });
     }
 

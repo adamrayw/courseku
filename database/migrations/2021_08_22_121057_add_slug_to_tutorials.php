@@ -14,7 +14,7 @@ class AddSlugToTutorials extends Migration
     public function up()
     {
         Schema::table('tutorials', function (Blueprint $table) {
-            $table->string('slug')->after('name');
+            $table->string('slug')->after('name')->nullable();
         });
     }
 

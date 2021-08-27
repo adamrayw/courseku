@@ -14,7 +14,7 @@ class AddLevelToTutorials extends Migration
     public function up()
     {
         Schema::table('tutorials', function (Blueprint $table) {
-            $table->string('level')->after('type');
+            $table->string('level')->after('type')->nullable();
         });
     }
 
