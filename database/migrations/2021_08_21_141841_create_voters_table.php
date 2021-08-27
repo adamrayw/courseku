@@ -16,7 +16,7 @@ class CreateVotersTable extends Migration
         Schema::create('voters', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('tutorial_id');
+            $table->foreignId('tutorials_id');
             $table->timestamps();
         });
     }
