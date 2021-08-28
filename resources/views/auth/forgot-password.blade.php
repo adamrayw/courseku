@@ -16,7 +16,7 @@
 
                 <div class="form-group">
                     <label class="font-weight-bold text-uppercase">Email Address</label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Masukkan Alamat Email">
+                    <input id="email" type="email" class="border-0 font-xs focus:outline-none focus:ring-0 text-gray-500 border-gray-300 rounded-md  px-3 w-4/5 h-12" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Masukkan Alamat Email">
 
                     @error('email')
                     <div class="alert alert-danger mt-2">
