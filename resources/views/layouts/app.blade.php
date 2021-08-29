@@ -37,7 +37,7 @@
     <title>COURSEKU | @yield('title')</title>
 </head>
 
-<body>
+<body class="bg-gray-50">
     @include('sweetalert::alert')
 
     <header>
