@@ -30,7 +30,7 @@
             <div class="mt-6">
                 <a href="/forgot-password" class="font-medium text-sm text-gray-500 float-right">Forgot Password?</a>
             </div>
-            <button type="submit" class="mt-4 text-center w-full bg-gray-700 rounded-md text-white py-3 font-medium hover:bg-gray-600 transition">Login</button>
+            <button type="submit" class="mt-2 text-center w-full bg-gray-700 rounded-md text-white py-3 font-medium hover:bg-gray-600 transition">Login</button>
             <p class="text-sm text-center my-4 text-gray-500">Don't have an account ? <a href="/register" class="underline">Sign Up</a></p>
         </form>
     </div>
