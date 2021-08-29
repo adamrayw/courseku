@@ -13,6 +13,7 @@ class CoursesController extends Controller
 
         return view('pages.tutorials', [
             'name_course' => $course->name,
+            'slug' => $course->slug,
             'tutorials' => $course->tutorials,
             'get_vote' => $tutorials->votes
         ]);
