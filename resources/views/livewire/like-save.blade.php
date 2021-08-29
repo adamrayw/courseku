@@ -28,11 +28,11 @@
     @endphp
 
 
-    @foreach ($data->saves as $saved)
+    @foreach ($data->saves as $save)
     @php
 
     if(Auth::check()) {
-    if($saved->user_id == Auth::user()->id) {
+    if($save->user_id == Auth::user()->id) {
     $save_status = "fas";
     $saved = "removesave";
     }
