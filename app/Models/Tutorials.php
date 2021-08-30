@@ -18,7 +18,7 @@ class Tutorials extends Model
 
     public function votes()
     {
-        return $this->hasMany(Voters::class);
+        return $this->hasMany(Voters::class, 'id', 'tutorials_id');
     }
 
     public function user()
