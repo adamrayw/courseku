@@ -38,9 +38,14 @@
             <div class="p-4 bg-white space-y-2" x-show.transition.in="active === 0">
                 <div class="">
                     @foreach ($datas as $data)
+                    @if ($data)
                     <div class="card">
                         <h4 class="text-gray-600">{{ $data->tutorial->name }}</h4>
                     </div>
+                    @else
+                    <p>Data tidak ada</p>
+                    @endif
+
                     @endforeach
                 </div>
             </div>
