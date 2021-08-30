@@ -5,7 +5,7 @@
 @section('content')
 <section class="max-w-7xl mx-auto">
     <div class="flex justify-center text-center items-center mt-20 mb-28">
-        <div>
+        <div class="px-4">
             <h1 class="animate__animated animate__fadeInUp font-bold mb-2 text-gray-600 text-4xl">Welcome to COURSEKU!</h1>
             <p class="animate__animated animate__fadeInUp animate__delay-1s text-gray-400 text-lg">The best place to find Programming courses & tutorials</p>
             <a href="#find-course" class="animate__animated animate__fadeInUp animate__delay-2s inline-block font-semibold mt-6 rounded-lg no-underline text-white bg-gray-700 hover:bg-gray-500 transition-all px-6 py-3">Explore Tutorial</a>
