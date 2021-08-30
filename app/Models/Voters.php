@@ -16,8 +16,8 @@ class Voters extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function tutorials()
+    public function tutorial()
     {
-        return $this->belongsTo(Tutorials::class, 'tutorials_id');
+        return $this->belongsTo(Tutorials::class, 'tutorials_id', 'id');
     }
 }
