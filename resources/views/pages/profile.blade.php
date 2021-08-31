@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="mt-4 " x-data="{active: 0}">
-        <div class="flex bg-white rounded-md overflow-hidden">
+        <div class="flex bg-white overflow-hidden">
             <button class="px-4 py-2 border-b border-gray-400 text-gray-600 w-full" x-on:click.prevent="active = 0" x-bind:class="{'border-blue-600 ': active === 0}">Liked</button>
             <button class="px-4 py-2 border-b border-gray-400 text-gray-600 w-full" x-on:click.prevent="active = 1" x-bind:class="{'border-blue-600 ': active === 1}">Saved</button>
             <button class="px-4 py-2 border-b border-gray-400 text-gray-600 w-full" x-on:click.prevent="active = 2" x-bind:class="{'border-blue-600': active === 2}">Submitted</button>
