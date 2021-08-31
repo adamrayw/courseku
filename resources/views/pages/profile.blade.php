@@ -3,7 +3,7 @@
 @section('title', 'Profile')
 
 @section('content')
-<section class="mt-20 max-w-3xl mx-4 md:mx-auto">
+<section class="my-20 max-w-3xl mx-4 md:mx-auto">
     <div class="flex flex-col md:flex-row justify-between items-start">
         <div class="flex items-start">
             <div class="bg-gray-500 w-24 h-24 p-4 flex justify-center items-center mr-4 rounded-md">
@@ -11,7 +11,7 @@
             </div>
             <div>
                 <h3 class="text-gray-600 text-2xl font-semibold">{{ Auth()->user()->name }}</h3>
-                <p class="text-gray-500 text-sm">Member Since : {{ Auth()->user()->created_at->toFormattedDateString() }}</p>
+                <p class="mt-1 text-gray-500 text-sm">Member Since : {{ Auth()->user()->created_at->toFormattedDateString() }}</p>
             </div>
         </div>
         <div class="">
@@ -21,7 +21,7 @@
                     <p class="ml-1 font-medium text-gray-600">Points</p>
                 </div>
                 <div class="mt-1">
-                    <p class="text-gray-500">2000</p>
+                    <p class="text-gray-500">0</p>
                 </div>
                 <!-- <a href="#!" class="mt-2 inline-block text-center border-2 text-gray-500 text-sm border-gray-500 rounded-md px-6 py-2">Follow</a> -->
             </div>
@@ -31,30 +31,40 @@
     <div class="mt-4 " x-data="{active: 0}">
         <div class="flex bg-white overflow-hidden">
             <button class="px-4 py-2 border-b border-gray-400 text-gray-600 w-full" x-on:click.prevent="active = 0" x-bind:class="{'border-blue-600 ': active === 0}">Liked</button>
-            <button class="px-4 py-2 border-b border-gray-400 text-gray-600 w-full" x-on:click.prevent="active = 1" x-bind:class="{'border-blue-600 ': active === 1}">Saved</button>
+            <button class="px-4 py-2 border-b border-gray-400 text-gray-600 w-full" x-on:click.prevent="active = 1" x-bind:class="{'border-blue-600 ': active === 1}">Bookmarked</button>
             <button class="px-4 py-2 border-b border-gray-400 text-gray-600 w-full" x-on:click.prevent="active = 2" x-bind:class="{'border-blue-600': active === 2}">Submitted</button>
         </div>
         <div class=" bg-opacity-10">
             <div class="p-4 bg-white space-y-2" x-show.transition.in="active === 0">
-                <a href="/deleteall">delete</a>
-                @if(count($datas) == 0) <div class="flex flex-col justify-center items-center">
+                @if(count($votes) == 0) <div class="flex flex-col justify-center items-center">
                     <img src="img/like.png" alt="like" class="block">
                     <h1 class="mt-2 text-gray-600">No tutorials liked.</h1>
                 </div>
                 @endif
-                @foreach ($datas as $data)
+                @foreach ($votes as $vote)
                 <div class="card">
-                    @if ($data->tutorial)
-                    <h4 class="text-gray-600">{{ $data->tutorial->name }}</h4>
+                    @if ($vote->tutorial)
+                    <h4 class="text-gray-600">{{ $vote->tutorial->name }}</h4>
                     @endif
                 </div>
                 @endforeach
             </div>
             <div class="p-4 bg-white space-y-2" x-show.transition.in="active === 1">
+                @if(count($saves) == 0)
                 <div class="flex flex-col justify-center items-center">
                     <img src="img/save.png" alt="save" class="block">
-                    <h1 class="mt-2 text-gray-600">No tutorials saved.</h1>
+                    <h1 class="mt-2 text-gray-600">No tutorials bookmarked.</h1>
                 </div>
+                @endif
+
+                @foreach ($saves as $save)
+                <div class="card">
+                    @if ($save->tutorials)
+                    <a href="/course/{{ $save->tutorials->slug }}" class="text-gray-600"> {{ $save->tutorials->name  }}</a>
+                    @endif
+                </div>
+                @endforeach
+
             </div>
             <div class="p-4 bg-white space-y-2" x-show.transition.in="active === 2">
                 <div class="flex flex-col justify-center items-center">
