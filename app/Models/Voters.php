@@ -18,6 +18,6 @@ class Voters extends Model
 
     public function tutorial()
     {
-        return $this->belongsTo(Tutorials::class);
+        return $this->belongsTo(Tutorials::class, 'tutorials_id', 'id');
     }
 }
