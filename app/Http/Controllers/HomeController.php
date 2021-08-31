@@ -16,10 +16,4 @@ class HomeController extends Controller
             'courses' => Course::where('category_id', 1)->get(),
         ]);
     }
-
-    public function destroy()
-    {
-        Voters::truncate();
-        return back();
-    }
 }
