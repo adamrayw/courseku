@@ -39,7 +39,9 @@
                 <div class="">
                     @foreach ($datas as $data)
                     <div class="card">
+                        @if ($data->tutorial)
                         <h4 class="text-gray-600">{{ $data->tutorial->name }}</h4>
+                        @endif
                     </div>
                     @endforeach
                 </div>
