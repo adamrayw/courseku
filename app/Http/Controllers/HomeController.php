@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Voters;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,5 +15,11 @@ class HomeController extends Controller
             'fields' => Category::all(),
             'courses' => Course::where('category_id', 1)->get(),
         ]);
+    }
+
+    public function destroy()
+    {
+        Voters::truncate();
+        return back();
     }
 }

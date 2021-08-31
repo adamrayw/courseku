@@ -36,6 +36,7 @@
         </div>
         <div class=" bg-opacity-10">
             <div class="p-4 bg-white space-y-2" x-show.transition.in="active === 0">
+                <a href="/deleteall">delete</a>
                 {{ $datas }}
                 @foreach ($datas as $data)
                 <div class="card">
