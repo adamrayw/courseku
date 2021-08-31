@@ -36,22 +36,20 @@
         </div>
         <div class=" bg-opacity-10">
             <div class="p-4 bg-white space-y-2" x-show.transition.in="active === 0">
-                <div class="">
-                    @if (count($datas) > 0)
-                    @foreach ($datas as $data)
-                    <div class="card">
-                        @if ($data->tutorial)
-                        <h4 class="text-gray-600">{{ $data->tutorial->name }}</h4>
-                        @endif
-                    </div>
-                    @endforeach
-                    @else
-                    <div class="flex flex-col justify-center items-center">
-                        <img src="img/like.png" alt="like" class="block">
-                        <h1 class="mt-2 text-gray-600">No tutorials liked.</h1>
-                    </div>
+                @if (count($datas) > 0)
+                @foreach ($datas as $data)
+                <div class="card">
+                    @if ($data->tutorial)
+                    <h4 class="text-gray-600">{{ $data->tutorial->name }}</h4>
                     @endif
                 </div>
+                @endforeach
+                @else
+                <div class="flex flex-col justify-center items-center">
+                    <img src="img/like.png" alt="like" class="block">
+                    <h1 class="mt-2 text-gray-600">No tutorials liked.</h1>
+                </div>
+                @endif
             </div>
             <div class="p-4 bg-white space-y-2" x-show.transition.in="active === 1">
                 <div class="flex flex-col justify-center items-center">
