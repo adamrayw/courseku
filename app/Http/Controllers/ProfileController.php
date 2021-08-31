@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Save;
 use App\Models\Tutorials;
 use App\Models\User;
 use App\Models\Voters;
@@ -15,7 +16,8 @@ class ProfileController extends Controller
         if (Auth::check()) {
 
             return view('pages.profile', [
-                'datas' => Voters::where('user_id', Auth::user()->id)->with('tutorial')->get(),
+                'votes' => Voters::where('user_id', Auth::user()->id)->with('tutorial')->get(),
+                'saves' => Save::where('user_id', Auth::user()->id)->with('tutorials')->get()
             ]);
         }
 
