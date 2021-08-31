@@ -41,8 +41,6 @@
                 <div class="card">
                     @if ($data->tutorial)
                     <h4 class="text-gray-600">{{ $data->tutorial->name }}</h4>
-                    @else
-                    <p>Tidak ada data</p>
                     @endif
                 </div>
                 @endforeach
