@@ -36,6 +36,7 @@
         </div>
         <div class=" bg-opacity-10">
             <div class="p-4 bg-white space-y-2" x-show.transition.in="active === 0">
+                @if(!$datas->isEmpty())
                 @foreach ($datas as $data)
                 <div class="card">
                     @if ($data->tutorial)
@@ -43,12 +44,14 @@
                     @endif
                 </div>
                 @endforeach
-                @if(count($datas) == 0)
+                @else
+                <p>Tidak ada data</p>
                 <div class="flex flex-col justify-center items-center">
                     <img src="img/like.png" alt="like" class="block">
                     <h1 class="mt-2 text-gray-600">No tutorials liked.</h1>
                 </div>
                 @endif
+
             </div>
             <div class="p-4 bg-white space-y-2" x-show.transition.in="active === 1">
                 <div class="flex flex-col justify-center items-center">
