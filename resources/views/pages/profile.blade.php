@@ -11,11 +11,11 @@
             </div>
             <div>
                 <h3 class="text-gray-600 text-2xl font-semibold">{{ Auth()->user()->name }}</h3>
-                <p class="text-gray-500">Member Since : {{ Auth()->user()->created_at->toFormattedDateString() }}</p>
+                <p class="text-gray-500 text-sm">Member Since : {{ Auth()->user()->created_at->toFormattedDateString() }}</p>
             </div>
         </div>
         <div class="">
-            <div>
+            <div class="mt-2 md:mt-0">
                 <div class="flex items-center">
                     <img src="img/point.png" alt="point" width="18">
                     <p class="ml-1 font-medium text-gray-600">Points</p>
@@ -29,14 +29,15 @@
         </div>
     </div>
     <div class="mt-4 " x-data="{active: 0}">
-        <div class="flex overflow-hidden">
-            <button class="px-4  py-2 w-full" x-on:click.prevent="active = 0" x-bind:class="{'bg-gray-600 rounded-md text-white': active === 0}">Liked</button>
-            <button class="px-4 py-2 w-full" x-on:click.prevent="active = 1" x-bind:class="{'bg-gray-600 rounded-md text-white': active === 1}">Saved</button>
-            <button class="px-4 py-2 w-full" x-on:click.prevent="active = 2" x-bind:class="{'bg-gray-600 rounded-md text-white': active === 2}">Submitted</button>
+        <div class="flex bg-white rounded-md overflow-hidden">
+            <button class="px-4 py-2 border-b border-gray-400 text-gray-600 w-full" x-on:click.prevent="active = 0" x-bind:class="{'border-blue-600 ': active === 0}">Liked</button>
+            <button class="px-4 py-2 border-b border-gray-400 text-gray-600 w-full" x-on:click.prevent="active = 1" x-bind:class="{'border-blue-600 ': active === 1}">Saved</button>
+            <button class="px-4 py-2 border-b border-gray-400 text-gray-600 w-full" x-on:click.prevent="active = 2" x-bind:class="{'border-blue-600': active === 2}">Submitted</button>
         </div>
-        <div class="bg-black bg-opacity-10">
+        <div class=" bg-opacity-10">
             <div class="p-4 bg-white space-y-2" x-show.transition.in="active === 0">
                 <div class="">
+                    @if (count($datas) > 0)
                     @foreach ($datas as $data)
                     <div class="card">
                         @if ($data->tutorial)
@@ -44,15 +45,25 @@
                         @endif
                     </div>
                     @endforeach
+                    @else
+                    <div class="flex flex-col justify-center items-center">
+                        <img src="img/like.png" alt="like" class="block">
+                        <h1 class="mt-2 text-gray-600">No tutorials liked.</h1>
+                    </div>
+                    @endif
                 </div>
             </div>
-            <div class="p-4 space-y-2" x-show.transition.in="active === 1">
-                <h2 class="text-2xl">Panel 2 Using x-show.transition</h2>
-                <p>Panel 2 content</p>
+            <div class="p-4 bg-white space-y-2" x-show.transition.in="active === 1">
+                <div class="flex flex-col justify-center items-center">
+                    <img src="img/save.png" alt="save" class="block">
+                    <h1 class="mt-2 text-gray-600">No tutorials saved.</h1>
+                </div>
             </div>
-            <div class="p-4 space-y-2" x-show.transition.in="active === 2">
-                <h2 class="text-2xl">Panel 2 Using x-show.transition</h2>
-                <p>Panel 2 content</p>
+            <div class="p-4 bg-white space-y-2" x-show.transition.in="active === 2">
+                <div class="flex flex-col justify-center items-center">
+                    <img src="img/submitted.png" alt="submit" class="block">
+                    <h1 class="mt-2 text-gray-600">You haven't sent the tutorial</h1>
+                </div>
             </div>
         </div>
     </div>
