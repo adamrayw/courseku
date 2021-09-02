@@ -64,7 +64,6 @@
                     @endif
                 </div>
                 @endforeach
-
             </div>
             <div class="p-4 bg-white space-y-2" x-show.transition.in="active === 2">
                 <div class="flex flex-col justify-center items-center">
