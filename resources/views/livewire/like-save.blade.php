@@ -72,11 +72,11 @@
         <input type="text" wire:model="tutorials_id" class="hidden" value="{{ $data->id }}">
         <input type="text" wire:model="users_id" class="hidden" value="{{ Auth()->user()->id }} ">
         <input type="text" wire:model="save" class="hidden" value="1">
-        <button type="submit" class="text-gray-600 text-lg  ml-4"><i class="{{ $save_status }} fa-bookmark mr-1 text-gray-600"></i> Save</button>
+        <button type="submit" class="text-gray-600 text-lg  ml-4"><i class="{{ $save_status }} fa-bookmark mr-1 text-gray-600"></i></button>
     </form>
     @else
     <div x-data="{ showModal : false }">
-        <button @click="showModal = !showModal" class=" text-gray-600 text-lg ml-4"><i class="{{ $save_status }} fa-bookmark mr-1 text-gray-600"></i> Save</button>
+        <button @click="showModal = !showModal" class=" text-gray-600 text-lg ml-4"><i class="{{ $save_status }} fa-bookmark mr-1 text-gray-600"></i></button>
 
         <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
             <!-- Modal -->
