@@ -29,13 +29,17 @@
                     <p class="block px-4 py-2 text-sm capitalize text-gray-700">
                         Hi, {{ Auth()->user()->name }}
                     </p>
-                    <hr>
-                    <a href="/profile" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
-                        Profile
+                    <hr class="mb-1">
+                    <a href="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white">
+                        <i class="fas fa-paper-plane mr-1"></i> Submit a Tutorial
                     </a>
+                    <a href="/profile" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
+                        <i class="fas fa-user mr-1"></i> My Profile
+                    </a>
+
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button type="submit" class="w-full text-left px-4 py-2 text-sm capitalize text-red-700 hover:bg-red-500 hover:text-white">Log Out</button>
+                        <button type="submit" class="w-full text-left px-4 py-2 text-sm capitalize text-red-600 hover:bg-red-500 hover:text-white"><i class="fas fa-sign-out-alt mr-1"></i> Log Out</button>
                     </form>
                 </div>
             </div>
