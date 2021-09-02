@@ -67,7 +67,7 @@ class LikeSave extends Component
 
     public function storesave()
     {
-        $this->alert('success', 'Saved!', [
+        $this->alert('success', 'Bookmarked!', [
             'position' =>  'center',
             'timer' =>  '2000',
             'toast' =>  true,
