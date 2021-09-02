@@ -15,7 +15,7 @@
 
     <div class="view-tutorial flex-row justify-center mb-20">
         <img class="rounded-t-md" src="https://source.unsplash.com/700x200?coding" alt="img-card">
-        <div class="p-4 shadow-md rounded-b-md text-left">
+        <div class="p-4 bg-white shadow-md rounded-b-md text-left">
             <div>
                 <h2 class="font-bold text-lg text-gray-600">{{ $data->name }}</h2>
             </div>
@@ -40,15 +40,20 @@
             <a class="block bg-gray-600 px-4 py-2 rounded-md text-center text-white hover:bg-gray-500 transition" href="{{ $data->source_link }}">Start Learning!</a>
         </div>
         <div class="comments-section text-left my-6">
-            <div class="rounded-md">
-                <div class="bg-white p-2">
+            <div class="">
+                <div class="bg-white rounded-md shadow py-2 px-4">
                     <div class="">
                         <!-- Modal -->
                         <div x-data="{ showModal : false }">
                             <!-- Button -->
-                            <div class="flex justify-between items-center mb-4">
-                                <h2 class="font-bold text-gray-600">{{ count($data->comments) }} Comments </h2>
-                                <button @click="showModal = !showModal" class="text-sm max-w-3xl rounded-xl transition-colors duration-150 ease-linear text-gray-500 focus:outline-none focus:ring-0 font-bold hover:text-gray-700">Leave a comment</button>
+                            <div class="overflow-hidden">
+                                <form action="/course/{{$data->slug}}/comment" method="POST">
+                                    @csrf
+                                    <input type="text" name="tutorials_id" class="hidden" value="{{ $data->id }}">
+                                    <input type="text" name="users_id" class="hidden" value="{{ Auth()->user()->id }}">
+                                    <textarea name="comment" id="comment" class="border w-full font-xs text-gray-500 app border-gray-300 p-2 my-2 rounded-md focus:outline-none focus:ring-2 ring-blue-200" placeholder="Write your comment here..."></textarea>
+                                    <button type="input" class=" px-4 py-2 text-sm bg-blue-600 rounded-md border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-bold hover:bg-blue-700 focus:bg-indigo-50 focus:text-gray-200 float-right overflow-auto">Submit</button>
+                                </form>
                             </div>
 
                             <!-- Modal Background -->
@@ -92,6 +97,13 @@
                                 </div>
                             </div>
                         </div>
+
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="font-bold text-gray-600">{{ count($data->comments) }} Comments </h2>
+                        <!-- <button @click="showModal = !showModal" class="text-sm max-w-3xl rounded-xl transition-colors duration-150 ease-linear text-gray-500 focus:outline-none focus:ring-0 font-bold hover:text-gray-700">Leave a comment</button> -->
                     </div>
                     @if (count($data->comments) > 0)
                     @for ($i = 0; $i < count($data->comments); $i++)
