@@ -17,9 +17,9 @@
         <img class="rounded-t-md" src="https://source.unsplash.com/700x200?coding" alt="img-card">
         <div class="p-4 bg-white shadow-md rounded-b-md text-left">
             <div class="flex justify-between items-center">
-                <div class=" mb-2">
-                    <div>
-                        <h2 class="font-bold text-lg text-gray-600">{{ $data->name }}</h2>
+                <div class="mb-2">
+                    <div class="">
+                        <h2 class="font-bold text-lg text-gray-600 pr-8">{{ $data->name }}</h2>
                     </div>
                     <div class="creator mt-1">
                         <p class="text-sm text-gray-500">{{ $data->author }}</p>
@@ -62,8 +62,15 @@
                                 <div class="px-1">
                                     <input type="text" name="tutorials_id" class="hidden" value="{{ $data->id }}">
                                     <input type="text" name="users_id" class="hidden" value="{{ Auth()->user()->id }}">
-                                    <textarea name="comment" id="comment" class="border w-full font-xs text-gray-500 app border-gray-300 p-2 my-2 rounded-md focus:outline-none focus:ring-2 ring-blue-200" placeholder="Write your comment here..."></textarea>
-                                    <button type="input" class="px-4 py-2 text-sm bg-blue-600 rounded-md border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-bold hover:bg-blue-700 focus:bg-indigo-50 focus:text-gray-200 float-right overflow-auto">POST</button>
+                                    <textarea name="comment" id="comment" class="border w-full font-xs text-gray-500 app border-gray-300 p-2 my-2 rounded-md focus:outline-none focus:ring-2 ring-blue-200" placeholder="Write your comment here..." required></textarea>
+                                    <div>
+                                        <label for="cars" class="text-gray-600">Comment as:</label>
+                                        <select name="cars" id="cars" class="text-gray-800">
+                                            <option value="volvo">Anonim</option>
+                                            <option value="saab">{{ Auth()->user()->name }}</option>
+                                        </select>
+                                        <button type="input" class="px-4 py-2 text-sm bg-blue-600 rounded-md border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-bold hover:bg-blue-700 focus:bg-indigo-50 focus:text-gray-200 float-right overflow-auto">POST</button>
+                                    </div>
                                 </div>
                             </form>
                             @else
@@ -83,7 +90,9 @@
                     <h2 class="font-bold text-gray-600">{{ count($data->comments) }} Comments </h2>
                     <div class="flex items-start justify-start">
                         <p class="font-medium text-gray-600 text-sm">Sort By Newest</p>
-                        <i class="fas fa-sort-down ml-1 fa-lg text-gray-600"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
                     </div>
                 </div>
                 @if (count($data->comments) > 0)
