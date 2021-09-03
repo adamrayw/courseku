@@ -88,30 +88,59 @@
             <div class="mt-6">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="font-bold text-gray-600">{{ count($data->comments) }} Comments </h2>
-                    <div class="flex items-start justify-start">
-                        <p class="font-medium text-gray-600 text-sm">Sort By Newest</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
+                    <form action="/course/{{ $data->slug }}" method="get">
+                        @if(request('sortby') == 'desc')
+                        <input type="hidden" name="sortby" value="asc">
+                        <button type="submit">
+                            <div class="flex items-start justify-start">
+                                <p class="font-medium text-gray-600 text-sm">Sort By Oldest</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+                        @elseif(request('sortby') == 'asc')
+                        <input type="hidden" name="sortby" value="desc">
+                        <button type="submit">
+                            <div class="flex items-start justify-start">
+                                <p class="font-medium text-gray-600 text-sm">Sort By Newest</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+                        @else
+                        <input type="hidden" name="sortby" value="asc">
+                        <button type="submit">
+                            <div class="flex items-start justify-start">
+                                <p class="font-medium text-gray-600 text-sm">Sort By Oldest</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+                        @endif
+
+                    </form>
                 </div>
-                @if (count($data->comments) > 0)
-                @for ($i = 0; $i < count($data->comments); $i++)
-                    <div class="flex items-start">
-                        <div>
-                            <p class="bg-gray-600 text-xl w-10 h-10 flex justify-center items-center mr-2 rounded-full text-white">{{ $data->comments[$i]->user->name[0]}}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm font-medium text-gray-600 mb-1">{{ $data->comments[$i]->user->name}}</p>
-                            <p class="mb-2 text-xs text-gray-500">{{ $data->comments[$i]->comment}}</p>
-                        </div>
-                        <p class="font-thin text-xs text-gray-400 ml-auto"> {{$data->comments[$i]->created_at->diffForHumans()}}</p>
+                @if (!$comments->isEmpty())
+                @foreach ($comments as $comment)
+
+                <div class="flex items-start">
+                    <div>
+                        <p class="bg-gray-600 text-xl w-10 h-10 flex justify-center items-center mr-2 rounded-full text-white">{{ $comment->user->name[0] }}</p>
                     </div>
-                    <hr class="mt-2 mb-4">
-                    @endfor
-                    @else
-                    <p class="text-center text-gray-500">No comments yet</p>
-                    @endif
+                    <div>
+                        <p class="text-sm font-medium text-gray-600 mb-1">{{ $comment->user->name }}</p>
+                        <p class="mb-2 text-xs text-gray-500">{{ $comment->comment }}</p>
+                    </div>
+                    <p class="font-thin text-xs text-gray-400 ml-auto"> {{$comment->created_at->diffForHumans()}}</p>
+                </div>
+                <hr class="mt-2 mb-4">
+                @endforeach
+                @else
+                <p class="text-center text-gray-500">No comments yet</p>
+                @endif
             </div>
         </div>
     </div>
