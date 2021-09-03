@@ -17,8 +17,14 @@
         <div class="">
             <div class="mt-2 md:mt-0">
                 <div class="flex items-center">
-                    <img src="img/point.png" alt="point" width="18">
-                    <p class="ml-1 font-medium text-gray-600">Points</p>
+                    <!-- <i class="fas fa-question-circle fa-sm"></i> -->
+                    <i class="fas fa-star fa-sm text-yellow-400"></i>
+                    <p class="ml-1 font-medium text-gray-600">Stars </p>
+                    <div class="group cursor-pointer relative inline-block text-blue-600 text-center ml-1"><i class="fas fa-question-circle fa-sm"></i>
+                        <div class="opacity-0 w-28 bg-gray-600 border border-gray-600 text-white text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 bottom-full -left-0 ml-1 px-3 pointer-events-none">
+                            Get stars by submitting tutorials.
+                        </div>
+                    </div>
                 </div>
                 <div class="mt-1">
                     <p class="text-gray-500">0</p>
