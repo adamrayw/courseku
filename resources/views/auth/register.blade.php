@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="my-20 mx-2 bg-white flex flex-col justify-center items-center">
+<div class="my-20 mx-2 flex flex-col justify-center items-center">
     <div class="bg-white w-full md:w-1/4 shadow rounded-md p-5 mx-2">
         <h1 class="text-4xl font-bold mb-2 text-gray-600">Welcome to COURSEKU!</h1>
         <p class="text-sm text-gray-500">Signup to submit, like, comment and more!</p>

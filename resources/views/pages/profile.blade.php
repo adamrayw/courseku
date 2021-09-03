@@ -44,7 +44,7 @@
                 @foreach ($votes as $vote)
                 <div class="card">
                     @if ($vote->tutorial)
-                    <h4 class="text-gray-600">{{ $vote->tutorial->name }}</h4>
+                    <a href="/course/{{ $vote->tutorial->slug }}" class="text-gray-600">{{ $vote->tutorial->name }}</a>
                     @endif
                 </div>
                 @endforeach
