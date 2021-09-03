@@ -64,11 +64,11 @@
                                     <input type="text" name="users_id" class="hidden" value="{{ Auth()->user()->id }}">
                                     <textarea name="comment" id="comment" class="border w-full font-xs text-gray-500 app border-gray-300 p-2 my-2 rounded-md focus:outline-none focus:ring-2 ring-blue-200" placeholder="Write your comment here..." required></textarea>
                                     <div>
-                                        <label for="cars" class="text-gray-600">Comment as:</label>
+                                        <!-- <label for="cars" class="text-gray-600">Comment as:</label>
                                         <select name="cars" id="cars" class="text-gray-800 bg-transparent">
                                             <option value="volvo" class="border border-gray-500">Anonim</option>
-                                            <option value="saab" class="border border-gray-500">{{ Auth()->user()->name }}</option>
-                                        </select>
+                                            <option value="{{ Auth()->user()->name }}" class="border border-gray-500">{{ Auth()->user()->name }}</option>
+                                        </select> -->
                                         <button type="input" class="px-4 py-2 text-sm bg-blue-600 rounded-md border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-bold hover:bg-blue-700 focus:bg-indigo-50 focus:text-gray-200 float-right overflow-auto">POST</button>
                                     </div>
                                 </div>
