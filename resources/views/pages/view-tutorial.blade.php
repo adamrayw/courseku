@@ -63,7 +63,7 @@
                                     <input type="text" name="tutorials_id" class="hidden" value="{{ $data->id }}">
                                     <input type="text" name="users_id" class="hidden" value="{{ Auth()->user()->id }}">
                                     <textarea name="comment" id="comment" class="border w-full font-xs text-gray-500 app border-gray-300 p-2 my-2 rounded-md focus:outline-none focus:ring-2 ring-blue-200" placeholder="Write your comment here..."></textarea>
-                                    <button type="input" class="w-full px-4 py-2 text-sm bg-blue-600 rounded-md border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-bold hover:bg-blue-700 focus:bg-indigo-50 focus:text-gray-200 float-right overflow-auto">POST</button>
+                                    <button type="input" class="px-4 py-2 text-sm bg-blue-600 rounded-md border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-bold hover:bg-blue-700 focus:bg-indigo-50 focus:text-gray-200 float-right overflow-auto">POST</button>
                                 </div>
                             </form>
                             @else
@@ -81,7 +81,10 @@
             <div class="mt-6">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="font-bold text-gray-600">{{ count($data->comments) }} Comments </h2>
-                    <p class="font-medium text-gray-600 text-sm">Sort By Newest<i class="fas fa-sort-down ml-1 fa-lg text-gray-600"></i></p>
+                    <div class="flex items-start justify-start">
+                        <p class="font-medium text-gray-600 text-sm">Sort By Newest</p>
+                        <i class="fas fa-sort-down ml-1 fa-lg text-gray-600"></i>
+                    </div>
                 </div>
                 @if (count($data->comments) > 0)
                 @for ($i = 0; $i < count($data->comments); $i++)
