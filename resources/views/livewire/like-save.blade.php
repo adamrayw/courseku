@@ -49,7 +49,7 @@
         <input type="text" wire:model="tutorials_id" class="hidden" value="{{ $data->id }}">
         <input type="text" wire:model="users_id" class="hidden" value="{{ Auth()->user()->id }} ">
         <input type="text" wire:model="vote" class="hidden" value="1">
-        <button type="submit" class=" text-lg mr-1 text-gray-600"><i class="{{ $like_status }} fa-thumbs-up fa-sm"></i> {{-- count($data->votes) --}}</button>
+        <button type="submit" class="text-lg mr-1 text-gray-600"><i class="{{ $like_status }} fa-thumbs-up fa-lg"></i> {{-- count($data->votes) --}}</button>
     </form>
     @else
     <div x-data="{ showModal : false }">
@@ -72,7 +72,7 @@
         <input type="text" wire:model="tutorials_id" class="hidden" value="{{ $data->id }}">
         <input type="text" wire:model="users_id" class="hidden" value="{{ Auth()->user()->id }} ">
         <input type="text" wire:model="save" class="hidden" value="1">
-        <button type="submit" class="text-gray-600 text-lg  ml-4"><i class="{{ $save_status }} fa-bookmark mr-1 fa-sm"></i></button>
+        <button type="submit" class="text-gray-600 text-lg  ml-4"><i class="{{ $save_status }} fa-bookmark mr-1 fa-lg"></i></button>
     </form>
     @else
     <div x-data="{ showModal : false }">
