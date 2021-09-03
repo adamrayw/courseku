@@ -32,8 +32,8 @@ Route::get('/course/{slug}', [TutorialsController::class, 'show']);
 
 Route::post('/course/{slug}/comment', [CommentController::class, 'store']);
 
-Route::post('/course/{slug}/like', [CommentController::class, 'storevote']);
-Route::post('/course/{slug}/dislike', [CommentController::class, 'removevote']);
+// Route::post('/course/{slug}/like', [CommentController::class, 'storevote']);
+// Route::post('/course/{slug}/dislike', [CommentController::class, 'removevote']);
 
 // Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
 
