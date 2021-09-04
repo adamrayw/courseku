@@ -17,17 +17,16 @@ class TutorialsController extends Controller
 
         $user = Auth::id();
 
-        if ($request->sortby == 'desc') {
-            $sortby = 'desc';
-        } elseif ($request->sortby == 'asc') {
-            $sortby = 'asc';
-        } else {
-            $sortby = 'desc';
-        }
+        // if ($request->sortby == 'desc') {
+        //     $sortby = 'desc';
+        // } elseif ($request->sortby == 'asc') {
+        //     $sortby = 'asc';
+        // } else {
+        //     $sortby = 'desc';
+        // }
 
         return view('pages.view-tutorial', [
-            'datas' => Tutorials::where('slug', $slug)->get(),
-            'comments' => Comment::with(['tutorial', 'user'])->orderBy('created_at', $sortby)->get(),
+            'datas' => Tutorials::with('comments')->where('slug', $slug)->get(),
             'isLiked' => Voters::whereHas('user', function ($q) {
                 $q->where('tutorials_id');
             })->get(),
