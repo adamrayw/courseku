@@ -53,7 +53,7 @@
     </form>
     @else
     <div x-data="{ showModal : false }">
-        <button @click="showModal = !showModal" class="text-lg"><i class="far fa-thumbs-up text-gray-600 fa-sm"></i> {{-- count($data->votes) --}}</button>
+        <button @click="showModal = !showModal" class="text-lg"><i class="far fa-thumbs-up text-gray-600"></i> {{-- count($data->votes) --}}</button>
 
         <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
             <!-- Modal -->
@@ -76,7 +76,7 @@
     </form>
     @else
     <div x-data="{ showModal : false }">
-        <button @click="showModal = !showModal" class="text-lg ml-4"><i class="{{ $save_status }} fa-bookmark mr-1 text-gray-600 fa-sm"></i></button>
+        <button @click="showModal = !showModal" class="text-lg ml-4"><i class="{{ $save_status }} fa-bookmark mr-1 text-gray-600"></i></button>
 
         <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
             <!-- Modal -->
