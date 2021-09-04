@@ -4,7 +4,7 @@
 
 @section('content')
 <section class="my-20 max-w-3xl mx-4 md:mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-start">
+    <div class="flex flex-col md:flex-row">
         <div class="flex items-start">
             <div class="bg-gray-500 w-24 h-24 p-4 flex justify-center items-center mr-4 rounded-md">
                 <h1 class="font-bold mb-1 text-white text-4xl">{{ Auth()->user()->name[0] }}</h1>
@@ -14,13 +14,13 @@
                 <p class="mt-1 text-gray-500 text-sm">Member Since : {{ Auth()->user()->created_at->toFormattedDateString() }}</p>
             </div>
         </div>
-        <div class="">
+        <div class="md:ml-auto">
             <div class="mt-2 md:mt-0">
                 <div class="flex items-center">
                     <!-- <i class="fas fa-question-circle fa-sm"></i> -->
                     <i class="fas fa-star fa-sm text-yellow-400"></i>
                     <p class="ml-1 font-medium text-gray-600">Stars </p>
-                    <div class="group cursor-pointer relative inline-block text-blue-600 text-center ml-1"><i class="fas fa-question-circle fa-sm"></i>
+                    <div class="group cursor-pointer relative inline-block text-blue-600 text-center ml-2"><i class="fas fa-question-circle fa-sm"></i>
                         <div class="opacity-0 w-28 bg-gray-600 border border-gray-600 text-white text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 bottom-full -left-0 ml-1 px-3 pointer-events-none">
                             Get stars by submitting tutorials.
                         </div>
@@ -36,9 +36,9 @@
     </div>
     <div class="mt-4 " x-data="{active: 0}">
         <div class="flex bg-white overflow-hidden">
-            <button class="px-4 py-2 border-b border-gray-400 text-gray-600 w-full" x-on:click.prevent="active = 0" x-bind:class="{'border-blue-600 ': active === 0}">Liked</button>
-            <button class="px-4 py-2 border-b border-gray-400 text-gray-600 w-full" x-on:click.prevent="active = 1" x-bind:class="{'border-blue-600 ': active === 1}">Bookmarked</button>
-            <button class="px-4 py-2 border-b border-gray-400 text-gray-600 w-full" x-on:click.prevent="active = 2" x-bind:class="{'border-blue-600': active === 2}">Submitted</button>
+            <button class="px-4 py-2 border-b border-gray-200 text-gray-600 w-full" x-on:click.prevent="active = 0" x-bind:class="{'border-blue-600 ': active === 0}">Liked</button>
+            <button class="px-4 py-2 border-b border-gray-200 text-gray-600 w-full" x-on:click.prevent="active = 1" x-bind:class="{'border-blue-600 ': active === 1}">Bookmarked</button>
+            <button class="px-4 py-2 border-b border-gray-200 text-gray-600 w-full" x-on:click.prevent="active = 2" x-bind:class="{'border-blue-600': active === 2}">Submitted</button>
         </div>
         <div class=" bg-opacity-10">
             <div class="p-4 bg-white space-y-2" x-show.transition.in="active === 0">
