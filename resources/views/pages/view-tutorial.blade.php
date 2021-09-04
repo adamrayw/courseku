@@ -123,7 +123,7 @@
                         </div>
                         <div class="ml-2">
                             <div>
-                                <p class="text-sm font-semibold text-gray-600">{{ $data->comments[$i]->user->name}}</p>
+                                <p class="text-sm font-semibold text-gray-600 mb-1">{{ $data->comments[$i]->user->name}}</p>
                                 <p class="text-xs text-gray-500">{{ $data->comments[$i]->comment}}</p>
                             </div>
                         </div>
