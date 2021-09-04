@@ -5,14 +5,6 @@
 @section('content')
 @foreach ($datas as $data)
 <section class="mt-20 text-center w-full md:w-4/12 mx-auto px-4">
-
-    @if(session()->has('status'))
-    <div class="" role="alert">
-        {{ session('status') }}
-    </div>
-    @endif
-
-
     <div class="view-tutorial flex-row justify-center mb-10">
         <img class="rounded-t-md" src="https://source.unsplash.com/700x200?coding" alt="img-card">
         <div class="p-4 bg-white shadow-md rounded-b-md text-left">
@@ -88,7 +80,7 @@
             <div class="mt-6">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="font-bold text-gray-600">{{ count($data->comments) }} Comments </h2>
-                    <form action="/course/{{ $data->slug }}" method="get">
+                    <!-- <form action="/course/{{ $data->slug }}" method="get">
                         @if(request('sortby') == 'desc')
                         <input type="hidden" name="sortby" value="asc">
                         <button type="submit">
@@ -121,26 +113,29 @@
                         </button>
                         @endif
 
-                    </form>
+                    </form> -->
                 </div>
-                @if (!$comments->isEmpty())
-                @foreach ($comments as $comment)
+                @if (count($data->comments) > 0)
+                @for ($i = 0; $i < count($data->comments); $i++)
+                    <div class="flex items-start">
+                        <div>
+                            <p class="bg-gray-600 h-10 w-10 rounded-full text-white flex items-center justify-center">{{ $data->comments[$i]->user->name[0] }}</p>
+                        </div>
+                        <div class="ml-2">
+                            <div>
+                                <p class="text-sm font-semibold text-gray-600">{{ $data->comments[$i]->user->name}}</p>
+                                <p class="text-xs text-gray-500">{{ $data->comments[$i]->comment}}</p>
+                            </div>
+                        </div>
 
-                <div class="flex items-start">
-                    <div>
-                        <p class="bg-gray-600 text-xl w-10 h-10 flex justify-center items-center mr-2 rounded-full text-white">{{ $comment->user->name[0] }}</p>
+                        <p class="font-thin text-xs text-gray-400 ml-auto"> {{$data->comments[$i]->created_at->diffForHumans()}}</p>
+
                     </div>
-                    <div>
-                        <p class="text-sm font-medium text-gray-600 mb-1">{{ $comment->user->name }}</p>
-                        <p class="mb-2 text-xs text-gray-500">{{ $comment->comment }}</p>
-                    </div>
-                    <p class="font-thin text-xs text-gray-400 ml-auto"> {{$comment->created_at->diffForHumans()}}</p>
-                </div>
-                <hr class="mt-2 mb-4">
-                @endforeach
-                @else
-                <p class="text-center text-gray-500">No comments yet</p>
-                @endif
+                    <hr class="my-4">
+                    @endfor
+                    @else
+                    <p class="text-center text-gray-500">No comments yet</p>
+                    @endif
             </div>
         </div>
     </div>
