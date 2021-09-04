@@ -18,6 +18,13 @@
                     </div>
                     <!-- <p class="text-xs my-2 text-gray-500 mt-2">Di submit oleh {{ $data->submitted_by }}</p> -->
                 </div>
+
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <p class="text-xs rounded-md bg-gray-600 text-white p-2">{{ $data->type }}</p>
+                    <p class="text-xs rounded-md ml-2 bg-gray-600 text-white p-2">{{ $data->level }}</p>
+                </div>
                 <div>
                     @if (Auth::check())
                     @livewire('like-save', ['datas' => $datas, 'users_id' => Auth()->user()->id, 'tutorials_id' => $data->id, 'vote' => 1])
@@ -25,10 +32,6 @@
                     @livewire('like-save', ['datas' => $datas, 'users_id' => 0, 'tutorials_id' => $data->id, 'vote' => 1])
                     @endif
                 </div>
-            </div>
-            <div class="flex items-center mb-4">
-                <p class="text-xs rounded-md bg-gray-600 text-white p-2">{{ $data->type }}</p>
-                <p class="text-xs rounded-md ml-2 bg-gray-600 text-white p-2">{{ $data->level }}</p>
             </div>
             <div class=" description my-2">
                 @if($data->type == ' Video') <h2 class="text-lg font-semibold mb-2 text-gray-600">Description</h2>
