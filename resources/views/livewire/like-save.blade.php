@@ -49,13 +49,13 @@
         <input type="text" wire:model="tutorials_id" class="hidden" value="{{ $data->id }}">
         <input type="text" wire:model="users_id" class="hidden" value="{{ Auth()->user()->id }} ">
         <input type="text" wire:model="vote" class="hidden" value="1">
-        <button type="submit" class="text-lg mr-1 text-gray-600"><i class="{{ $like_status }} fa-thumbs-up fa-lg"></i> {{-- count($data->votes) --}}</button>
+        <button type="submit" class="text-lg mr-2 text-gray-600"><i class="{{ $like_status }} fa-thumbs-up fa-lg pr-1"></i> {{ count($data->votes) }}</button>
     </form>
     @else
     <div x-data="{ showModal : false }">
-        <button @click="showModal = !showModal" class="text-lg"><i class="far fa-thumbs-up text-gray-600"></i> {{-- count($data->votes) --}}</button>
+        <button @click="showModal = !showModal" class="text-lg mr-2"><i class="far fa-thumbs-up text-gray-600 fa-lg pr-1"></i> {{ count($data->votes) }}</button>
 
-        <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+        <div x-show=" showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
             <!-- Modal -->
             <div x-show="showModal" class="bg-white rounded-xl shadow-2xl p-6 w-full sm:w-5/12 mx-10" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
                 <h1 class="text-center my-6 text-xl">Login to like, save, and comment this tutorial.</h1>
@@ -76,9 +76,9 @@
     </form>
     @else
     <div x-data="{ showModal : false }">
-        <button @click="showModal = !showModal" class="text-lg ml-4"><i class="{{ $save_status }} fa-bookmark mr-1 text-gray-600"></i></button>
+        <button @click="showModal = !showModal" class="text-lg ml-4"><i class="{{ $save_status }} fa-bookmark mr-1 text-gray-600 fa-lg"></i></button>
 
-        <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+        <div x-show=" showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
             <!-- Modal -->
             <div x-show="showModal" class="bg-white rounded-xl shadow-2xl p-6 w-full sm:w-5/12 mx-10" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
                 <h1 class="text-center my-6 text-xl">Login to like, save, and comment this tutorial.</h1>
