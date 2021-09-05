@@ -44,3 +44,6 @@ Route::get('/{category:slug}', function (Category $category) {
         'title' => $category->name,
     ]);
 });
+
+// admin
+require __DIR__ . '/admin.php';
