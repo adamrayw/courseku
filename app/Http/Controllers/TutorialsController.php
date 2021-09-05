@@ -15,18 +15,11 @@ class TutorialsController extends Controller
     public function show($slug, Request $request)
     {
 
-        $user = Auth::id();
-
-        // if ($request->sortby == 'desc') {
-        //     $sortby = 'desc';
-        // } elseif ($request->sortby == 'asc') {
-        //     $sortby = 'asc';
-        // } else {
-        //     $sortby = 'desc';
-        // }
+        // $datas = Tutorials::where('slug', $slug)->firstOrFail();
+        // $comments = Comment::where('tutorials_id', $datas->id)->with('user')->paginate(1);
 
         return view('pages.view-tutorial', [
-            'datas' => Tutorials::with('comments')->where('slug', $slug)->get(),
+            'datas' => Tutorials::where('slug', $slug)->with('comments')->get(),
             'isLiked' => Voters::whereHas('user', function ($q) {
                 $q->where('tutorials_id');
             })->get(),
