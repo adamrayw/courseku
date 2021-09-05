@@ -64,7 +64,7 @@
                                             <option value="volvo" class="border border-gray-500">Anonim</option>
                                             <option value="{{ Auth()->user()->name }}" class="border border-gray-500">{{ Auth()->user()->name }}</option>
                                         </select> -->
-                                        <button type="input" class="px-4 py-2 text-sm bg-blue-600 rounded-md border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-bold hover:bg-blue-700 focus:bg-indigo-50 focus:text-gray-200 float-right overflow-auto">POST</button>
+                                        <button type="submit" class="px-4 py-2 text-sm bg-blue-600 rounded-md border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-bold hover:bg-blue-700 focus:bg-indigo-50 focus:text-gray-200 float-right overflow-auto">POST</button>
                                     </div>
                                 </div>
                             </form>
@@ -130,9 +130,7 @@
                                 <p class="text-xs text-gray-500">{{ $data->comments[$i]->comment}}</p>
                             </div>
                         </div>
-
-                        <p class="font-thin text-xs text-gray-400 ml-auto"> {{$data->comments[$i]->created_at->diffForHumans()}}</p>
-
+                        <p class="font-thin text-xs text-gray-400 ml-auto pl-4"> {{$data->comments[$i]->created_at->diffForHumans()}}</p>
                     </div>
                     <hr class="my-4">
                     @endfor
