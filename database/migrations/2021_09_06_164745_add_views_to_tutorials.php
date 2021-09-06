@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DropViewsToTutorials extends Migration
+class AddViewsToTutorials extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class DropViewsToTutorials extends Migration
     public function up()
     {
         Schema::table('tutorials', function (Blueprint $table) {
-            $table->dropColumn('views');
+            $table->integer('views');
         });
     }
 
@@ -26,7 +26,7 @@ class DropViewsToTutorials extends Migration
     public function down()
     {
         Schema::table('tutorials', function (Blueprint $table) {
-            //
+            $table->integer('views');
         });
     }
 }
