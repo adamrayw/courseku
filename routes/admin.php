@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
@@ -18,5 +19,5 @@ Route::prefix('admin')->name('admin.')->group(function () {
         ->middleware('auth:admin')
         ->name('logout');
 
-    Route::view('/home', 'admin/admin-dashboard')->middleware('auth:admin')->name('home');
+    Route::get('/home', [AdminController::class, 'home'])->middleware('auth:admin')->name('home');
 });
