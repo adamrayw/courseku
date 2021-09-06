@@ -14,7 +14,7 @@ class AddViewsToTutorials extends Migration
     public function up()
     {
         Schema::table('tutorials', function (Blueprint $table) {
-            $table->integer('views')->after('submitted_by')->nullable();
+            $table->integer('views')->after('submitted_by');
         });
     }
 
