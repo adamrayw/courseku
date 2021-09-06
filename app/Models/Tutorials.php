@@ -11,6 +11,8 @@ class Tutorials extends Model
 
     protected $guarded = ['id'];
 
+    protected $primaryKey = 'id';
+
     public function course()
     {
         return $this->belongsTo(Course::class);
