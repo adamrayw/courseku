@@ -19,6 +19,7 @@ class TutorialsController extends Controller
         // $comments = Comment::where('tutorials_id', $datas->id)->with('user')->paginate(1);
 
         return view('pages.view-tutorial', [
+            Tutorials::where('slug', $slug)->increment('views'),
             'datas' => Tutorials::where('slug', $slug)->with('comments')->get(),
             'isLiked' => Voters::whereHas('user', function ($q) {
                 $q->where('tutorials_id');
