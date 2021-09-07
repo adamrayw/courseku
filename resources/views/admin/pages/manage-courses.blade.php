@@ -8,6 +8,18 @@
         <div class="mb-4">
             <h2 class="text-2xl font-bold text-gray-600">Menage Courses</h2>
         </div>
+        @if (session('successDelete'))
+        <div class="mb-2 alert alert-success">
+            <div class="bg-green-200 border-green-600 text-green-600 border-l-4 p-4" role="alert">
+                <p class="font-bold">
+                    Success
+                </p>
+                <p>
+                    {{ session('successDelete') }}
+                </p>
+            </div>
+        </div>
+        @endif
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
             <div class="w-full overflow-x-auto h-96">
                 <table class="w-full">
@@ -47,7 +59,7 @@
                                         Edit
                                     </a>
                                     <div class="mx-2"></div>
-                                    <a href="" class="flex justify-center items-center text-red-500">
+                                    <a href="/admin/manage-courses/{{$course->id}}" class="flex justify-center items-center text-red-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                         </svg>
