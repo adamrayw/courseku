@@ -5,11 +5,7 @@
 
 
 
-<section class="mt-20 px-4 md:px-12 w-full">
-    <div class="mb-6">
-        <h3 class="text-2xl md:text-4xl font-semibold text-gray-600">Hi, {{ Auth()->user()->name }}</h3>
-        <hr class="mt-2">
-    </div>
+<section class="mt-16 px-4 md:px-12 w-full">
     <div class="total-user grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="card bg-white rounded-md py-4 px-6 shadow text-xl text-center">
             <p class="text-gray-600 font-medium text-2xl mb-2">{{ count($users) }}</p>
@@ -25,10 +21,12 @@
             <p class="text-blue-600 font-bold">Courses</p>
         </div>
     </div>
+
+    <!-- View active course & new user -->
     <div class="mt-4 grid md:grid-cols-3 gap-4">
-        <div class="card md:col-span-2 bg-white rounded-md shadow p-4 text-gray-600">
+        <div class="card md:col-span-2 bg-white rounded-md shadow p-6 text-gray-600">
             <h2 class="font-bold mb-2 text-xl">Tutorials active</h2>
-            <div class="overflow-scroll h-48 w-full">
+            <div class="overflow-auto h-48 w-full">
                 <table class="table-auto border-collapse border border-gray-400 relative">
                     <thead>
                         <tr class="text-left sticky top-0 bg-white">
@@ -72,6 +70,39 @@
                     @endforeach
                 </tbody>
             </table>
+        </div>
+    </div>
+
+
+    <!-- Comment -->
+    <div class="mt-4 grid md:grid-cols-3 gap-4">
+        <div class="card md:col-span-2 bg-white rounded-md shadow p-6 text-gray-600">
+            <h2 class="font-bold mb-2 text-xl">Latest Comments</h2>
+            <div class="overflow-auto h-44 w-full">
+                <table class="table-auto w-full">
+                    <thead>
+                        <tr class="text-left">
+                            <th class="pb-2">No</th>
+                            <th class="pb-2">comment</th>
+                            <th class="pb-2"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($comments as $comment)
+                        <tr>
+                            <td class="pb-2">{{ $loop->iteration }}.</td>
+                            <td class="pb-2">{{ $comment->comment }} <a class="text-xs text-gray-400" href="/course/{{ $comment->tutorial->slug }}">In {{ $comment->tutorial->name }}</a></td>
+                            <td class="pb-2 text-right text-sm text-gray-400">{{ $comment->created_at->diffForHumans() }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card bg-white rounded-md shadow p-4 text-gray-600">
+            <h2 class="font-bold text-xl">Latest Comments</h2>
+            <hr class="my-2">
         </div>
     </div>
 </section>
