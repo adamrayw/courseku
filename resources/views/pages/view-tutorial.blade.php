@@ -52,7 +52,7 @@
                         <!-- Button -->
                         <div class="overflow-hidden">
                             @if (Auth::check())
-                            <form action="/course/{{$data->slug}}/comment" method="POST">
+                            <form action="/course/{{$data->slug}}" method="POST">
                                 @csrf
                                 <div class="px-1">
                                     <input type="text" name="tutorials_id" class="hidden" value="{{ $data->id }}">
@@ -82,7 +82,7 @@
             </div>
             <div class="mt-6">
                 <div class="flex justify-between items-center mb-4">
-                    <h2 class="font-bold text-gray-600">{{ count($data->comments) }} Comments </h2>
+                    <h2 class="font-bold text-gray-600 mb-2">{{ count($data->comments) }} Comments </h2>
                     <!-- <form action="/course/{{ $data->slug }}" method="get">
                         @if(request('sortby') == 'desc')
                         <input type="hidden" name="sortby" value="asc">
