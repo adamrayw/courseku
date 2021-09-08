@@ -14,7 +14,7 @@ class AddImgUrlToCategories extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->string('img_url')->after('id');
+            $table->string('img_url')->after('id')->nullable();
         });
     }
 
