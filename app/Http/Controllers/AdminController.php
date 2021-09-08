@@ -90,6 +90,13 @@ class AdminController extends Controller
         return back()->with('successDelete', 'Course deleted successfully!');
     }
 
+    public function deleteUser($id)
+    {
+        User::where('id', $id)->delete();
+
+        return back()->with('successDelete', 'User deleted successfully!');
+    }
+
     public function updateCategory(Request $request)
     {
         Category::where('slug', $request->slug)
