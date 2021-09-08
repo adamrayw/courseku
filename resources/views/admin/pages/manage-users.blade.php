@@ -56,7 +56,7 @@
                                 </div>
                             </td>
                             <td class="px-4 py-3 text-xs border">
-                                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Active </span>
+                                <span class="px-2 py-1 font-semibold leading-tight {{ ($user->status == 'Active') ? 'text-green-700 bg-green-100' : 'text-red-700 bg-red-100' }}  rounded-sm"> {{ $user->status }} </span>
                             </td>
                             <td class="px-4 py-3 text-sm border">{{$user->created_at }}</td>
                             <td class="px-4 py-3 text-sm border">
@@ -103,7 +103,7 @@
                                                             </div>
                                                             <!-- Buttons -->
                                                             <div class="text-right space-x-2 mt-5">
-                                                                <button @click="showModal = !showModal" class="px-4 py-2 text-sm bg-white rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-500 focus:outline-none focus:ring-0 font-bold hover:bg-gray-50 focus:bg-indigo-50 focus:text-indigo">Cancel</button>
+                                                                <a @click="showModal = !showModal" class="cursor-pointer px-4 py-2 text-sm bg-white rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-500 focus:outline-none focus:ring-0 font-bold hover:bg-gray-50 focus:bg-indigo-50 focus:text-indigo">Cancel</a>
                                                                 <button type="submit" class="px-4 py-2 text-sm bg-gray-800 rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-white hover:bg-gray-600">Edit</button>
                                                             </div>
                                                         </form>
