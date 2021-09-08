@@ -29,6 +29,27 @@
             </div>
         </div>
         @endif
+        @if (session('updateSuccess'))
+        <div class="mb-2 alert alert-success" x-data="{cookies: true}" x-show="cookies">
+            <div class="bg-green-200 flex border-green-600 text-green-600 border-l-4 p-4" role="alert">
+                <div>
+                    <p class="font-bold">
+                        Success
+                    </p>
+                    <p>
+                        {{ session('updateSuccess') }}
+                    </p>
+                </div>
+                <div class="ml-auto">
+                    <p class="cursor-pointer" @click="cookies = false">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </p>
+                </div>
+            </div>
+        </div>
+        @endif
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
             <div class="w-full overflow-auto h-96">
                 <table class="w-full">
@@ -56,7 +77,7 @@
                                 </div>
                             </td>
                             <td class="px-4 py-3 text-xs border">
-                                <span class="px-2 py-1 font-semibold leading-tight {{ ($user->status == 'Active') ? 'text-green-700 bg-green-100' : 'text-red-700 bg-red-100' }}  rounded-sm"> {{ $user->status }} </span>
+                                <span class="px-2 py-1 font-semibold leading-tight {{ ($user->status == 'Active') ? 'text-green-700 bg-green-100' : 'text-yellow-700 bg-yellow-100' }}  rounded-sm"> {{ $user->status }} </span>
                             </td>
                             <td class="px-4 py-3 text-sm border">{{$user->created_at }}</td>
                             <td class="px-4 py-3 text-sm border">
@@ -84,20 +105,24 @@
                                                     </div>
                                                     <!-- Body 🍺 -->
                                                     <div class="p-4 md:w-96 w-full">
-                                                        <form action="/admin/manage-courses" method="POST">
+                                                        <form action="/admin/manage-courses/user/{{ $user->id }}" method="POST">
                                                             @csrf
                                                             <div class="my-4">
                                                                 <h2 class="text-gray-600 font-semibold mb-1">Name</h2>
                                                                 <input type="text" name="name" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Course name" value="{{ $user->name }}">
                                                             </div>
                                                             <div class="my-4">
+                                                                <h2 class="text-gray-600 font-semibold mb-1">Email</h2>
+                                                                <input type="text" name="email" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Course name" value="{{ $user->email }}">
+                                                            </div>
+                                                            <div class="my-4">
                                                                 <h2 class="text-gray-600 font-semibold mb-1">Status User</h2>
-                                                                <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="category_id">
+                                                                <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="status">
                                                                     <option value="Active">
                                                                         Active
                                                                     </option>
-                                                                    <option value="Blocked">
-                                                                        Block
+                                                                    <option value="Suspended">
+                                                                        Suspend
                                                                     </option>
                                                                 </select>
                                                             </div>
