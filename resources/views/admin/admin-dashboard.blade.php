@@ -2,10 +2,7 @@
 @section('admin-content')
 @section('admin-title', 'Admin Dashboard')
 
-
-
-
-<section class="mt-16 px-4 md:px-12 w-full">
+<section class="mt-12 px-4 md:px-12 w-full">
     <div class="total-user grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="card bg-white rounded-md py-4 px-6 shadow text-xl text-center">
             <p class="text-gray-600 font-medium text-2xl mb-2">{{ count($users) }}</p>
@@ -101,8 +98,8 @@
         </div>
 
         <div class="card bg-white rounded-md shadow p-4 text-gray-600">
-            <h2 class="font-bold text-xl">Latest Comments</h2>
-            <hr class="my-2">
+            <!-- <h2 class="font-bold text-xl">Latest Comments</h2>
+            <hr class="my-2"> -->
         </div>
     </div>
 </section>
