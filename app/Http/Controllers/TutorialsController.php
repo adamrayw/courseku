@@ -20,7 +20,7 @@ class TutorialsController extends Controller
 
         return view('pages.view-tutorial', [
             Tutorials::where('slug', $slug)->increment('views'),
-            'datas' => Tutorials::where('slug', $slug)->with('comments')->limit(4)->get(),
+            'datas' => Tutorials::where('slug', $slug)->with('comments')->get(),
             'isLiked' => Voters::whereHas('user', function ($q) {
                 $q->where('tutorials_id');
             })->get(),
