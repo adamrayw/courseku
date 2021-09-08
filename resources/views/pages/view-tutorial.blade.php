@@ -52,22 +52,27 @@
                         <!-- Button -->
                         <div class="overflow-hidden">
                             @if (Auth::check())
+                            @if (Auth()->user()->status == 'Suspended')
+                            <div class="text-center flex items-center bg-yellow-100 border border-yellow-700 p-4 rounded-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-h-12 text-yellow-700 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                                <p class="text-yellow-700 text-left ml-2">You can't comment, because your account is being suspended!</p>
+                            </div>
+                            @else
                             <form action="/course/{{$data->slug}}" method="POST">
                                 @csrf
+
                                 <div class="px-1">
                                     <input type="text" name="tutorials_id" class="hidden" value="{{ $data->id }}">
                                     <input type="text" name="users_id" class="hidden" value="{{ Auth()->user()->id }}">
                                     <textarea name="comment" id="comment" class="border w-full font-xs text-gray-500 app border-gray-300 p-2 my-2 rounded-md focus:outline-none focus:ring-2 ring-blue-200" placeholder="Write your comment here..." required></textarea>
                                     <div>
-                                        <!-- <label for="cars" class="text-gray-600">Comment as:</label>
-                                        <select name="cars" id="cars" class="text-gray-800 bg-transparent">
-                                            <option value="volvo" class="border border-gray-500">Anonim</option>
-                                            <option value="{{ Auth()->user()->name }}" class="border border-gray-500">{{ Auth()->user()->name }}</option>
-                                        </select> -->
                                         <button type="submit" class="px-4 py-2 text-sm bg-blue-600 rounded-md border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-bold hover:bg-blue-700 focus:bg-indigo-50 focus:text-gray-200 float-right overflow-auto">POST</button>
                                     </div>
                                 </div>
                             </form>
+                            @endif
                             @else
                             <div class="text-center">
                                 <p class="text-gray-600">You must <a href="/login" class="underline">login</a> to comment!</p>
