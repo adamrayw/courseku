@@ -90,6 +90,18 @@ class AdminController extends Controller
         return back()->with('successDelete', 'Course deleted successfully!');
     }
 
+    public function editUser($id, Request $request)
+    {
+        User::where('id', $id)
+            ->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'status' => $request->status,
+            ]);
+
+        return back()->with('updateSuccess', 'User updated successfully!');
+    }
+
     public function deleteUser($id)
     {
         User::where('id', $id)->delete();
