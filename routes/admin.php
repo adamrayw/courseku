@@ -26,6 +26,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/manage-users/{id}', [AdminController::class, 'deleteUser'])->middleware('auth:admin');
 
+    Route::post('/manage-courses/user/{id}', [AdminController::class, 'editUser'])->middleware('auth:admin');
+
     Route::get('/manage-courses', [AdminController::class, 'manageCourses'])->middleware('auth:admin');
 
     Route::get('/manage-comments', [AdminController::class, 'manageComments'])->middleware('auth:admin');
