@@ -38,7 +38,7 @@
             @foreach ($fields as $field)
             <a href="/{{ $field->slug }}">
                 <div class="card flex items-center bg-white shadow p-4 rounded-lg hover:shadow-lg transition">
-                    <img src="https://img.icons8.com/ios/50/000000/programming.png" alt="logo" />
+                    {!! $field->img_url !!}
                     <p class="ml-2 text-gray-600">{{ $field->name }}</p>
                 </div>
             </a>
