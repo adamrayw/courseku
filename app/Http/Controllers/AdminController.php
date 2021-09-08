@@ -49,8 +49,10 @@ class AdminController extends Controller
     {
         // get users
         $courses = Course::orderBy('created_at', 'desc')->with('category')->get();
+        // get category
+        $categories = Category::all();
 
-        return view('admin.pages.manage-courses', compact(['courses']));
+        return view('admin.pages.manage-courses', compact(['courses', 'categories']));
     }
 
     public function manageComments()
@@ -86,5 +88,17 @@ class AdminController extends Controller
         Course::where('id', $id)->delete();
 
         return back()->with('successDelete', 'Course deleted successfully!');
+    }
+
+    public function updateCategory(Request $request)
+    {
+        Category::where('slug', $request->slug)
+            ->update([
+                'img_url' => $request->img_url,
+                'name' => $request->name,
+                'slug' => $request->slug,
+            ]);
+
+        return back()->with('updateSuccess', 'Category updated successfully!');
     }
 }
