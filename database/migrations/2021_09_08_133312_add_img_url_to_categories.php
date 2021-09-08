@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddViewsToTutorials extends Migration
+class AddImgUrlToCategories extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddViewsToTutorials extends Migration
      */
     public function up()
     {
-        Schema::table('tutorials', function (Blueprint $table) {
-            $table->integer('views')->default(0);
+        Schema::table('categories', function (Blueprint $table) {
+            $table->string('img_url')->after('id');
         });
     }
 
@@ -25,8 +25,8 @@ class AddViewsToTutorials extends Migration
      */
     public function down()
     {
-        Schema::table('tutorials', function (Blueprint $table) {
-            $table->integer('views');
+        Schema::table('categories', function (Blueprint $table) {
+            //
         });
     }
 }
