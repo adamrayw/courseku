@@ -74,14 +74,12 @@ class AdminController extends Controller
 
     public function storeCourse(Request $request)
     {
-        $validated = $request->validate([
-            'category_id' => 'required',
-            'name' => 'required',
-            'slug' => 'required',
-            'img_url' => 'required'
+        Course::create([
+            'category_id' => $request->category_id,
+            'name' => $request->name,
+            'slug' => Str::slug($request->name, '-'),
+            'img_url' => $request->img_url
         ]);
-
-        Course::create($validated);
 
         return back()->with('success', 'Course added successfully!');
     }
@@ -135,6 +133,7 @@ class AdminController extends Controller
                 'img_url' => $request->img_url,
                 'name' => $request->name,
                 'slug' => $request->slug,
+                'status' => $request->status
             ]);
 
         return back()->with('updateSuccess', 'Category updated successfully!');
@@ -147,6 +146,7 @@ class AdminController extends Controller
                 'img_url' => $request->img_url,
                 'name' => $request->name,
                 'slug' => $request->slug,
+                'status' => $request->status
             ]);
 
         return back()->with('updateCourseSuccess', 'Course updated successfully!');
