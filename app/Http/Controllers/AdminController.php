@@ -109,6 +109,22 @@ class AdminController extends Controller
         return back()->with('successDelete', 'User deleted successfully!');
     }
 
+    public function addCategory()
+    {
+        return view('admin.pages.add-category');
+    }
+
+    public function storeCategory(Request $request)
+    {
+        Category::create([
+            'img_url' => $request->img_url,
+            'name' => $request->name,
+            'slug' => $request->slug
+        ]);
+
+        return back()->with('success', 'Category added successfully!');
+    }
+
     public function updateCategory(Request $request)
     {
         Category::where('slug', $request->slug)
