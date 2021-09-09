@@ -20,7 +20,7 @@
             <div x-data="{ dropdownOpen: false }" class="relative ml-auto">
                 <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
                     <div class="flex justify-between items-center">
-                        <p class="bg-gray-500 text-white p-4 h-5 w-5 rounded-full flex justify-center items-center">{{ Auth()->user()->name[0] }} </p>
+                        <p class="bg-gray-500 text-white p-4 h-5 w-5 rounded-md flex justify-center items-center">{{ Auth()->user()->name[0] }} </p>
                         <i class="fas fa-caret-down ml-2"></i>
                     </div>
                 </button>
