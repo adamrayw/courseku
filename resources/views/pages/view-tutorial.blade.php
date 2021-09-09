@@ -6,8 +6,8 @@
 @foreach ($datas as $data)
 <section class="mt-20 text-center w-full md:w-4/12 mx-auto px-4">
     <div class="view-tutorial flex-row justify-center mb-10">
-        <img class="rounded-t-md" src="https://source.unsplash.com/700x200?coding" alt="img-card">
-        <div class="p-4 bg-white shadow-md rounded-b-md text-left">
+        <img class="rounded-t-md" src="https://source.unsplash.com/700x300?coding" alt="img-card">
+        <div class="p-4 bg-white border border-gray-200 shadow-md rounded-b-md text-left">
             <div class="flex justify-between items-center">
                 <div class="mb-2">
                     <div class="">

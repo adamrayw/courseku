@@ -19,7 +19,7 @@
         <div class="grid grid-cols-1 md:grid-cols-5 md:px-0 px-4 gap-4 py-6">
             @foreach ($courses as $course)
             <a href="/learn/{{ $course->slug }}">
-                <div class="card flex bg-white items-center shadow p-4 rounded-lg hover:shadow-lg transition">
+                <div class="card flex bg-white items-center shadow border border-gray-200 p-4 rounded-lg hover:shadow-lg transition">
                     {!! $course->img_url !!}
                     <p class="ml-2 text-gray-600">{{ $course->name }}</p>
                 </div>
@@ -37,7 +37,7 @@
         <div class="grid grid-cols-1 md:grid-cols-4 md:px-0 px-4 gap-4 py-6">
             @foreach ($fields as $field)
             <a href="/{{ $field->slug }}">
-                <div class="card flex items-center bg-white shadow p-4 rounded-lg hover:shadow-lg transition">
+                <div class="card flex items-center bg-white shadow border border-gray-200 p-4 rounded-lg hover:shadow-lg transition">
                     {!! $field->img_url !!}
                     <p class="ml-2 text-gray-600">{{ $field->name }}</p>
                 </div>
