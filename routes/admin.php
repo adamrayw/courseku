@@ -34,6 +34,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/manage-courses', [AdminController::class, 'manageCourses'])->middleware('auth:admin');
 
+    Route::get('/manage-tutorials', [AdminController::class, 'manageTutorial'])->middleware('auth:admin');
+
     Route::get('/manage-comments', [AdminController::class, 'manageComments'])->middleware('auth:admin');
 
     Route::get('/add-course', [AdminController::class, 'addCourse'])->middleware('auth:admin');
@@ -41,6 +43,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/add-course/post', [AdminController::class, 'storeCourse'])->middleware('auth:admin');
 
     Route::get('/add-category', [AdminController::class, 'addCategory'])->middleware('auth:admin');
+
+    Route::get('/add-tutorial', [AdminController::class, 'viewTutorial'])->middleware('auth:admin');
+
+    Route::post('/add-tutorial', [AdminController::class, 'addTutorial'])->middleware('auth:admin');
 
     Route::post('/add-category/post', [AdminController::class, 'storeCategory'])->middleware('auth:admin');
 
