@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Course;
 use App\Models\Tutorials;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -147,5 +149,22 @@ class AdminController extends Controller
             ]);
 
         return back()->with('updateCourseSuccess', 'Course updated successfully!');
+    }
+
+    public function addAdmin(Request $request)
+    {
+        Admin::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'email_verified_at' => now(),
+            'password' => Hash::make($request->password)
+        ]);
+
+        return back()->with('success', 'Admin added successfully!');
+    }
+
+    public function viewAdmin()
+    {
+        return view('admin.pages.add-admin');
     }
 }
