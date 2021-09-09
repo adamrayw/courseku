@@ -73,6 +73,7 @@
                 <div x-show="open" class="bg-gray-50">
                     <a href="/admin/manage-courses" class="py-2 px-7 block text-sm text-gray-600 hover:bg-blue-500 hover:text-white" href="#">Manage Courses</a>
                     <a href="/admin/add-course" class="py-2 px-7 block text-sm text-gray-600 hover:bg-blue-500 hover:text-white" href="#">Add New Course</a>
+                    <a href="/admin/add-category" class="py-2 px-7 block text-sm text-gray-600 hover:bg-blue-500 hover:text-white" href="#">Add New Category</a>
                 </div>
             </div>
             <div x-data="{ open: false }">

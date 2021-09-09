@@ -46,7 +46,7 @@
                 </table>
             </div>
         </div>
-        <div class="card bg-white rounded-md shadow p-4 text-gray-600">
+        <div class="card bg-white rounded-md shadow p-6 text-gray-600">
             <h2 class="font-bold text-xl">5 New User</h2>
             <hr class="my-2">
             <table class="table-auto w-full">
