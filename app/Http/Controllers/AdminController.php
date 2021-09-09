@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
-use App\Models\Category;
-use App\Models\Comment;
-use App\Models\Course;
-use App\Models\Tutorials;
 use App\Models\User;
+use App\Models\Admin;
+use App\Models\Course;
+use App\Models\Comment;
+use App\Models\Category;
+use App\Models\Tutorials;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -19,7 +20,7 @@ class AdminController extends Controller
         $users = User::orderBy('created_at', 'desc')->Limit(5)->get();
 
         // get tutorials
-        $tutorials = Tutorials::all();
+        $tutorials = Tutorials::orderBy('created_at', 'desc')->get();
         // get courses
         $courses = Course::all();
         // get comments
@@ -166,5 +167,39 @@ class AdminController extends Controller
     public function viewAdmin()
     {
         return view('admin.pages.add-admin');
+    }
+
+    public function manageTutorial()
+    {
+        $tutorials = Tutorials::orderBy('created_at', 'desc')->get();
+
+
+        return view('admin.pages.manage-tutorials', compact(['tutorials']));
+    }
+
+    public function viewTutorial()
+    {
+        $courses = Course::all();
+
+        return view('admin.pages.add-tutorial', compact('courses'));
+    }
+
+    public function addTutorial(Request $request)
+    {
+        Tutorials::create([
+            'course_id' => $request->course_id,
+            'comment_id' => $request->commentid,
+            'name' => $request->name,
+            'slug' => Str::slug($request->name, '-'),
+            'description' => $request->description,
+            'author' => $request->author,
+            'type' => $request->type,
+            'level' => $request->level,
+            'submitted_by' => $request->submitted_by,
+            'views' => 0,
+            'source_link' => $request->source_link
+        ]);
+
+        return back()->with('success', 'Tutorial added successfully!');
     }
 }
