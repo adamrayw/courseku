@@ -34,10 +34,6 @@
                     <input type="text" name="name" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Course name">
                 </div>
                 <div class="my-4">
-                    <h2 class="text-gray-600 font-semibold mb-1">Slug</h2>
-                    <input type="text" name="slug" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Slug">
-                </div>
-                <div class="my-4">
                     <h2 class="text-gray-600 font-semibold mb-1">Select Category</h2>
                     <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="category_id">
                         @foreach ($categories as $category)

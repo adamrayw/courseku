@@ -56,7 +56,7 @@
                                 </div>
                             </td>
                             <td class="px-4 py-3 text-xs border">
-                                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Active </span>
+                                <span class="px-2 py-1 font-semibold leading-tight {{ ($course->status == 'Release') ? 'text-green-700 bg-green-100' : 'text-gray-700 bg-gray-100' }} rounded-sm"> {{ $course->status }} </span>
                             </td>
                             <td class="px-4 py-3 text-sm border">{{$course->created_at }}</td>
                             <td class="px-4 py-3 text-sm border">
@@ -99,7 +99,17 @@
                                                                 <h2 class="text-gray-600 font-semibold mb-1">Slug</h2>
                                                                 <input type="text" name="slug" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Slug" value="{{ $course->slug }}">
                                                             </div>
-
+                                                            <div class="my-4">
+                                                                <h2 class="text-gray-600 font-semibold mb-1">Status</h2>
+                                                                <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="status">
+                                                                    <option value="Draft">
+                                                                        Draft
+                                                                    </option>
+                                                                    <option value="Release">
+                                                                        Released
+                                                                    </option>
+                                                                </select>
+                                                            </div>
                                                             <!-- Buttons -->
                                                             <div class="text-right space-x-2 mt-5">
                                                                 <a @click="showModal = !showModal" class="cursor-pointer px-4 py-2 text-sm bg-white rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-500 focus:outline-none focus:ring-0 font-bold hover:bg-gray-50 focus:bg-indigo-50 focus:text-indigo">Cancel</a>
@@ -177,7 +187,7 @@
                                 </div>
                             </td>
                             <td class="px-4 py-3 text-xs border">
-                                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Active </span>
+                                <span class="px-2 py-1 font-semibold leading-tight {{ ($category->status == 'Release') ? 'text-green-700 bg-green-100' : 'text-gray-700 bg-gray-100' }}  rounded-sm"> {{ $category->status }} </span>
                             </td>
                             <td class="px-4 py-3 text-sm border">{{$category->created_at }}</td>
                             <td class="px-4 py-3 text-sm border">
@@ -219,7 +229,17 @@
                                                             <h2 class="text-gray-600 font-semibold mb-1">Slug</h2>
                                                             <input type="text" name="slug" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Slug" value="{{ $category->slug }}">
                                                         </div>
-
+                                                        <div class="my-4">
+                                                            <h2 class="text-gray-600 font-semibold mb-1">Status</h2>
+                                                            <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="status">
+                                                                <option value="Draft">
+                                                                    Draft
+                                                                </option>
+                                                                <option value="Release">
+                                                                    Released
+                                                                </option>
+                                                            </select>
+                                                        </div>
                                                         <!-- Buttons -->
                                                         <div class="text-right space-x-2 mt-5">
                                                             <a @click="showModal = !showModal" class="cursor-pointer px-4 py-2 text-sm bg-white rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-500 focus:outline-none focus:ring-0 font-bold hover:bg-gray-50 focus:bg-indigo-50 focus:text-indigo">Cancel</a>
