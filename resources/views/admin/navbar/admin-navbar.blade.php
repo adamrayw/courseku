@@ -49,7 +49,7 @@
 
                 <div x-show="open" class="bg-gray-50">
                     <a href="/admin/manage-users" class="py-2 px-7 block text-sm text-gray-600 hover:bg-blue-500 hover:text-white" href="#">Manage Users</a>
-                    <a class="py-2 px-7 block text-sm text-gray-600 hover:bg-blue-500 hover:text-white" href="#">Add New Admin</a>
+                    <a class="py-2 px-7 block text-sm text-gray-600 hover:bg-blue-500 hover:text-white" href="/admin/add-admin">Add New Admin</a>
                 </div>
             </div>
             <div x-data="{ open: false }">
