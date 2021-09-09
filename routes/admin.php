@@ -22,6 +22,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/home', [AdminController::class, 'home'])->middleware('auth:admin')->name('home');
 
+    Route::get('/add-admin', [AdminController::class, 'viewAdmin'])->middleware('auth:admin');
+
+    Route::post('/add-admin', [AdminController::class, 'addAdmin'])->middleware('auth:admin');
+
     Route::get('/manage-users', [AdminController::class, 'manageUsers'])->middleware('auth:admin');
 
     Route::get('/manage-users/{id}', [AdminController::class, 'deleteUser'])->middleware('auth:admin');
