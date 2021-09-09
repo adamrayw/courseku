@@ -36,6 +36,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::post('/add-course/post', [AdminController::class, 'storeCourse'])->middleware('auth:admin');
 
+    Route::get('/add-category', [AdminController::class, 'addCategory'])->middleware('auth:admin');
+
+    Route::post('/add-category/post', [AdminController::class, 'storeCategory'])->middleware('auth:admin');
+
+
     Route::get('/manage-courses/{id}', [AdminController::class, 'deleteCourse'])->middleware('auth:admin');
 
     Route::post('/manage-courses', [AdminController::class, 'updateCategory'])->middleware('auth:admin');
