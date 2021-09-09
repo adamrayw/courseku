@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Course;
 use App\Models\Tutorials;
 use Illuminate\Http\Request;
@@ -17,5 +18,11 @@ class CoursesController extends Controller
             'tutorials' => $course->tutorials,
             'get_vote' => $tutorials->votes
         ]);
+    }
+
+    public function field($slug)
+    {
+        $courses = Category::where('slug', $slug)->with('course')->get();
+        return view('pages.field', compact('courses'));
     }
 }
