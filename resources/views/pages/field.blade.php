@@ -11,7 +11,7 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 py-6">
             @foreach ($courses as $course)
             <a href="/learn/{{ $course->slug }}">
-                <div class="card flex items-center shadow p-4 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition">
+                <div class="card flex items-center shadow-sm p-4 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition">
                     {!! $course->img_url !!}
                     <p class="ml-2 text-gray-600">{{ $course->name }}</p>
                 </div>
