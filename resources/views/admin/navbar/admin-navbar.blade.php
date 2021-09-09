@@ -1,4 +1,4 @@
-<div class="md:flex flex-col md:flex-row md:min-h-screen">
+<div class="md:fixed md:h-full md:z-10 md:overflow-x-hidden md:flex flex-col md:flex-row md:min-h-screen">
     <div @click.away="open = false" class="flex flex-col w-full md:w-64 text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0" x-data="{ open: false }">
         <div class="flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between">
             <div class="flex flex-col">
@@ -95,8 +95,8 @@
                 </button>
 
                 <div x-show="open" class="bg-gray-50">
-                    <a href="/admin/manage-courses" class="py-2 px-7 block text-sm text-gray-600 hover:bg-blue-500 hover:text-white" href="#">Manage Tutorials</a>
-                    <a class="py-2 px-7 block text-sm text-gray-600 hover:bg-blue-500 hover:text-white" href="#">Add New Tutorials</a>
+                    <a href="/admin/manage-tutorials" class="py-2 px-7 block text-sm text-gray-600 hover:bg-blue-500 hover:text-white" href="#">Manage Tutorials</a>
+                    <a class="py-2 px-7 block text-sm text-gray-600 hover:bg-blue-500 hover:text-white" href="/admin/add-tutorial">Add New Tutorials</a>
                 </div>
             </div>
             <div x-data="{ open: false }">
