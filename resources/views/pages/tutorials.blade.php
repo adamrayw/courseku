@@ -14,7 +14,7 @@
             <a href="/course/{{ $tutorial->slug }}">
                 <div class="card relative bg-white border border-gray-200 text-left shadow-sm p-4 rounded-lg hover:shadow-lg transition">
                     <div class="mb-8">
-                        <p class="ml-2 mb-1 pr-8 font-semibold text-xl truncate text-gray-700">{{ $tutorial->name }}</p>
+                        <p class="ml-2 mb-1 pr-8 font-semibold text-xl truncate text-gray-600">{{ $tutorial->name }}</p>
                         <p class="ml-2 text-xs text-gray-500">{{ $tutorial->author }}</p>
                     </div>
                     <div class="flex justify-between items-center">
