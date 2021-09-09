@@ -6,31 +6,29 @@
 <section class="mt-16 px-4 md:px-12 w-full ml-0 md:ml-64">
     <div>
         <div class="mb-4">
-            <h2 class="text-2xl font-bold text-gray-600">Menage Comments</h2>
+            <h2 class="text-2xl font-bold text-gray-600">Menage Tutorials</h2>
         </div>
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
             <div class="w-full overflow-auto h-96">
                 <table class="w-full">
                     <thead>
                         <tr class="text-md font-semibold tracking-wide text-left text-white bg-blue-500 uppercase border-b border-gray-600">
-                            <th class="px-4 py-3">Comment</th>
-                            <th class="px-4 py-3">IN</th>
+                            <th class="px-4 py-3">Name</th>
+                            <th class="px-4 py-3">Author</th>
                             <th class="px-4 py-3">Date</th>
                             <th class="px-4 py-3">Action</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white">
-                        @foreach ($comments as $comment )
+                        @foreach ($tutorials as $tutorial )
                         <tr class="text-gray-700">
                             <td class="px-4 py-3 border">
-                                <p>{{ $comment->comment }}</p>
+                                <p>{{ $tutorial->name }}</p>
                             </td>
                             <td class="px-4 py-3 border">
-                                <a href="/course/{{ $comment->tutorial->slug }}">
-                                    <p class="underline text-blue-600">{{ $comment->tutorial->name }}</p>
-                                </a>
+                                <p class="text-gray-600">{{ $tutorial->author }}</p>
                             </td>
-                            <td class="px-4 py-3 text-sm border">{{$comment->created_at->diffForHumans() }}</td>
+                            <td class="px-4 py-3 text-sm border">{{$tutorial->created_at->diffForHumans() }}</td>
                             <td class="px-4 py-3 text-sm border">
                                 <div class="">
                                     <div class="mx-2"></div>

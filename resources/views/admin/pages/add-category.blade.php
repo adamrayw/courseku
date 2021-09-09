@@ -3,7 +3,7 @@
 @section('admin-title', 'Add Category')
 
 @section('admin-content')
-<section class="mt-16 px-4 md:px-12">
+<section class="mt-16 px-4 md:px-12 ml-0 md:ml-64">
     <div>
         <div class="mb-4">
             <h2 class="text-2xl font-bold text-gray-600">Add New Category</h2>

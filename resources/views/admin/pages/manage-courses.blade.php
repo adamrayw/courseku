@@ -3,7 +3,7 @@
 @section('admin-title', 'Manage Users')
 
 @section('admin-content')
-<section class="mt-12 mb-20 px-4 md:px-12 w-full">
+<section class="mt-12 mb-20 px-4 md:px-12 w-full ml-0 md:ml-64">
     <div>
         <div class="mb-4">
             <h2 class="text-2xl font-bold text-gray-600">Menage Courses</h2>
