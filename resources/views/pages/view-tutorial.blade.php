@@ -62,7 +62,6 @@
                             @else
                             <form action="/course/{{$data->slug}}" method="POST">
                                 @csrf
-
                                 <div class="px-1">
                                     <input type="text" name="tutorials_id" class="hidden" value="{{ $data->id }}">
                                     <input type="text" name="users_id" class="hidden" value="{{ Auth()->user()->id }}">
