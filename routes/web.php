@@ -32,18 +32,9 @@ Route::get('/course/{slug}', [TutorialsController::class, 'show']);
 
 Route::post('/course/{slug}', [CommentController::class, 'store']);
 
-// Route::post('/course/{slug}/like', [CommentController::class, 'storevote']);
-// Route::post('/course/{slug}/dislike', [CommentController::class, 'removevote']);
 
-// Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
+Route::get('/{category:slug}', [CoursesController::class, 'field']);
 
-Route::get('/{category:slug}', function (Category $category) {
-    return view('pages.field', [
-        'name_category' => $category->name,
-        'courses' => $category->course,
-        'title' => $category->name,
-    ]);
-});
 
 // admin
 require __DIR__ . '/admin.php';
