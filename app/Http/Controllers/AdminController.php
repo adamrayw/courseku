@@ -136,4 +136,16 @@ class AdminController extends Controller
 
         return back()->with('updateSuccess', 'Category updated successfully!');
     }
+
+    public function updateCourse(Request $request)
+    {
+        Course::where('slug', $request->slug)
+            ->update([
+                'img_url' => $request->img_url,
+                'name' => $request->name,
+                'slug' => $request->slug,
+            ]);
+
+        return back()->with('updateCourseSuccess', 'Course updated successfully!');
+    }
 }
