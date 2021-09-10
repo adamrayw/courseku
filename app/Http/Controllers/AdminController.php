@@ -171,10 +171,11 @@ class AdminController extends Controller
 
     public function manageTutorial()
     {
-        $tutorials = Tutorials::orderBy('created_at', 'desc')->get();
+        $tutorials = Tutorials::orderBy('created_at', 'desc')->with('course')->get();
+        $courses = Course::all();
 
 
-        return view('admin.pages.manage-tutorials', compact(['tutorials']));
+        return view('admin.pages.manage-tutorials', compact(['tutorials', 'courses']));
     }
 
     public function viewTutorial()
@@ -201,5 +202,24 @@ class AdminController extends Controller
         ]);
 
         return back()->with('success', 'Tutorial added successfully!');
+    }
+
+    public function updateTutorial($id, Request $request)
+    {
+        Tutorials::where('id', $id)
+            ->update([
+                'course_id' => $request->course_id,
+                'comment_id' => $request->commentid,
+                'name' => $request->name,
+                'slug' => Str::slug($request->name, '-'),
+                'description' => $request->description,
+                'author' => $request->author,
+                'type' => $request->type,
+                'level' => $request->level,
+                'submitted_by' => $request->submitted_by,
+                'source_link' => $request->source_link
+            ]);
+
+        return back()->with('updateTutorialSuccess', 'Tutorial updated successfully!');
     }
 }
