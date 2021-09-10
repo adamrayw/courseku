@@ -56,7 +56,7 @@
         });
     </script>
     <script src="https://kit.fontawesome.com/6678200964.js" crossorigin="anonymous"></script>
-    
+
 </body>
 
 </html>
