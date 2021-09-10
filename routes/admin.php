@@ -55,4 +55,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/manage-courses/category', [AdminController::class, 'updateCategory'])->middleware('auth:admin');
 
     Route::post('/manage-courses/course', [AdminController::class, 'updateCourse'])->middleware('auth:admin');
+
+    Route::post('/manage-tutorials/{id}', [AdminController::class, 'updateTutorial'])->middleware('auth:admin');
 });
