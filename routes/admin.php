@@ -59,4 +59,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/manage-tutorials/{id}', [AdminController::class, 'deleteTutorial'])->middleware('auth:admin');
 
     Route::post('/manage-tutorials/{id}', [AdminController::class, 'updateTutorial'])->middleware('auth:admin');
+
+    Route::get('/manage-comments/{id}', [AdminController::class, 'deleteComment'])->middleware('auth:admin');
 });

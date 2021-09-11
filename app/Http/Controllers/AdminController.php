@@ -229,4 +229,11 @@ class AdminController extends Controller
 
         return back()->with('successDelete', 'Tutorial deleted successfully!');
     }
+
+    public function deleteComment($id)
+    {
+        Comment::where('id', $id)->delete();
+
+        return back()->with('successDelete', 'Comment deleted successfully!');
+    }
 }
