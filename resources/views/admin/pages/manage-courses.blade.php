@@ -187,7 +187,7 @@
                                 </div>
                             </td>
                             <td class="px-4 py-3 text-xs border">
-                                <span class="px-2 py-1 font-semibold leading-tight {{ ($category->status == 'Release') ? 'text-green-700 bg-green-100' : 'text-gray-700 bg-gray-100' }}  rounded-sm"> {{ $category->status }} </span>
+                                <span class="px-2 py-1 font-semibold leading-tight {{ ($category->status == 'Released') ? 'text-green-700 bg-green-100' : 'text-gray-700 bg-gray-100' }}  rounded-sm"> {{ $category->status }} </span>
                             </td>
                             <td class="px-4 py-3 text-sm border">{{$category->created_at }}</td>
                             <td class="px-4 py-3 text-sm border">
@@ -235,8 +235,8 @@
                                                                 <option value="Draft">
                                                                     Draft
                                                                 </option>
-                                                                <option value="Release">
-                                                                    Released
+                                                                <option value="Released">
+                                                                    Release
                                                                 </option>
                                                             </select>
                                                         </div>
