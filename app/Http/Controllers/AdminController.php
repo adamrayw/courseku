@@ -222,4 +222,11 @@ class AdminController extends Controller
 
         return back()->with('updateTutorialSuccess', 'Tutorial updated successfully!');
     }
+
+    public function deleteTutorial($id)
+    {
+        Tutorials::where('id', $id)->delete();
+
+        return back()->with('successDelete', 'Tutorial deleted successfully!');
+    }
 }
