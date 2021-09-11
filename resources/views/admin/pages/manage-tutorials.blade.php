@@ -9,14 +9,45 @@
             <h2 class="text-2xl font-bold text-gray-600">Menage Tutorials</h2>
         </div>
         @if (session('successDelete'))
-        <div class="mb-2 alert alert-success">
-            <div class="bg-green-200 border-green-600 text-green-600 border-l-4 p-4" role="alert">
-                <p class="font-bold">
-                    Success
-                </p>
-                <p>
-                    {{ session('successDelete') }}
-                </p>
+        <div class="mb-2 alert alert-success" x-data="{cookies: true}" x-show="cookies">
+            <div class="bg-green-200 flex border-green-600 text-green-600 border-l-4 p-4" role="alert">
+                <div>
+                    <p class="font-bold">
+                        Success
+                    </p>
+                    <p>
+                        {{ session('successDelete') }}
+                    </p>
+                </div>
+                <div class="ml-auto">
+                    <p class="cursor-pointer" @click="cookies = false">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </p>
+                </div>
+            </div>
+        </div>
+        @endif
+        @if (session('updateTutorialSuccess'))
+        <div class="mb-2 alert alert-success" x-data="{cookies: true}" x-show="cookies">
+            <div class="bg-green-200 flex border-green-600 text-green-600 border-l-4 p-4" role="alert">
+                <div>
+
+                    <p class="font-bold">
+                        Success
+                    </p>
+                    <p>
+                        {{ session('updateTutorialSuccess') }}
+                    </p>
+                </div>
+                <div class="ml-auto">
+                    <p class="cursor-pointer" @click="cookies = false">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </p>
+                </div>
             </div>
         </div>
         @endif
