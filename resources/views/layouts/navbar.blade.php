@@ -30,9 +30,87 @@
                         Hi, {{ Auth()->user()->name }}
                     </p>
                     <hr class="mb-1">
-                    <a href="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white">
-                        <i class="fas fa-paper-plane mr-1"></i> Submit a Tutorial
-                    </a>
+                    <div>
+                        <!-- Modal -->
+                        <div x-data="{ showModal : false }">
+                            <button @click="showModal = !showModal" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white">
+                                <i class="fas fa-paper-plane mr-1"></i> Submit a Tutorial
+                            </button>
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="h-4/5 overflow-y-scroll bg-white rounded-md py-6 px-4 mx-4 w-full md:w-auto" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+                                    <!-- Title -->
+                                    <div class="flex items-center mb-1 px-4">
+                                        <i class="fas fa-paper-plane mr-1 fa-lg"></i>
+                                        <span class="font-bold block text-2xl ml-2">Submit tutorial</span>
+                                    </div>
+                                    <hr class="mt-2">
+                                    <!-- Body 🍺 -->
+                                    <div class="p-4 md:w-auto w-full">
+                                        <form action="/admin/add-tutorial" method="POST">
+                                            @csrf
+
+                                            <div class="my-4">
+                                                <h2 class="text-gray-600 font-semibold mb-1">Tutorial name</h2>
+                                                <input type="text" name="name" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="">
+                                            </div>
+                                            <div class="my-4">
+                                                <h2 class="text-gray-600 font-semibold mb-1">Description</h2>
+                                                <textarea type="text" name="description" class="border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Description" rows="4"></textarea>
+                                            </div>
+                                            <div class="my-4">
+                                                <h2 class="text-gray-600 font-semibold mb-1">Author</h2>
+                                                <input type="text" name="author" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Author of tutorial">
+                                            </div>
+                                            <div class="my-2 md:flex items-center justify-between">
+                                                <div class="my-4">
+                                                    <h2 class="text-gray-600 font-semibold mb-1">Type</h2>
+                                                    <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="type">
+                                                        <option value="Video">
+                                                            Video
+                                                        </option>
+                                                        <option value="Article">
+                                                            Article
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                <div class="my-4 md:mx-2">
+                                                    <h2 class="text-gray-600 font-semibold mb-1">Level</h2>
+                                                    <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="level">
+                                                        <option value="Beginner">
+                                                            Beginner
+                                                        </option>
+                                                        <option value="Advanced">
+                                                            Advanced
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                <div class="my-4">
+                                                    <h2 class="text-gray-600 font-semibold mb-1">Category</h2>
+                                                    <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="course_id">
+                                                        @foreach ($courses as $course)
+                                                        <option value="{{ $course->id }}">
+                                                            {{ $course->name }}
+                                                        </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="my-4">
+                                                <h2 class="text-gray-600 font-semibold mb-1">Link</h2>
+                                                <input type="text" name="source_link" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Source Link"></input>
+                                            </div>
+                                            <div class="mt-6 text-right">
+                                                <a @click="showModal = !showModal" class="cursor-pointer bg-white border border-gray-200 px-6 py-2 text-gray-800 rounded-md hover:bg-gray-300 hover:text-white transition">Cancel</a>
+                                                <button type="submit" class="bg-gray-800 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="/profile" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
                         <i class="fas fa-user mr-1"></i> My Profile
                     </a>

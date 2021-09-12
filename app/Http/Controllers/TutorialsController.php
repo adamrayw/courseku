@@ -24,6 +24,7 @@ class TutorialsController extends Controller
             'isLiked' => Voters::whereHas('user', function ($q) {
                 $q->where('tutorials_id');
             })->get(),
+            'courses' => Course::where('status', 'Released')->get(),
         ]);
     }
 }

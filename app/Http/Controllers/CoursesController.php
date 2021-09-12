@@ -16,13 +16,16 @@ class CoursesController extends Controller
             'name_course' => $course->name,
             'slug' => $course->slug,
             'tutorials' => $course->tutorials,
-            'get_vote' => $tutorials->votes
+            'get_vote' => $tutorials->votes,
+            'courses' => Course::where('status', 'Released')->get(),
         ]);
     }
 
     public function field($slug)
     {
-        $courses = Category::where('slug', $slug)->with('course')->get();
-        return view('pages.field', compact('courses'));
+        $field = Category::where('slug', $slug)->with('course')->get();
+        $courses = Course::where('status', 'Released')->get();
+
+        return view('pages.field', compact(['field', 'courses']));
     }
 }

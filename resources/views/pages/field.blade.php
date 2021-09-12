@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@foreach ($courses as $c)
+@foreach ($field as $c)
 @section('title', $c->name)
 @section('content')
 
@@ -7,7 +7,6 @@
     <div>
         <h1 class="font-bold mb-1 text-gray-600 text-4xl">{{ $c->name }}</h1>
     </div>
-    <hr class="my-2">
     <div class="what-you-learn mb-20">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 py-6">
 
