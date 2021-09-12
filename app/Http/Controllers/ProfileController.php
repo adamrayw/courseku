@@ -25,4 +25,24 @@ class ProfileController extends Controller
 
         return redirect('login')->with('mustLogin', 'You must login for access it.');
     }
+
+    public function viewTutorial()
+    {
+        $courses = Course::where('status', 'Released')->get();
+        return view('pages.add-tutorial', compact('courses'));
+    }
+
+    public function addTutorial(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'description' => 'required',
+            'author' => 'required',
+            'type' => 'required',
+            'level' => 'required',
+            'category' => 'required',
+            'source_link' => 'required',
+        ]);
+    }
 }
