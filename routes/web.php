@@ -19,6 +19,10 @@ use App\Http\Controllers\TutorialsController;
 |
 */
 
+Route::get('/submit-tutorial', [ProfileController::class, 'viewTutorial'])->middleware('auth');
+
+Route::post('/submit-tutorial', [ProfileController::class, 'addTutorial'])->middleware('auth');
+
 Route::get('/', function () {
     return redirect('/home');
 });
@@ -34,10 +38,6 @@ Route::post('/course/{slug}', [CommentController::class, 'store']);
 
 
 Route::get('/{category:slug}', [CoursesController::class, 'field']);
-
-Route::get('/profile/add-tutorial', [ProfileController::class, 'viewTutorial']);
-
-Route::post('/profile/add-tutorial', [ProfileController::class, 'addTutorial']);
 
 // admin
 require __DIR__ . '/admin.php';

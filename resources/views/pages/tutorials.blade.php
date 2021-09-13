@@ -31,8 +31,13 @@
             </a>
             @endforeach
         </div>
-        @if (count($tutorials) < 1) <p class="my-4 text-center">Tutorial not Found</p>
-            @endif
+        @if (count($tutorials) == 0)
+        <div class="p-6 rounded-md shadow-md w-1/3 mx-auto">
+            <h5 class="text-xl font-semibold text-center text-gray-600">Tutorials not Found</h5>
+            <p class="text-center text-gray-600 text-sm">Help us find tutorials for {{ $slug }}</p>
+            <a href="/submit-tutorial" type="submit" class="mt-4 bg-gray-800 text-white px-6 py-2 text-sm rounded-md hover:bg-gray-700 transition">Submit tutorial</a>
+        </div>
+        @endif
     </div>
 </section>
 @endsection

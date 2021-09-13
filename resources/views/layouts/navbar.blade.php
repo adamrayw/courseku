@@ -33,7 +33,7 @@
 
                     <!-- SUBMIT TUTORiAL -->
 
-                    <a href="/profile/add-tutorial" class="block text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white">
+                    <a href="/submit-tutorial" class="block text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white">
                         <i class="fas fa-paper-plane mr-1"></i> Submit a Tutorial
                     </a>
 

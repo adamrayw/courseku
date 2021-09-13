@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Add Tutorial')
+@section('title', 'Submit Tutorial')
 
 @section('content')
 <section class="my-20 max-w-3xl mx-4 md:mx-auto">
@@ -13,25 +13,25 @@
         <hr>
         <!-- Body 🍺 -->
         <div class="p-4 md:w-auto w-full">
-            <form action="/profile/add-tutorial" method="POST">
+            <form action="/submit-tutorial" method="POST">
                 @csrf
                 <div class="my-4">
                     <h2 class="text-gray-600 font-semibold mb-1">Tutorial name</h2>
-                    <input type="text" name="name" class="h-12 border w-full font-xs text-gray-500 @error('name') border-red-300 @enderror border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="ex: Javascript Dasar">
+                    <input type="text" name="name" class="h-12 border w-full font-xs text-gray-500 @error('name') border-red-300 @enderror border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="ex: Javascript Dasar" value="{{ old('name') }}">
                     @error('name')
                     <div class="text-red-500 text-sm">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="my-4">
                     <h2 class="text-gray-600 font-semibold mb-1">Description</h2>
-                    <textarea type="text" name="description" class="border w-full font-xs text-gray-500 app @error('description') border-red-300 @enderror border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Description" rows="4"></textarea>
+                    <textarea type="text" name="description" class="border w-full font-xs text-gray-500 app @error('description') border-red-300 @enderror border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Description" rows="4">{{ old('description') }}</textarea>
                     @error('description')
                     <div class="text-red-500 text-sm">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="my-4">
                     <h2 class="text-gray-600 font-semibold mb-1">Author</h2>
-                    <input type="text" name="author" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Author of tutorial">
+                    <input type="text" name="author" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Author of tutorial" value="{{ old('author') }}">
                     @error('author')
                     <div class="text-red-500 text-sm">{{ $message }}</div>
                     @enderror
@@ -39,7 +39,7 @@
                 <div class="my-2 md:flex items-center justify-between">
                     <div class="my-4">
                         <h2 class="text-gray-600 font-semibold mb-1">Type</h2>
-                        <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="type">
+                        <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="type" required>
                             <option>
                                 Choose type
                             </option>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="my-4 md:mx-2">
                         <h2 class="text-gray-600 font-semibold mb-1">Level</h2>
-                        <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="level">
+                        <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="level" required>
                             <option>
                                 Choose level
                             </option>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="my-4">
                         <h2 class="text-gray-600 font-semibold mb-1">Category</h2>
-                        <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="category">
+                        <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="category" required>
                             <option>
                                 Choose category
                             </option>
@@ -90,7 +90,7 @@
                 </div>
                 <div class="my-4">
                     <h2 class="text-gray-600 font-semibold mb-1">Link</h2>
-                    <input type="text" name="source_link" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Source Link"></input>
+                    <input type="text" name="source_link" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Source Link" value="{{ old('source_link') }}"></input>
                     @error('source_link')
                     <div class="text-red-500 text-sm">{{ $message }}</div>
                     @enderror
