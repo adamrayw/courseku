@@ -4,7 +4,6 @@
 
 @section('content')
 <section class="my-20 max-w-3xl mx-4 md:mx-auto">
-
     <div class="bg-white shadow rounded-md">
         <div class="flex items-center p-4 text-gray-600">
             <i class="fas fa-paper-plane mr-1 fa-lg"></i>
@@ -12,7 +11,7 @@
         </div>
         <hr>
         <!-- Body 🍺 -->
-        <div class="p-4 md:w-auto w-full">
+        <div class="p-6 md:px-8 md:w-auto w-full">
             <form action="/submit-tutorial" method="POST">
                 @csrf
                 <div class="my-4">
