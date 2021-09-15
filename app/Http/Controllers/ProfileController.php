@@ -29,7 +29,7 @@ class ProfileController extends Controller
     public function viewTutorial()
     {
         $courses = Course::where('status', 'Released')->get();
-        return view('pages.add-tutorial', compact('courses'));
+        return view('pages.submit-tutorial', compact('courses'));
     }
 
     public function addTutorial(Request $request)
