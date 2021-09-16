@@ -52,7 +52,7 @@
             <button class="px-4 py-2 border-b border-gray-200 text-gray-600 w-full" x-on:click.prevent="active = 2" x-bind:class="{'border-blue-600': active === 2}">Submitted</button>
         </div>
         <div class="bg-gray-50 bg-opacity-10">
-            <div class="p-4 bg-gray-50 space-y-2" x-show.transition.in="active === 0">
+            <div class="p-4 bg-gray-50 space-y-2 h-40 overflow-auto" x-show.transition.in="active === 0">
                 @if(count($votes) == 0) <div class="flex flex-col justify-center items-center">
                     <img src="img/like.png" alt="like" class="block">
                     <h1 class="mt-2 text-gray-600">No tutorials liked.</h1>
@@ -66,7 +66,7 @@
                 </div>
                 @endforeach
             </div>
-            <div class="p-4 bg-gray-50 space-y-2" x-show.transition.in="active === 1">
+            <div class="p-4 bg-gray-50 space-y-2 h-40 overflow-auto" x-show.transition.in="active === 1">
                 @if(count($saves) == 0)
                 <div class="flex flex-col justify-center items-center">
                     <img src="img/save.png" alt="save" class="block">
@@ -82,7 +82,7 @@
                 </div>
                 @endforeach
             </div>
-            <div class="p-4 bg-gray-50 space-y-2" x-show.transition.in="active === 2">
+            <div class="p-4 bg-gray-50 space-y-2 h-40 overflow-auto" x-show.transition.in="active === 2">
                 <div class="flex flex-col justify-center items-center">
                     <img src="img/submitted.png" alt="submit" class="block">
                     <h1 class="mt-2 text-gray-600">You haven't sent the tutorial</h1>
