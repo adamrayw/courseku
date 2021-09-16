@@ -14,7 +14,7 @@ class AddUseridStatusToTutorials extends Migration
     public function up()
     {
         Schema::table('tutorials', function (Blueprint $table) {
-            $table->integer('user_id')->after('id');
+            $table->integer('user_id')->after('id')->nullable();
             $table->string('status')->after('views')->default('Draft');
         });
     }
