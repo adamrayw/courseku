@@ -3,7 +3,7 @@
 @section('title', 'Profile')
 
 @section('content')
-<section class="my-20 max-w-3xl mx-4 md:mx-auto">
+<section class="my-20 max-w-3xl mx-4 md:mx-auto h-4/6">
     <div class="flex flex-col md:flex-row">
         <div class="flex items-start">
             <div class="bg-gray-500 w-24 h-24 p-4 flex justify-center items-center mr-4 rounded-md">
