@@ -3,7 +3,7 @@
 @section('title', 'The best to find Programming courses & tutorials')
 
 @section('content')
-<section class="max-w-7xl mx-auto">
+<section class="max-w-7xl mx-auto px-4">
     <div class="flex justify-center text-center items-center mt-20 mb-28">
         <div class="px-4">
             <h1 class="animate__animated animate__fadeInUp font-bold mb-2 text-gray-600 text-4xl">Welcome to COURSEKU!</h1>

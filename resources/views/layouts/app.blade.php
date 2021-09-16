@@ -14,6 +14,7 @@
 
         html {
             font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
         }
 
         @media (min-width: 1024px) {
