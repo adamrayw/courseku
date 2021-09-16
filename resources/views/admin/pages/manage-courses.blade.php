@@ -108,7 +108,7 @@
                                                                     <option value="Draft">
                                                                         Draft
                                                                     </option>
-                                                                    <option value="Released">
+                                                                    <option value="Release">
                                                                         Release
                                                                     </option>
                                                                 </select>
@@ -241,7 +241,7 @@
                                                                 <option value="Draft">
                                                                     Draft
                                                                 </option>
-                                                                <option value="Released">
+                                                                <option value="Release">
                                                                     Release
                                                                 </option>
                                                             </select>
