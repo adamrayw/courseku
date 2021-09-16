@@ -3,7 +3,7 @@
 @section('content')
 <div class="my-20 mx-2 bg-white flex flex-col justify-center items-center">
     <div class="bg-white w-full md:w-1/4 shadow rounded-md p-5 mx-2">
-        <h1 class="text-4xl font-bold mb-2 text-gray-600">Reset Password</h1>
+        <h1 class="text-4xl font-bold mb-2 text-gray-600">Forgot Password</h1>
         <p class="text-sm text-gray-500">Just enter your registered email, we will email you a link to reset your password.</p>
         <hr class="mt-2 mb-2">
         <div class="card-body">
