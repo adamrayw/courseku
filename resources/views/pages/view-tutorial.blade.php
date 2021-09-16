@@ -4,6 +4,14 @@
 
 @section('content')
 @foreach ($datas as $data)
+@if ($data->status == 'Draft')
+<section class="my-20 text-center w-full md:w-4/12 mx-auto px-4">
+    <div class="view-tutorial flex-row justify-center items-center mb-10">
+        <img class="mx-auto w-40 md:w-60" src="{{asset('img/confused.svg')}}" alt="image">
+        <h1 class="text-2xl font-bold text-gray-600 mt-6">Oops, this tutorial is not yet available.</h1>
+    </div>
+</section>
+@else
 <section class="mt-20 text-center w-full md:w-4/12 mx-auto px-4">
     <div class="view-tutorial flex-row justify-center mb-10">
         <img class="rounded-t-md" src="https://source.unsplash.com/700x300?coding" alt="img-card">
@@ -146,5 +154,7 @@
     </div>
     </div>
 </section>
+@endif
+
 @endforeach
 @endsection

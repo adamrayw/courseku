@@ -3,30 +3,31 @@
 @section('title', 'Submit Tutorial')
 
 @section('content')
+@if (session('success'))
+<div class="mb-2 alert alert-success">
+    <div class="bg-green-200 border-green-600 text-green-600 border-l-4 p-4" role="alert">
+        <p class="font-bold">
+            Success
+        </p>
+        <p>
+            {{ session('success') }}
+        </p>
+    </div>
+</div>
+@endif
 <section class="my-20 max-w-3xl mx-4 md:mx-auto">
     <div class="bg-white shadow rounded-md">
         <div class="flex items-center p-4 text-gray-600">
             <i class="fas fa-paper-plane mr-1 fa-lg"></i>
             <span class="font-bold block text-2xl ml-2">Submit tutorial</span>
         </div>
-        @if (session('success'))
-        <div class="mb-2 alert alert-success">
-            <div class="bg-green-200 border-green-600 text-green-600 border-l-4 p-4" role="alert">
-                <p class="font-bold">
-                    Success
-                </p>
-                <p>
-                    {{ session('success') }}
-                </p>
-            </div>
-        </div>
-        @endif
         <hr>
         <!-- Body 🍺 -->
         <div class="p-6 md:px-8 md:w-auto w-full">
             <form action="/submit-tutorial" method="POST">
                 @csrf
                 <input type="hidden" name="comment_id" value="0">
+                <input type="hidden" name="user_id" value="{{ Auth()->user()->id }}">
                 <input type="hidden" name="submitted_by" value="{{ Auth()->user()->name }}">
                 <input type="hidden" name="views" value="0">
                 <div class="my-4">

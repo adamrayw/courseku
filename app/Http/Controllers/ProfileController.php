@@ -19,6 +19,7 @@ class ProfileController extends Controller
             return view('pages.profile', [
                 'votes' => Voters::where('user_id', Auth::user()->id)->with('tutorial')->get(),
                 'saves' => Save::where('user_id', Auth::user()->id)->with('tutorials')->get(),
+                'submits' => Tutorials::where('user_id', Auth()->user()->id)->get(),
                 'courses' => Course::where('status', 'Released')->get(),
             ]);
         }
@@ -35,6 +36,7 @@ class ProfileController extends Controller
     public function addTutorial(Request $request)
     {
         $validated = $request->validate([
+            'user_id' => 'required',
             'course_id' => 'required',
             'comment_id' => 'required',
             'name' => 'required',
@@ -50,6 +52,6 @@ class ProfileController extends Controller
 
         Tutorials::create($validated);
 
-        return back()->with('success', 'We will review your submission.');
+        return back()->with('success', 'Thank you for submitting, your submission is under review.');
     }
 }

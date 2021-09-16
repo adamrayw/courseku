@@ -217,7 +217,8 @@ class AdminController extends Controller
                 'type' => $request->type,
                 'level' => $request->level,
                 'submitted_by' => $request->submitted_by,
-                'source_link' => $request->source_link
+                'source_link' => $request->source_link,
+                'status' => $request->status,
             ]);
 
         return back()->with('updateTutorialSuccess', 'Tutorial updated successfully!');

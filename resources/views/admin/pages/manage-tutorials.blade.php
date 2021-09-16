@@ -57,7 +57,7 @@
                     <thead>
                         <tr class="text-md font-semibold tracking-wide text-left text-white bg-blue-500 uppercase border-b border-gray-600">
                             <th class="px-4 py-3">Name</th>
-                            <th class="px-4 py-3">Author</th>
+                            <th class="px-4 py-3">Status</th>
                             <th class="px-4 py-3">Date</th>
                             <th class="px-4 py-3">Action</th>
                         </tr>
@@ -68,8 +68,8 @@
                             <td class="px-4 py-3 border">
                                 <p>{{ $tutorial->name }}</p>
                             </td>
-                            <td class="px-4 py-3 border">
-                                <p class="text-gray-600">{{ $tutorial->author }}</p>
+                            <td class="px-4 py-3 text-xs border">
+                                <span class="px-2 py-1 font-semibold leading-tight {{ ($tutorial->status == 'Release') ? 'text-green-700 bg-green-100' : 'text-gray-700 bg-gray-100' }}  rounded-sm"> {{ $tutorial->status }} </span>
                             </td>
                             <td class="px-4 py-3 text-sm border">{{$tutorial->created_at->diffForHumans() }}</td>
                             <td class="px-4 py-3 text-sm border">
@@ -153,6 +153,20 @@
                                                                 </option>
                                                                 <option value="advanced">
                                                                     Advanced
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="my-4">
+                                                            <h2 class="text-gray-600 font-semibold mb-1">Level</h2>
+                                                            <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="status">
+                                                                <option value=" {{ $tutorial->status }}">
+                                                                    {{ $tutorial->status }}
+                                                                </option>
+                                                                <option value="Release">
+                                                                    Release
+                                                                </option>
+                                                                <option value="Draft">
+                                                                    Draft
                                                                 </option>
                                                             </select>
                                                         </div>

@@ -83,10 +83,25 @@
                 @endforeach
             </div>
             <div class="p-4 bg-gray-50 space-y-2 h-40 overflow-auto" x-show.transition.in="active === 2">
+                @if (count($submits) == 0)
                 <div class="flex flex-col justify-center items-center">
                     <img src="img/submitted.png" alt="submit" class="block">
                     <h1 class="mt-2 text-gray-600">You haven't sent the tutorial</h1>
                 </div>
+                @endif
+
+                @foreach ($submits as $submit)
+                <div class="card">
+                    <div class="flex items-center space-x-4">
+                        <a href="/course/{{ $submit->slug }}" class="text-gray-600"> {{ $submit->name  }}</a>
+                        @if ($submit->status == 'Draft')
+                        <p class="bg-gray-200 text-gray-700 text-sm px-1 py-1 rounded-sm font-semibold">Under Review</p>
+                        @elseif ($submit->status == 'Release')
+                        <p class="bg-green-100 text-green-700 text-sm px-1 py-1 rounded-sm font-semibold">Approved</p>
+                        @endif
+                    </div>
+                </div>
+                @endforeach
             </div>
         </div>
     </div>

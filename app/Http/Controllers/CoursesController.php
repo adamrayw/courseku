@@ -15,9 +15,9 @@ class CoursesController extends Controller
         return view('pages.tutorials', [
             'name_course' => $course->name,
             'slug' => $course->slug,
-            'tutorials' => $course->tutorials,
+            'tutorials' => Tutorials::where('status', 'Release')->get(),
             'get_vote' => $tutorials->votes,
-            'courses' => Course::where('status', 'Released')->get(),
+            // 'courses' => Course::where('status', 'Released')->get(),
         ]);
     }
 
