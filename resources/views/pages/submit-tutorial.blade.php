@@ -9,11 +9,26 @@
             <i class="fas fa-paper-plane mr-1 fa-lg"></i>
             <span class="font-bold block text-2xl ml-2">Submit tutorial</span>
         </div>
+        @if (session('success'))
+        <div class="mb-2 alert alert-success">
+            <div class="bg-green-200 border-green-600 text-green-600 border-l-4 p-4" role="alert">
+                <p class="font-bold">
+                    Success
+                </p>
+                <p>
+                    {{ session('success') }}
+                </p>
+            </div>
+        </div>
+        @endif
         <hr>
         <!-- Body 🍺 -->
         <div class="p-6 md:px-8 md:w-auto w-full">
             <form action="/submit-tutorial" method="POST">
                 @csrf
+                <input type="hidden" name="comment_id" value="0">
+                <input type="hidden" name="submitted_by" value="{{ Auth()->user()->name }}">
+                <input type="hidden" name="views" value="0">
                 <div class="my-4">
                     <h2 class="text-gray-600 font-semibold mb-1">Tutorial name</h2>
                     <input type="text" name="name" class="h-12 border w-full font-xs text-gray-500 @error('name') border-red-300 @enderror border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="ex: Javascript Dasar" value="{{ old('name') }}">
@@ -72,7 +87,7 @@
                     </div>
                     <div class="my-4">
                         <h2 class="text-gray-600 font-semibold mb-1">Category</h2>
-                        <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="category" required>
+                        <select class="block w-52 text-gray-500 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="course_id" required>
                             <option>
                                 Choose category
                             </option>
