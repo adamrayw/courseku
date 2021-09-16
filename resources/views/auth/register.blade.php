@@ -20,10 +20,10 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <!-- <label class="font-weight-bold text-uppercase">Full Name</label> -->
-                        <input type="text" name="name" value="{{ old('name') }}" class="h-12 border w-full font-xs text-gray-500 border-gray-300 p-2 my-2 rounded-md focus:outline-none focus:ring-2 ring-blue-200" placeholder="Full Name">
+                        <input type="text" name="name" value="{{ old('name') }}" class="h-12 border w-full font-xs text-gray-500 @error('name') border-red-300 @enderror border-gray-300 p-2 mt-2 rounded-md focus:outline-none focus:ring-2 ring-blue-200" placeholder="Full Name">
                         @error('name')
-                        <div class="alert alert-danger mt-2">
-                            {{ $message }}
+                        <div class="alert alert-danger mb-2">
+                            <p class="text-red-500 text-sm">{{ $message }}</p>
                         </div>
                         @enderror
                     </div>
@@ -32,10 +32,10 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <!-- <label class="font-weight-bold text-uppercase">Email address</label> -->
-                        <input type="email" name="email" value="{{ old('email') }}" class="h-12 border w-full font-xs text-gray-500 border-gray-300 p-2 my-2 rounded-md focus:outline-none focus:ring-2 ring-blue-200" placeholder="Email">
+                        <input type="email" name="email" value="{{ old('email') }}" class="h-12 border w-full font-xs text-gray-500 @error('email') border-red-300 @enderror border-gray-300 p-2 mt-2 rounded-md focus:outline-none focus:ring-2 ring-blue-200" placeholder="Email">
                         @error('email')
-                        <div class="alert alert-danger mt-2">
-                            {{ $message }}
+                        <div class="alert alert-danger mb-2">
+                            <p class="text-red-500 text-sm">{{ $message }}</p>
                         </div>
                         @enderror
                     </div>
@@ -44,10 +44,10 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <!-- <label class="font-weight-bold text-uppercase">Password</label> -->
-                        <input type="password" name="password" class="h-12 border w-full font-xs text-gray-500 border-gray-300 p-2 my-2 rounded-md focus:outline-none focus:ring-2 ring-blue-200" placeholder="Password">
+                        <input type="password" name="password" class="h-12 border w-full font-xs text-gray-500 @error('password') border-red-300 @enderror border-gray-300 p-2 mt-2 rounded-md focus:outline-none focus:ring-2 ring-blue-200" placeholder="Password">
                         @error('password')
-                        <div class="alert alert-danger mt-2">
-                            {{ $message }}
+                        <div class="alert alert-danger mb-2">
+                            <p class="text-red-500 text-sm">{{ $message }}</p>
                         </div>
                         @enderror
                     </div>
