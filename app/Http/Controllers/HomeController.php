@@ -12,8 +12,8 @@ class HomeController extends Controller
     public function index()
     {
         return view('index', [
-            'fields' => Category::where('status', 'Released')->get(),
-            'courses' => Course::where('category_id', 1)->where('status', 'Released')->get(),
+            'fields' => Category::where('status', 'Release')->get(),
+            'courses' => Course::where('category_id', 1)->where('status', 'Release')->get(),
         ]);
     }
 }
