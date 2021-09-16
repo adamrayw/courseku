@@ -16,12 +16,12 @@
         @endif
         <form action="{{ route('login') }}" method="POST" class="mt-2">
             @csrf
-            <input type="email" name="email" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 my-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Email" value="{{ old('email')}}" autofocus />
+            <input type="email" name="email" class="h-12 border w-full font-xs text-gray-500 app @error('email') border-red-300 @enderror border-gray-300 p-2 mt-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Email" value="{{ old('email')}}" autofocus />
             @error('email')
             <p class="text-red-600 text-sm font-light">{{ $message }}</p>
             @enderror
 
-            <input type="password" name="password" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 my-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" id="pass" placeholder="Password" />
+            <input type="password" name="password" class="h-12 border w-full font-xs text-gray-500 app @error('password') border-red-300 @enderror border-gray-300 p-2 mt-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" id="pass" placeholder="Password" />
             @error('password')
             <p class="text-red-600  text-sm font-light">{{ $message }}</p>
             @enderror
