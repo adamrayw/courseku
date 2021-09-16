@@ -28,21 +28,28 @@ class ProfileController extends Controller
 
     public function viewTutorial()
     {
-        $courses = Course::where('status', 'Released')->get();
+        $courses = Course::where('status', 'Release')->get();
         return view('pages.submit-tutorial', compact('courses'));
     }
 
     public function addTutorial(Request $request)
     {
         $validated = $request->validate([
+            'course_id' => 'required',
+            'comment_id' => 'required',
             'name' => 'required',
             'description' => 'required',
             'description' => 'required',
             'author' => 'required',
             'type' => 'required',
             'level' => 'required',
-            'category' => 'required',
             'source_link' => 'required',
+            'submitted_by' => 'required',
+            'views' => 'required',
         ]);
+
+        Tutorials::create($validated);
+
+        return back()->with('success', 'We will review your submission.');
     }
 }
