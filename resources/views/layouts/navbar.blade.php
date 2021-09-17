@@ -41,6 +41,10 @@
                         <i class="fas fa-user mr-1"></i> My Profile
                     </a>
 
+                    <a href="/submit-tutorial" class="block text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white">
+                        <i class="fas fa-edit mr-1"></i> Edit Profile
+                    </a>
+
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit" class="w-full text-left px-4 py-2 text-sm capitalize text-red-600 hover:bg-red-500 hover:text-white"><i class="fas fa-sign-out-alt mr-1"></i> Log Out</button>
