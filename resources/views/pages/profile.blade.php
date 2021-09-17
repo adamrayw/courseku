@@ -82,13 +82,34 @@
 
                 @foreach ($submits as $submit)
                 <div class="card">
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center justify-between space-x-4">
                         <a href="/course/{{ $submit->slug }}" class="text-gray-600"> {{ $submit->name  }}</a>
-                        @if ($submit->status == 'Draft')
-                        <p class="bg-gray-200 text-gray-700 text-sm px-1 py-1 rounded-sm font-semibold">Under Review</p>
-                        @elseif ($submit->status == 'Release')
-                        <p class="bg-green-100 text-green-700 text-sm px-1 py-1 rounded-sm font-semibold">Approved</p>
-                        @endif
+                        <div class="flex items-center">
+                            @if ($submit->status == 'Draft')
+                            <p class="bg-gray-200 text-gray-700 text-sm px-1 py-1 rounded-sm font-semibold">Under Review</p>
+                            @elseif ($submit->status == 'Release')
+                            <p class="bg-green-100 text-green-700 text-sm px-1 py-1 rounded-sm font-semibold">Approved</p>
+                            @endif
+                            <div x-data="{ dropdownOpen: false }" class="relative ml-auto">
+                                <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
+                                    <div class="flex justify-between items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
+                                <div x-show="dropdownOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
+                                    <a href="/course/{{ $submit->slug }}" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
+                                        <i class="fas fa-eye mr-1"></i> Visit Tutorial
+                                    </a>
+
+                                    <a href="/submit-tutorial" class="block text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white">
+                                        <i class="fas fa-edit mr-1"></i> Edit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 @endforeach
