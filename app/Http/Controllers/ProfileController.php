@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Course;
 use App\Models\Voters;
 use App\Models\Tutorials;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,6 +41,7 @@ class ProfileController extends Controller
             'course_id' => 'required',
             'comment_id' => 'required',
             'name' => 'required',
+            'slug' => 'min:5',
             'description' => 'required',
             'description' => 'required',
             'author' => 'required',
@@ -49,6 +51,8 @@ class ProfileController extends Controller
             'submitted_by' => 'required',
             'views' => 'required',
         ]);
+
+        $validated['slug'] = Str::slug($validated['name'], '-');
 
         Tutorials::create($validated);
 
