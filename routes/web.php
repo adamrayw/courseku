@@ -23,21 +23,26 @@ Route::get('/submit-tutorial', [ProfileController::class, 'viewTutorial'])->midd
 
 Route::post('/submit-tutorial', [ProfileController::class, 'addTutorial'])->middleware('auth');
 
+Route::get('/edit-profile', [ProfileController::class, 'editProfile'])->middleware('auth');
+
+Route::post('/edit-profile', [ProfileController::class, 'updateProfile'])->middleware('auth');
+
 Route::get('/', function () {
     return redirect('/home');
 });
 
 Route::get('/home', [HomeController::class, 'index']);
 
-Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');;
+
 Route::get('/learn/{course:slug}', [CoursesController::class, 'show']);
 
 Route::get('/course/{slug}', [TutorialsController::class, 'show']);
 
 Route::post('/course/{slug}', [CommentController::class, 'store']);
 
-
 Route::get('/{category:slug}', [CoursesController::class, 'field']);
+
 
 // admin
 require __DIR__ . '/admin.php';
