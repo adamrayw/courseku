@@ -58,4 +58,25 @@ class ProfileController extends Controller
 
         return back()->with('success', 'Thank you for submitting, your submission is under review.');
     }
+
+    public function editProfile()
+    {
+        $users = User::where('id', Auth()->user()->id)->get();
+        return view('pages.edit-profile', compact('users'));
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+
+        User::where('id', $request->id)->update([
+            'name' => $request->name,
+            'email' => $request->email
+        ]);
+
+        return redirect('/profile')->with('success', 'Profile updated successfully!');
+    }
 }
