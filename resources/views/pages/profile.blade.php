@@ -91,21 +91,24 @@
                 <div class="card">
                     <div>
                         <div class="flex flex-col mb-4">
-                            <a href="/course/{{ $submit->slug }}" class="text-gray-600"> {{ $submit->name  }}</a>
-                            <div class="inline-block">
+                            <a href="/course/{{ $submit->slug }}" class="font-medium text-gray-600"> {{ $submit->name  }}</a>
+                            <div class="inline-block text-xs">
                                 @if ($submit->status == 'Draft')
                                 <p class="inline-block bg-gray-200 text-gray-700 text-xs px-1 py-1 rounded-sm font-semibold">Under Review</p>
-                                @elseif ($submit->status == 'Release')
-                                <p class="inline-block bg-green-100 text-green-700 text-xs px-1 py-1 rounded-sm font-semibold">Approved</p>
-                                @endif
-                                <i class="text-gray-400 mx-1">|</i>
-                                <a href="/course/{{ $submit->slug }}" class="inline-block text-sm mx-1 capitalize text-gray-500 hover:text-gray-700">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                                <i class="text-gray-400 mx-1">|</i>
-                                <a href="/course/{{ $submit->slug }}" class="inline-block text-sm mx-1 capitalize text-gray-500 hover:text-gray-700">
+                                <i class="text-gray-400 mx-1">•</i>
+                                <a href="/course/{{ $submit->slug }}" class="inline-block text-sm py-1 capitalize text-gray-500 hover:text-gray-700">
                                     <i class="fas fa-trash"></i>
                                 </a>
+                                @elseif ($submit->status == 'Release')
+                                <p class="inline-block bg-green-100 text-green-700 text-xs px-1 py-1 rounded-sm font-semibold">Approved</p>
+                                <i class="text-gray-400 mx-1">•</i>
+                                <a href="/course/{{ $submit->slug }}" class="inline-block text-sm  py-1 capitalize text-gray-500 hover:text-gray-700">
+                                    View
+                                </a>
+                                <i class="text-gray-400 mx-1">•</i>
+                                <p class="inline-block text-sm py-1 capitalize text-gray-500 hover:text-gray-700"><i class="fas fa-eye mr-1"></i> {{ $submit->views }} Views </p>
+                                @endif
+
                             </div>
                         </div>
                     </div>
