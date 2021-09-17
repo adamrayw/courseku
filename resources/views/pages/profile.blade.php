@@ -19,15 +19,15 @@
             <div class="mt-2 md:mt-0">
                 <div class="flex items-center">
                     <!-- <i class="fas fa-question-circle fa-sm"></i> -->
-                    <i class="fas fa-star fa-sm text-yellow-400"></i>
-                    <p class="ml-1 font-medium text-gray-600">Stars </p>
+                    <p class="font-medium text-gray-600">Stars </p>
                     <div class="group cursor-pointer relative inline-block text-blue-600 text-center ml-2"><i class="fas fa-question-circle fa-sm"></i>
                         <div class="opacity-0 w-28 bg-gray-600 border border-gray-600 text-white text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 bottom-full -left-0 ml-1 px-3 pointer-events-none">
                             Get stars by submitting tutorials.
                         </div>
                     </div>
                 </div>
-                <div class="mt-1">
+                <div class="mt-1 flex items-center">
+                    <i class="fas fa-star fa-sm text-blue-600 mr-1"></i>
                     <p class="text-gray-500">0</p>
                 </div>
                 <!-- <a href="#!" class="mt-2 inline-block text-center border-2 text-gray-500 text-sm border-gray-500 rounded-md px-6 py-2">Follow</a> -->
@@ -59,7 +59,14 @@
             <div class="p-4 bg-gray-50 space-y-2 h-60 overflow-auto" x-show.transition.in="active === 1">
                 @if(count($saves) == 0)
                 <div class="flex flex-col justify-center items-center">
-                    <img src="https://img.icons8.com/color/100/000000/bookmark-ribbon--v1.png" />
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 172 172" style=" fill:#000000;">
+                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                            <path d="M0,172v-172h172v172z" fill="none"></path>
+                            <g fill="#3b82f6">
+                                <path d="M132.58333,154.08333l-46.58333,-21.5l-46.58333,21.5v-121.83333c0,-7.88333 6.45,-14.33333 14.33333,-14.33333h64.5c7.88333,0 14.33333,6.45 14.33333,14.33333z"></path>
+                            </g>
+                        </g>
+                    </svg>
                     <h1 class="mt-2 text-gray-600">No tutorials bookmarked.</h1>
                 </div>
                 @endif
