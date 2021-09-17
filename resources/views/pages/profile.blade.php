@@ -43,13 +43,15 @@
                     <p class="font-medium text-gray-600">Reputation </p>
                     <div class="group cursor-pointer relative inline-block text-blue-600 text-center ml-2"><i class="fas fa-question-circle fa-sm"></i>
                         <div class="opacity-0 w-28 bg-gray-600 border border-gray-600 text-white text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 bottom-full -left-0 ml-1 px-3 pointer-events-none">
-                            Get stars by submitting tutorials.
+                            Get points by submitting, like, bookmark tutorials.
                         </div>
                     </div>
                 </div>
                 <div class="mt-1 flex items-center">
                     <i class="fas fa-star fa-sm text-blue-600 mr-2"></i>
-                    <p class="text-gray-500">0 Points</p>
+                    @php
+                    $point = 0;
+                    for($i = 0; $i < count($submits); $i++) { $point +=100; } for($i=0; $i < count($votes); $i++) { $point +=10; } for($i=0; $i < count($saves); $i++) { $point +=10; } @endphp <p class="text-gray-500">{{ $point }} Points</p>
                 </div>
                 <!-- <a href="#!" class="mt-2 inline-block text-center border-2 text-gray-500 text-sm border-gray-500 rounded-md px-6 py-2">Follow</a> -->
             </div>
