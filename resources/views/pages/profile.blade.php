@@ -41,10 +41,10 @@
             <button class="px-4 py-2 border-b border-gray-200 text-gray-600 w-full" x-on:click.prevent="active = 1" x-bind:class="{'border-blue-600 ': active === 1}">Bookmarked</button>
             <button class="px-4 py-2 border-b border-gray-200 text-gray-600 w-full" x-on:click.prevent="active = 2" x-bind:class="{'border-blue-600': active === 2}">Submitted</button>
         </div>
-        <div class="bg-gray-50 bg-opacity-10">
-            <div class="p-4 bg-gray-50 space-y-2 h-40 overflow-auto" x-show.transition.in="active === 0">
+        <div class="bg-gray-50">
+            <div class="p-4 bg-gray-50 space-y-2 h-60 overflow-auto" x-show.transition.in="active === 0">
                 @if(count($votes) == 0) <div class="flex flex-col justify-center items-center">
-                    <img src="img/like.png" alt="like" class="block">
+                    <img src="https://img.icons8.com/cotton/100/000000/facebook-like--v2.png" />
                     <h1 class="mt-2 text-gray-600">No tutorials liked.</h1>
                 </div>
                 @endif
@@ -56,10 +56,10 @@
                 </div>
                 @endforeach
             </div>
-            <div class="p-4 bg-gray-50 space-y-2 h-40 overflow-auto" x-show.transition.in="active === 1">
+            <div class="p-4 bg-gray-50 space-y-2 h-60 overflow-auto" x-show.transition.in="active === 1">
                 @if(count($saves) == 0)
                 <div class="flex flex-col justify-center items-center">
-                    <img src="img/save.png" alt="save" class="block">
+                    <img src="https://img.icons8.com/color/100/000000/bookmark-ribbon--v1.png" />
                     <h1 class="mt-2 text-gray-600">No tutorials bookmarked.</h1>
                 </div>
                 @endif
@@ -72,42 +72,33 @@
                 </div>
                 @endforeach
             </div>
-            <div class="p-4 bg-gray-50 space-y-2 h-40 overflow-auto" x-show.transition.in="active === 2">
+            <div class="p-4 bg-gray-50 space-y-2 h-60 overflow-auto" x-show.transition.in="active === 2">
                 @if (count($submits) == 0)
                 <div class="flex flex-col justify-center items-center">
-                    <img src="img/submitted.png" alt="submit" class="block">
-                    <h1 class="mt-2 text-gray-600">You haven't sent the tutorial</h1>
+                    <img src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/100/000000/external-send-contact-flatart-icons-flat-flatarticons.png" />
+                    <h1 class="mt-2 text-gray-600">You don't have submissions.</h1>
                 </div>
                 @endif
 
                 @foreach ($submits as $submit)
                 <div class="card">
-                    <div class="flex items-center justify-between space-x-4">
-                        <a href="/course/{{ $submit->slug }}" class="text-gray-600"> {{ $submit->name  }}</a>
-                        <div class="flex items-center">
-                            @if ($submit->status == 'Draft')
-                            <p class="bg-gray-200 text-gray-700 text-sm px-1 py-1 rounded-sm font-semibold">Under Review</p>
-                            @elseif ($submit->status == 'Release')
-                            <p class="bg-green-100 text-green-700 text-sm px-1 py-1 rounded-sm font-semibold">Approved</p>
-                            @endif
-                            <div x-data="{ dropdownOpen: false }" class="relative ml-auto">
-                                <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
-                                    <div class="flex justify-between items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                                        </svg>
-                                    </div>
-                                </button>
-                                <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
-                                <div x-show="dropdownOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
-                                    <a href="/course/{{ $submit->slug }}" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
-                                        <i class="fas fa-eye mr-1"></i> Visit Tutorial
-                                    </a>
-
-                                    <a href="/submit-tutorial" class="block text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white">
-                                        <i class="fas fa-edit mr-1"></i> Edit
-                                    </a>
-                                </div>
+                    <div>
+                        <div class="flex flex-col mb-4">
+                            <a href="/course/{{ $submit->slug }}" class="text-gray-600"> {{ $submit->name  }}</a>
+                            <div class="inline-block">
+                                @if ($submit->status == 'Draft')
+                                <p class="inline-block bg-gray-200 text-gray-700 text-xs px-1 py-1 rounded-sm font-semibold">Under Review</p>
+                                @elseif ($submit->status == 'Release')
+                                <p class="inline-block bg-green-100 text-green-700 text-xs px-1 py-1 rounded-sm font-semibold">Approved</p>
+                                @endif
+                                <i class="text-gray-400 mx-1">|</i>
+                                <a href="/course/{{ $submit->slug }}" class="inline-block text-sm mx-1 capitalize text-gray-500 hover:text-gray-700">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <i class="text-gray-400 mx-1">|</i>
+                                <a href="/course/{{ $submit->slug }}" class="inline-block text-sm mx-1 capitalize text-gray-500 hover:text-gray-700">
+                                    <i class="fas fa-trash"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
