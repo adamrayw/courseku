@@ -20,6 +20,7 @@ class CreateTutorialsTable extends Migration
             $table->string('name');
             $table->string('submitted_by');
             $table->string('source_link');
+            $table->bigInteger('views')->default(0);
             $table->foreignId('vote_id');
             $table->timestamps();
         });
