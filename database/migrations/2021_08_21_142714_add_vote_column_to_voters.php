@@ -14,7 +14,7 @@ class AddVoteColumnToVoters extends Migration
     public function up()
     {
         Schema::table('voters', function (Blueprint $table) {
-            $table->bigInteger('vote')->after('tutorial_id');
+            $table->bigInteger('vote')->after('tutorials_id');
         });
     }
 
