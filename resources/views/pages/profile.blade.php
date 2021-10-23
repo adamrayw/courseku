@@ -131,7 +131,6 @@
                                 <i class="text-gray-400 mx-1">•</i>
                                 <p class="inline-block text-sm py-1 capitalize text-gray-500 hover:text-gray-700"><i class="fas fa-eye mr-1"></i> {{ $submit->views }} Views </p>
                                 @endif
-
                             </div>
                         </div>
                     </div>
