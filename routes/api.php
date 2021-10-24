@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiIndexHomeController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/programming', function() {
-    return response()->json([
-        'name' => 'Adam',
-        'age' => 19
-    ]);
-});
+// Route::get('/programming', [IndexHomeController::class, 'index']);
+
+Route::get('/home', [ApiIndexHomeController::class, 'index']);
