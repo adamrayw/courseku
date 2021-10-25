@@ -11,11 +11,7 @@ class ApiIndexHomeController extends Controller
 {
     public function index() {
         $indexProgramming = Course::where('category_id', 1)->where('status', 'Release')->limit(5)->get();
-        $response = [
-            'message' => 'List index for programming',
-            'data' => $indexProgramming
-        ];
 
-        return response()->json($response, Response::HTTP_OK);
+        return response()->json($indexProgramming, Response::HTTP_OK);
     }
 }
