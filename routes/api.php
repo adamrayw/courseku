@@ -24,3 +24,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::get('/programming', [IndexHomeController::class, 'index']);
 
 Route::get('/home', [ApiIndexHomeController::class, 'index']);
+Route::get('/field', [ApiIndexHomeController::class, 'field']);
