@@ -22,9 +22,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/login', [ApiAuthController::class, 'login']);
 
 // Route::get('/programming', [IndexHomeController::class, 'index']);
 
 Route::get('/home', [ApiIndexHomeController::class, 'index']);
 Route::get('/field', [ApiIndexHomeController::class, 'field']);
+Route::post('/login', [ApiAuthController::class, 'login']);
