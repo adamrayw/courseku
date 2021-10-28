@@ -18,7 +18,7 @@ class ApiAuthController extends Controller
             // validasi data yang masuk
             $fields = $request->validate([
                 'email' => 'required|string',
-                'password' => 'required|string'
+                'password' => 'required'
             ]);
 
             $credentials = request(['email', 'password']);
