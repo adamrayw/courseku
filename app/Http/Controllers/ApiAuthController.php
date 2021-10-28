@@ -37,7 +37,7 @@ class ApiAuthController extends Controller
             }
 
             // Token
-            $tokenResult = $user->createToken('myapptoken')->plainTextToken;
+            $tokenResult = $user->createToken('authToken')->plainTextToken;
 
             return ResponseFormatter::success([
                 'access_token' => $tokenResult,
