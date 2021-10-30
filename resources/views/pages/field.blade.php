@@ -13,7 +13,7 @@
             @foreach ($c->course as $f)
             <a href="/learn/{{ $f->slug }}">
                 <div class="card flex items-center shadow-sm p-4 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition">
-                    {!!$f->img_url!!}
+                    <img src="{{ $f->img_url }}" alt="logo_course">
                     <p class="ml-2 text-gray-600">{{$f->name}}</p>
                 </div>
             </a>
