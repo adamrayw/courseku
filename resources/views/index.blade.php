@@ -13,7 +13,7 @@
     </div>
     <div class="flex justify-between items-center mt-10 px-4 md:px-0">
         <h1 class="text-2xl md:text-2xl font-semibold text-gray-600">What do you want to learn? </h1>
-        <a href="/fields/programming" class="underline md:visible invisible text-blue-500 hover:text-blue-700 transition">See More...</a>
+        <a href="/programming" class="underline md:visible invisible text-blue-500 hover:text-blue-700 transition">See More...</a>
     </div>
     <div class="what-you-learn mb-20">
         <div class="grid grid-cols-1 md:grid-cols-5 md:px-0 px-4 gap-4 py-6">
