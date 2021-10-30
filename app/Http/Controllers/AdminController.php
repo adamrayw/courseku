@@ -16,8 +16,11 @@ class AdminController extends Controller
 {
     public function home()
     {
-        // get users
+        // get users limit 5
         $users = User::orderBy('created_at', 'desc')->Limit(5)->get();
+
+        // get user all
+        $users_all = User::all();
 
         // get tutorials
         $tutorials = Tutorials::orderBy('created_at', 'desc')->get();
@@ -31,6 +34,7 @@ class AdminController extends Controller
             'admin/admin-dashboard',
             compact(
                 [
+                    'users_all',
                     'users',
                     'tutorials',
                     'courses',
