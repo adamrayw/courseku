@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 class ApiIndexHomeController extends Controller
 {
     public function index() {
-        $indexProgramming = Course::where('category_id', 1)->where('status', 'Release')->limit(5)->get();
+        $indexProgramming = Course::where('category_id', 1)->where('status', 'Release')->limit(8)->get();
 
         return response()->json($indexProgramming, Response::HTTP_OK);
     }
