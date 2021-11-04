@@ -26,7 +26,7 @@
                             <p class="text-sm ml-3 text-gray-500"><i class="fas fa-comment mr-1"></i> {{ count($tutorial->comments) }}</p>
                         </div>
                     </div>
-                    <p class="absolute right-0 top-0bg-blue-500 px-2 py-1 rounded-bl-md rounded-tr-md text-sm text-white">{{$tutorial->type}} </p>
+                    <p class="absolute right-0 top-0 bg-blue-500 px-2 py-1 rounded-bl-md rounded-tr-md text-sm text-white">{{$tutorial->type}} </p>
                 </div>
             </a>
             @endforeach
