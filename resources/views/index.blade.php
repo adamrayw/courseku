@@ -13,7 +13,7 @@
     </div>
     <div class="flex justify-between items-center mt-10 px-4 md:px-0">
         <h1 class="text-2xl md:text-2xl font-semibold text-gray-600">What do you want to learn? </h1>
-        <a href="/programming" class="underline md:visible invisible text-blue-500 hover:text-blue-700 transition">See More...</a>
+        <a href="/programming" class="md:visible invisible text-blue-500 hover:text-blue-700 transition">See More <i class="fas fa-chevron-right fa-lg"></i></a>
     </div>
     <div class="what-you-learn mb-20">
         <div class="grid grid-cols-1 md:grid-cols-5 md:px-0 px-4 gap-4 py-6">
@@ -27,7 +27,7 @@
             @endforeach
         </div>
         <div class="flex justify-end items-end px-4">
-            <a href="/programming" class="underline text-right md:invisible visible text-blue-500 hover:text-blue-700 transition">See More...</a>
+            <a href="/programming" class="text-right md:invisible visible text-blue-500 hover:text-blue-700 transition">See More <i class="fas fa-chevron-right fa-lg ml-1"></i></a>
         </div>
     </div>
     <div class="mt-10 px-4 md:px-0" id="find-course">
