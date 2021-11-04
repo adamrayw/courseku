@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
-@section('title', 'The best to find Programming courses & tutorials')
+@section('title', 'Tempat terbaik untuk mencari kursus & tutorial pemrograman')
 
 @section('content')
 <section class="max-w-7xl mx-auto px-4">
     <div class="flex justify-center text-center items-center mt-20 mb-28">
         <div class="px-4">
-            <h1 class="animate__animated animate__fadeInUp font-bold mb-2 text-gray-600 text-4xl">Welcome to COURSEKU!</h1>
-            <p class="animate__animated animate__fadeInUp animate__delay-1s text-gray-400 text-lg">The best place to find Programming courses & tutorials</p>
+            <h1 class="animate__animated animate__fadeInUp font-bold mb-2 text-gray-600 text-4xl">Selamat datang di Kursusin!</h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s text-gray-400 text-lg">Tempat terbaik untuk mencari kursus & tutorial pemrograman</p>
             <a href="#find-course" class="animate__animated animate__fadeInUp animate__delay-2s inline-block font-semibold mt-6 rounded-lg no-underline text-white bg-gray-700 hover:bg-gray-500 transition-all px-6 py-3">Explore Tutorial</a>
         </div>
     </div>
     <div class="flex justify-between items-center mt-10 px-4 md:px-0">
-        <h1 class="text-2xl md:text-2xl font-semibold text-gray-600">What do you want to learn? </h1>
-        <a href="/programming" class="md:visible invisible text-blue-500 hover:text-blue-700 transition">See More <i class="fas fa-chevron-right fa-lg ml-1"></i></a>
+        <h1 class="text-2xl md:text-2xl font-semibold text-gray-600">Apa yang ingin kamu pelajari? </h1>
+        <a href="/programming" class="md:visible invisible text-blue-500 hover:text-blue-700 transition">Lihat lebih banyak <i class="fas fa-chevron-right fa-lg ml-1"></i></a>
     </div>
     <div class="what-you-learn mb-20">
         <div class="grid grid-cols-1 md:grid-cols-5 md:px-0 px-4 gap-4 py-6">
@@ -27,11 +27,11 @@
             @endforeach
         </div>
         <div class="flex justify-end items-end px-4">
-            <a href="/programming" class="text-right md:invisible visible text-blue-500 hover:text-blue-700 transition">See More <i class="fas fa-chevron-right fa-lg ml-1"></i></a>
+            <a href="/programming" class="text-right md:invisible visible text-blue-500 hover:text-blue-700 transition">Lihat lebih banyak <i class="fas fa-chevron-right fa-lg ml-1"></i></a>
         </div>
     </div>
     <div class="mt-10 px-4 md:px-0" id="find-course">
-        <h1 class="text-2xl md:text-2xl font-semibold text-gray-600">Find courses by field</h1>
+        <h1 class="text-2xl md:text-2xl font-semibold text-gray-600">Cari sesuai bidang kamu</h1>
     </div>
     <div class="what-you-learn mb-20">
         <div class="grid grid-cols-1 md:grid-cols-4 md:px-0 px-4 gap-4 py-6">
