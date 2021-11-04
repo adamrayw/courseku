@@ -7,7 +7,7 @@
 <section class="my-20 max-w-xl mx-4 md:mx-auto">
     <div class="bg-white shadow rounded-md">
         <div class="flex items-center p-4 text-gray-600">
-            <i class="fas fa-paper-plane mr-1 fa-lg"></i>
+            <i class="fas fa-edit mr-1 fa-lg"></i>
             <span class="font-bold block text-2xl ml-2">Edit Profile</span>
         </div>
         <hr>
