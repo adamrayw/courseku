@@ -137,8 +137,8 @@
                                                                 <option value="Video">
                                                                     Video
                                                                 </option>
-                                                                <option value="Article">
-                                                                    Article
+                                                                <option value="Artikel">
+                                                                    Artikel
                                                                 </option>
                                                             </select>
                                                         </div>
