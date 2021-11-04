@@ -5,8 +5,8 @@
 @section('content')
 <section class="mt-20 text-center max-w-5xl mx-auto px-4">
     <div class="text-left">
-        <h1 class="font-bold mb-1 text-gray-600 text-4xl">Learn {{ $name_course }}</h1>
-        <p class="text-base text-gray-500">Let's learn {{ strtolower($name_course) }}, this course is sent from the programming community.</p>
+        <h1 class="font-bold mb-1 text-gray-600 sm:text-3xl text-xl">Learn {{ $name_course }}</h1>
+        <p class="sm:text-lg text-sm text-gray-500">Let's learn {{ strtolower($name_course) }}, this course is sent from the programming community.</p>
     </div>
     <div class="what-you-learn mb-20">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-6">
@@ -14,7 +14,7 @@
             <a href="/course/{{ $tutorial->slug }}">
                 <div class="card relative bg-white border border-gray-200 text-left shadow-sm p-4 rounded-lg hover:shadow-lg transition">
                     <div class="mb-8">
-                        <p class="ml-2 mb-1 pr-8 font-semibold text-xl truncate text-gray-600">{{ $tutorial->name }}</p>
+                        <p class="ml-2 mb-1 pr-8 font-semibold text-xl text-gray-600">{{ $tutorial->name }}</p>
                         <p class="ml-2 text-xs text-gray-500">{{ $tutorial->author }}</p>
                     </div>
                     <div class="flex justify-between items-center">
