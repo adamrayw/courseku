@@ -19,7 +19,7 @@
     <div class="bg-white shadow rounded-md">
         <div class="flex items-center p-4 text-gray-600">
             <i class="fas fa-paper-plane mr-1 fa-lg"></i>
-            <span class="font-bold block text-2xl ml-2">Submit tutorial</span>
+            <span class="font-bold block text-2xl ml-2">Kirim Tutorial</span>
         </div>
         <hr>
         <!-- Body 🍺 -->
@@ -31,22 +31,22 @@
                 <input type="hidden" name="submitted_by" value="{{ Auth()->user()->name }}">
                 <input type="hidden" name="views" value="0">
                 <div class="my-4">
-                    <h2 class="text-gray-600 font-semibold mb-1">Tutorial name</h2>
-                    <input type="text" name="name" class="h-12 border w-full font-xs text-gray-500 @error('name') border-red-300 @enderror border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="ex: Javascript Dasar" value="{{ old('name') }}">
+                    <h2 class="text-gray-600 font-semibold mb-1">Nama Tutorial</h2>
+                    <input type="text" name="name" class="h-12 border w-full font-xs text-gray-500 @error('name') border-red-300 @enderror border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="cth: Javascript Dasar" value="{{ old('name') }}">
                     @error('name')
                     <div class="text-red-500 text-sm">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="my-4">
-                    <h2 class="text-gray-600 font-semibold mb-1">Description</h2>
-                    <textarea type="text" name="description" class="border w-full font-xs text-gray-500 app @error('description') border-red-300 @enderror border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Description" rows="4">{{ old('description') }}</textarea>
+                    <h2 class="text-gray-600 font-semibold mb-1">Deskripsi (Jelaskan mengenai tutorial)</h2>
+                    <textarea type="text" name="description" class="border w-full font-xs text-gray-500 app @error('description') border-red-300 @enderror border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Deskripsi" rows="4">{{ old('description') }}</textarea>
                     @error('description')
                     <div class="text-red-500 text-sm">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="my-4">
-                    <h2 class="text-gray-600 font-semibold mb-1">Author</h2>
-                    <input type="text" name="author" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Author of tutorial" value="{{ old('author') }}">
+                    <h2 class="text-gray-600 font-semibold mb-1">Author (Yang buat tutorial)</h2>
+                    <input type="text" name="author" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Author" value="{{ old('author') }}">
                     @error('author')
                     <div class="text-red-500 text-sm">{{ $message }}</div>
                     @enderror
@@ -104,8 +104,9 @@
                     </div>
                 </div>
                 <div class="my-4">
-                    <h2 class="text-gray-600 font-semibold mb-1">Link</h2>
-                    <input type="text" name="source_link" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Source Link" value="{{ old('source_link') }}"></input>
+                    <h2 class="text-gray-600 font-semibold">Link</h2>
+                    <p class="text-gray-300 font-light mb-1 text-xs">Link diperbolehkan jika mengandung afiliasi.</p>
+                    <input type="text" name="source_link" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="Link Sumber" value="{{ old('source_link') }}"></input>
                     @error('source_link')
                     <div class="text-red-500 text-sm">{{ $message }}</div>
                     @enderror
