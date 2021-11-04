@@ -32,7 +32,7 @@
                     @enderror
                 </div>
                 <div class="mt-6 text-right">
-                    <button type="submit" class="bg-gray-800 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition">Update</button>
+                    <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition">Update</button>
                 </div>
                 @endforeach
             </form>
