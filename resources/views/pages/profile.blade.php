@@ -27,7 +27,7 @@
 <section class="my-20 max-w-3xl mx-4 md:mx-auto h-4/6">
     <div class="flex flex-col md:flex-row">
         <div class="flex items-start">
-            <div class="bg-gray-500 w-24 h-24 p-4 flex justify-center items-center mr-4 rounded-md">
+            <div class="bg-blue-500 w-24 h-24 p-4 flex justify-center items-center mr-4 rounded-md">
                 <h1 class="font-bold mb-1 text-white text-4xl">{{ Auth()->user()->name[0] }}</h1>
             </div>
             <div>
