@@ -29,3 +29,4 @@ Route::post('/register', [ApiAuthController::class, 'register']);
 
 Route::get('/home', [ApiIndexHomeController::class, 'index']);
 Route::get('/field', [ApiIndexHomeController::class, 'field']);
+Route::get('/carousel-artikel', [ApiIndexHomeController::class, 'carousel_artikel']);
