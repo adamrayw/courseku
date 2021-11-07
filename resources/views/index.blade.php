@@ -8,7 +8,7 @@
         <div class="px-4">
             <h1 class="animate__animated animate__fadeInUp font-bold mb-2 text-gray-600 text-4xl">Selamat datang di Kursusin!</h1>
             <p class="animate__animated animate__fadeInUp animate__delay-1s text-gray-400 text-lg">Tempat terbaik untuk mencari kursus & tutorial pemrograman</p>
-            <a href="#find-course" class="animate__animated animate__fadeInUp animate__delay-2s inline-block font-semibold mt-6 rounded-lg no-underline text-white bg-gray-700 hover:bg-gray-500 transition-all px-6 py-3">Explore Tutorial</a>
+            <a href="#find-course" class="animate__animated animate__fadeInUp animate__delay-2s inline-block font-semibold mt-6 rounded-lg no-underline text-white bg-blue-500 hover:bg-blue-700 transition-all px-6 py-3">Explore Tutorial</a>
         </div>
     </div>
     <div class="flex justify-between items-center mt-10 px-4 md:px-0">
