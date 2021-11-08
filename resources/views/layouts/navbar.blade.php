@@ -7,20 +7,20 @@
     </button>
     <div class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto" id="navigation">
         <div class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
-            <a href="/" class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-gray-600 transition-all">
+            <a href="/" class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-blue-500 transition-all">
                 <span>Home</span>
             </a>
-            <a href="/programming" class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-gray-600 transition-all">
+            <a href="/programming" class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-blue-500 transition-all">
                 <span>Programming</span>
             </a>
-            <a href="/design" class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-gray-600 transition-all">
+            <a href="/design" class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-blue-500 transition-all">
                 <span>Design</span>
             </a>
             @if (Auth::check())
             <div x-data="{ dropdownOpen: false }" class="relative ml-auto">
                 <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
                     <div class="flex justify-between items-center">
-                        <p class="bg-gray-500 text-white p-4 h-5 w-5 rounded-md flex justify-center items-center">{{ Auth()->user()->name[0] }} </p>
+                        <p class="bg-blue-500 text-white p-4 h-5 w-5 rounded-md flex justify-center items-center">{{ Auth()->user()->name[0] }} </p>
                         <i class="fas fa-caret-down ml-2"></i>
                     </div>
                 </button>
@@ -52,7 +52,7 @@
                 </div>
             </div>
             @else
-            <a href="/register" class="lg:inline-flex text-center lg:w-auto w-full px-4 mt-2 md:mt-0 py-2 rounded text-white items-center justify-center bg-gray-700 hover:bg-gray-500 transition">
+            <a href="/register" class="lg:inline-flex text-center lg:w-auto w-full px-4 mt-2 md:mt-0 py-2 rounded text-white items-center justify-center bg-blue-500 hover:bg-blue-700 transition">
                 <span>Sign Up</span>
             </a>
             @endif
