@@ -23,8 +23,9 @@ class CoursesController extends Controller
 
     public function field($slug)
     {
-        $field = Category::where('slug', $slug)->with('course')->limit(2)->get();
+        $field = Category::where('slug', $slug)->with('course')->get();
+        $courses = Course::where('status', 'Released')->get();
 
-        return view('pages.field', compact(['field']));
+        return view('pages.field', compact(['field', 'courses']));
     }
 }
