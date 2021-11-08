@@ -21,7 +21,7 @@
 
         </div>
         <div>
-            @if (count($c->course) < 1) <p class="text-center my-2 text-gray-600">Sorry, No Course Found</p> @endif
+            @if (count($c->course) < 1) <Kategori class="text-center my-2 text-xl text-gray-600">Bidang {{ $c->name }} Sedang Maintance...</p> @endif
         </div>
     </div>
 </section>
