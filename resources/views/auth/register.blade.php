@@ -6,7 +6,7 @@
 
 <div class="my-20 mx-2 flex flex-col justify-center items-center">
     <div class="bg-white w-full md:w-1/4 shadow rounded-md p-6 mx-2">
-        <h1 class="text-4xl font-bold mb-2 text-gray-600">Selamat Datang di Kursusin!</h1>
+        <h1 class="text-4xl font-bold mb-2 text-gray-600">Register</h1>
         <p class="text-sm text-gray-500">Register untuk like, comment, bookmark, dan lainnya!</p>
         <hr class="mt-2 mb-2">
         @if (session()->has('loginError'))
@@ -64,7 +64,7 @@
 
             <button type="submit" class="mt-6 text-center w-full bg-blue-500 rounded-md text-white py-3 font-medium hover:bg-blue-700 transition">REGISTER</button>
 
-            <p class="text-sm text-center mt-6 text-gray-500">Sudah memiliki akun? <a href="/login" class="underline">Sign In</a></p>
+            <p class="text-sm text-center mt-6 text-gray-500">Sudah memiliki akun? <a href="/login" class="underline">Login</a></p>
         </form>
     </div>
 </div>
