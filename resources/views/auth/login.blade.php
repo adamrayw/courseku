@@ -6,7 +6,7 @@
 
 <div class="my-20 mx-2 flex flex-col justify-center items-center">
     <div class="bg-white w-full md:w-1/4 shadow rounded-md p-6 mx-2">
-        <h1 class="text-4xl font-bold mb-2 text-gray-600">Selamat Datang Kembali!</h1>
+        <h1 class="text-4xl font-bold mb-2 text-gray-600">Login</h1>
         <p class="text-sm text-gray-500">Ingin belajar hal baru?</p>
         <hr class="mt-2 mb-2">
         @if (session('status'))
@@ -30,7 +30,7 @@
                 <a href="/forgot-password" class="font-medium text-sm text-gray-500 float-right">Lupa Password?</a>
             </div>
             <button type="submit" class="mt-2 text-center w-full bg-blue-500 rounded-md text-white py-3 font-medium hover:bg-blue-700 transition">Login</button>
-            <p class="text-sm text-center mt-6 text-gray-500">Belum memiliki akun? <a href="/register" class="underline">Sign Up</a></p>
+            <p class="text-sm text-center mt-6 text-gray-500">Belum memiliki akun? <a href="/register" class="underline">Register</a></p>
         </form>
     </div>
 </div>
