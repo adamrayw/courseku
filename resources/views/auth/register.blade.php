@@ -64,7 +64,7 @@
 
             <button type="submit" class="mt-6 text-center w-full bg-blue-500 rounded-md text-white py-3 font-medium hover:bg-blue-700 transition">REGISTER</button>
 
-            <p class="text-sm text-center mt-6 text-gray-500">Already have an account ? <a href="/login" class="underline">Sign In</a></p>
+            <p class="text-sm text-center mt-6 text-gray-500">Sudah memiliki akun? <a href="/login" class="underline">Sign In</a></p>
         </form>
     </div>
 </div>
