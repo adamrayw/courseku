@@ -62,7 +62,7 @@
 
             </div>
 
-            <button type="submit" class="mt-4 text-center w-full bg-gray-700 rounded-md text-white py-3 font-medium hover:bg-gray-600 transition">REGISTER</button>
+            <button type="submit" class="mt-4 text-center w-full bg-blue-500 rounded-md text-white py-3 font-medium hover:bg-blue-700 transition">REGISTER</button>
 
             <p class="text-sm text-center my-4 text-gray-500">Already have an account ? <a href="/login" class="underline">Sign In</a></p>
         </form>
