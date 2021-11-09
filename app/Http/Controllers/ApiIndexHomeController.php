@@ -29,7 +29,7 @@ class ApiIndexHomeController extends Controller
         return response()->json($field, Response::HTTP_OK);
     }
 
-    public function show(Course $course, Tutorials $tutorials)
+    public function show(Course $course)
     {
         $tutorial = Tutorials::Where('course_id', $course->id)->where('status', 'Release')->with('votes')->get();
         $data = [
