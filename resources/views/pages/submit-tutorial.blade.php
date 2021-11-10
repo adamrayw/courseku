@@ -147,7 +147,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition">Submit</button>
+                    <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">Submit</button>
                 </div>
             </form>
         </div>
