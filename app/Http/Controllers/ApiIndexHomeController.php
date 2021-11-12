@@ -40,4 +40,16 @@ class ApiIndexHomeController extends Controller
 
         return response()->json($data, response::HTTP_OK);
     }
+
+    public function course($slug) {
+
+        $data = [
+            Tutorials::where('slug', $slug)->increment('views'),
+            'datas' => Tutorials::where('slug', $slug)->with('comments')->get(),
+            'courses' => Course::where('status', 'Released')->get(),
+        ];
+
+        return response()->json($data, response::HTTP_OK);
+
+    }
 }
