@@ -31,3 +31,4 @@ Route::get('/field', [ApiIndexHomeController::class, 'field']);
 Route::get('/carousel-artikel', [ApiIndexHomeController::class, 'carousel_artikel']);
 
 Route::get('learn/{course:slug}', [ApiIndexHomeController::class, 'show']);
+Route::get('course/{slug}', [ApiIndexHomeController::class, 'course']);
