@@ -27,8 +27,9 @@ Route::post('/login', [ApiAuthController::class, 'login']);
 Route::post('/register', [ApiAuthController::class, 'register']);
 
 Route::get('/home', [ApiIndexHomeController::class, 'index']);
-Route::get('/field', [ApiIndexHomeController::class, 'field']);
+Route::get('/field', [ApiIndexHomeController::class, 'fields']);
 Route::get('/carousel-artikel', [ApiIndexHomeController::class, 'carousel_artikel']);
 
-Route::get('learn/{course:slug}', [ApiIndexHomeController::class, 'show']);
-Route::get('course/{slug}', [ApiIndexHomeController::class, 'course']);
+Route::get('/learn/{course:slug}', [ApiIndexHomeController::class, 'show']);
+Route::get('/course/{slug}', [ApiIndexHomeController::class, 'course']);
+Route::get('/{slug}', [ApiIndexHomeController::class,'field']);
