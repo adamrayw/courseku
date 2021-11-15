@@ -23,7 +23,7 @@ class ApiIndexHomeController extends Controller
         return response()->json($indexProgramming, Response::HTTP_OK);
     }
 
-    public function field() {
+    public function fields() {
         $field = Category::all();
 
         return response()->json($field, Response::HTTP_OK);
@@ -50,5 +50,13 @@ class ApiIndexHomeController extends Controller
 
         return response()->json($data, response::HTTP_OK);
 
+    }
+
+    public function field($slug) {
+        $data = [
+            'field' => Category::where('slug', $slug)->with('course')->get()
+        ];
+
+        return response()->json($data, Response::HTTP_OK);
     }
 }
