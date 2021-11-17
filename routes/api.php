@@ -4,6 +4,7 @@ use App\Http\Controllers\ApiAuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiIndexHomeController;
+use App\Http\Controllers\ApiUpdateProfileController;
 use App\Http\Controllers\CoursesController;
 
 /*
@@ -19,6 +20,7 @@ use App\Http\Controllers\CoursesController;
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout', [ApiAuthController::class, 'logout']);
+    Route::post('/update-profile', [ApiUpdateProfileController::class,'updateProfile']);
 });
 
 
