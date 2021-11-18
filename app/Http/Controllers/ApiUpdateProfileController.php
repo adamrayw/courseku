@@ -9,11 +9,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ApiUpdateProfileController extends Controller
 {
-    public function updateProfile(Request $request) {
-        $edited = $request->all();
+    public function updateProfile(Request $request, $id) {
 
-        $user = User::where('id', Auth()->user()->id)->update($edited);
+        $user = User::find($id);
+        $user->update($request->all());
 
-        return response()->json($user, Response::HTTP_OK);
+        return response()->json(['message' => 'Success', 'data' => $user], Response::HTTP_OK);
     }
 }
