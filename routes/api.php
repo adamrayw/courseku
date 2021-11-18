@@ -22,7 +22,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout', [ApiAuthController::class, 'logout']);
 });
 
-Route::post('/update-profile', [ApiUpdateProfileController::class,'updateProfile']);
+Route::put('/update-profile/{id}', [ApiUpdateProfileController::class,'updateProfile']);
 
 // Route::get('/programming', [IndexHomeController::class, 'index']);
 Route::post('/login', [ApiAuthController::class, 'login']);
