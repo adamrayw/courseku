@@ -35,3 +35,4 @@ Route::get('/carousel-artikel', [ApiIndexHomeController::class, 'carousel_artike
 Route::get('/learn/{course:slug}', [ApiIndexHomeController::class, 'show']);
 Route::get('/course/{slug}', [ApiIndexHomeController::class, 'course']);
 Route::get('/{slug}', [ApiIndexHomeController::class,'field']);
+Route::get('/profile/{id}', [ApiIndexHomeController::class,'profileData']);
