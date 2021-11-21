@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Save;
+use App\Models\User;
 use App\Models\Course;
+use App\Models\Voters;
 use App\Models\Category;
-use App\Http\Controllers\Controller;
 use App\Models\Tutorials;
+use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
 class ApiIndexHomeController extends Controller
@@ -58,5 +61,16 @@ class ApiIndexHomeController extends Controller
         ];
 
         return response()->json($data, Response::HTTP_OK);
+    }
+
+    public function profileData($id) {
+        $result = [
+            'user' => User::where('id', $id)->get(),
+            'liked' => Voters::where('user_id', $id)->with('tutorial')->get(),
+            'bookmarked' =>Save::where('user_id', $id)->with('tutorials')->get(),
+            'submitted' => Tutorials::where('user_id', $id)->get(),
+        ];
+
+        return response()->json(['message'=>'Success','data'=> $result], Response::HTTP_OK);
     }
 }
