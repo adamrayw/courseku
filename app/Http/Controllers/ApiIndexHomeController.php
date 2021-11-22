@@ -16,9 +16,11 @@ class ApiIndexHomeController extends Controller
 {
 
     public function carousel_artikel() {
-        $artikel = Tutorials::where('type', 'Artikel')->limit(4)->get();
+        $data = [
+            'artikel' => Tutorials::where('type', 'Artikel')->orderBy('desc')->limit(4)->get(),
+        ];
 
-        return response()->json($artikel, Response::HTTP_OK);
+        return response()->json($data, Response::HTTP_OK);
     }
 
     public function index() {
