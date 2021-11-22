@@ -9,6 +9,7 @@ use App\Models\Voters;
 use App\Models\Category;
 use App\Models\Tutorials;
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
 use Symfony\Component\HttpFoundation\Response;
 
 class ApiIndexHomeController extends Controller
@@ -48,7 +49,7 @@ class ApiIndexHomeController extends Controller
 
         $data = [
             Tutorials::where('slug', $slug)->increment('views'),
-            'datas' => Tutorials::where('slug', $slug)->with('comments')->get(),
+            'datas' => Tutorials::where('slug', $slug)->with('comments.user')->get(),
         ];
 
         return response()->json($data, response::HTTP_OK);
