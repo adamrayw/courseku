@@ -6,10 +6,11 @@ use App\Models\Save;
 use App\Models\User;
 use App\Models\Course;
 use App\Models\Voters;
+use App\Models\Comment;
 use App\Models\Category;
 use App\Models\Tutorials;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Comment;
 use Symfony\Component\HttpFoundation\Response;
 
 class ApiIndexHomeController extends Controller
@@ -75,5 +76,17 @@ class ApiIndexHomeController extends Controller
         ];
 
         return response()->json(['message'=>'Success','data'=> $result], Response::HTTP_OK);
+    }
+
+    public function storevote(Request $request) {
+        $vote = Voters::create($request->all());
+
+        return response()->json(['message'=>'success', 'data' => $vote], Response::HTTP_OK);
+    }
+
+    public function removevote($tid, $uid) {
+        $removevote = Voters::where('user_id', $uid)->where('tutorials_id', $tid)->delete();
+
+        return response()->json(['message'=>'success remove vote', 'data' => null], Response::HTTP_OK);
     }
 }
