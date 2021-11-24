@@ -36,3 +36,6 @@ Route::get('/learn/{course:slug}', [ApiIndexHomeController::class, 'show']);
 Route::get('/course/{slug}', [ApiIndexHomeController::class, 'course']);
 Route::get('/{slug}', [ApiIndexHomeController::class,'field']);
 Route::get('/profile/{id}', [ApiIndexHomeController::class,'profileData']);
+
+Route::post('/storevote', [ApiIndexHomeController::class, 'storevote']);
+Route::delete('/{tid}/{uid}', [ApiIndexHomeController::class, 'removevote']);
