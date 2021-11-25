@@ -52,7 +52,7 @@ class ApiIndexHomeController extends Controller
 
         $data = [
             Tutorials::where('slug', $slug)->increment('views'),
-            'datas' => Tutorials::where('slug', $slug)->with('comments.user')->get(),
+            'datas' => Tutorials::where('slug', $slug)->with(['comments.user', 'votes'])->get(),
         ];
 
         return response()->json($data, response::HTTP_OK);
