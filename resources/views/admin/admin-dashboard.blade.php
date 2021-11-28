@@ -88,7 +88,7 @@
                         @foreach ($comments as $comment)
                         <tr>
                             <td class="pb-2">{{ $loop->iteration }}.</td>
-                            <td class="pb-2">{{ $comment->comment }} <a class="text-xs text-gray-400" href="/course/{{ $comment->tutorial->slug }}">In {{ $comment->tutorial->name }}</a></td>
+                            <td class="pb-2">{{ $comment->comment }} <a class="text-xs text-gray-400">In {{ $comment->tutorial->name }}</a></td>
                             <td class="pb-2 text-right text-sm text-gray-400">{{ $comment->created_at->diffForHumans() }}</td>
                         </tr>
                         @endforeach
