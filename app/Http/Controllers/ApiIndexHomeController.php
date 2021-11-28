@@ -38,7 +38,7 @@ class ApiIndexHomeController extends Controller
 
     public function show(Course $course)
     {
-        $tutorial = Tutorials::Where('course_id', $course->id)->where('status', 'Release')->with(['votes', 'comments, 'saves'])->get();
+        $tutorial = Tutorials::Where('course_id', $course->id)->where('status', 'Release')->with(['votes', 'comments', 'saves'])->get();
         $data = [
             'course_name' => $course->name,
             'slug' => $course->slug,
