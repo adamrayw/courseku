@@ -89,4 +89,16 @@ class ApiIndexHomeController extends Controller
 
         return response()->json(['message'=>'success remove vote', 'data' => null], Response::HTTP_OK);
     }
+
+    public function storesave(Request $request) {
+        $vote = Save::create($request->all());
+
+        return response()->json(['message'=>'success', 'data' => $vote], Response::HTTP_OK);
+    }
+
+    public function removesave($tid, $uid) {
+        $removevote = Save::where('user_id', $uid)->where('tutorials_id', $tid)->delete();
+
+        return response()->json(['message'=>'success remove vote', 'data' => null], Response::HTTP_OK);
+    }
 }
