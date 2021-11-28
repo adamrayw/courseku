@@ -39,3 +39,6 @@ Route::get('/profile/{id}', [ApiIndexHomeController::class,'profileData']);
 
 Route::post('/storevote', [ApiIndexHomeController::class, 'storevote']);
 Route::delete('/{tid}/{uid}', [ApiIndexHomeController::class, 'removevote']);
+
+Route::post('/storesave', [ApiIndexHomeController::class, 'storesave']);
+Route::delete('/save/{tid}/{uid}', [ApiIndexHomeController::class, 'removesave']);
