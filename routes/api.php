@@ -24,6 +24,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
 Route::put('/update-profile/{id}', [ApiUpdateProfileController::class,'updateProfile']);
 
+Route::post('/comment', [ApiIndexHomeController::class, 'comment']);
 // Route::get('/programming', [IndexHomeController::class, 'index']);
 Route::post('/login', [ApiAuthController::class, 'login']);
 Route::post('/register', [ApiAuthController::class, 'register']);
@@ -42,3 +43,4 @@ Route::delete('/{tid}/{uid}', [ApiIndexHomeController::class, 'removevote']);
 
 Route::post('/storesave', [ApiIndexHomeController::class, 'storesave']);
 Route::delete('/save/{tid}/{uid}', [ApiIndexHomeController::class, 'removesave']);
+
