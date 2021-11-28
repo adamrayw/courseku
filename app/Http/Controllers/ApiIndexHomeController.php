@@ -101,4 +101,11 @@ class ApiIndexHomeController extends Controller
 
         return response()->json(['message'=>'success remove vote', 'data' => null], Response::HTTP_OK);
     }
+
+    public function comment(Request $request) {
+
+        Comment::create($request->all());
+
+        return response()->json(['message' => 'Success'], Response::HTTP_OK);
+    }
 }
