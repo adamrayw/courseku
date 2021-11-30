@@ -43,7 +43,6 @@ class ProfileController extends Controller
             'name' => 'required',
             'slug' => 'min:5',
             'description' => 'required',
-            'description' => 'required',
             'author' => 'required',
             'type' => 'required',
             'level' => 'required',
@@ -53,6 +52,9 @@ class ProfileController extends Controller
         ]);
 
         $validated['slug'] = Str::slug($validated['name'], '-');
+        $explodeUser = explode(' ', $validated['submitted_by']);
+        $validated['submitted_by'] = $explodeUser[0];
+
 
         Tutorials::create($validated);
 
