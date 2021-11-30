@@ -9,6 +9,7 @@ use App\Models\Voters;
 use App\Models\Comment;
 use App\Models\Category;
 use App\Models\Tutorials;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -107,5 +108,38 @@ class ApiIndexHomeController extends Controller
         Comment::create($request->all());
 
         return response()->json(['message' => 'Success'], Response::HTTP_OK);
+    }
+
+    public function language() {
+        $data = Course::all();
+
+        return response()->json($data, Response::HTTP_OK);
+    }
+
+    public function submit(Request $request) {
+        $validated = $request->validate([
+            'user_id' => 'required',
+            'course_id' => 'required',
+            'comment_id' => 'required',
+            'name' => 'required',
+            'slug' => 'min:5',
+            'description' => 'required',
+            'description' => 'required',
+            'author' => 'required',
+            'type' => 'required',
+            'level' => 'required',
+            'source_link' => 'required',
+            'submitted_by' => 'required',
+            'views' => 'required',
+        ]);
+
+        $validated['slug'] = Str::slug($validated['name'], '-');
+        $explodeUser = explode(' ', $validated['submitted_by']);
+        $validated['submitted_by'] = $explodeUser[0];
+
+
+        Tutorials::create($validated);
+
+        return response()->json(['message' => 'Submit berhasil', 'data' => $validated], Response::HTTP_OK);
     }
 }
