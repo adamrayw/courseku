@@ -142,4 +142,10 @@ class ApiIndexHomeController extends Controller
 
         return response()->json(['message' => 'Submit berhasil', 'data' => $validated], Response::HTTP_OK);
     }
+
+    public function explore() {
+        $data = Tutorials::where('status', 'Release')->orderBy('created_at' ,'desc')->get();
+
+        return response()->json(['message' => 'success', 'data' => $data], Response::HTTP_OK);
+    }
 }
