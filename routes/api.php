@@ -22,6 +22,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout', [ApiAuthController::class, 'logout']);
 });
 
+Route::get('/explore', [ApiIndexHomeController::class, 'explore']);
+
 Route::put('/update-profile/{id}', [ApiUpdateProfileController::class,'updateProfile']);
 
 Route::post('/comment', [ApiIndexHomeController::class, 'comment']);
@@ -46,3 +48,5 @@ Route::post('/storesave', [ApiIndexHomeController::class, 'storesave']);
 Route::delete('/save/{tid}/{uid}', [ApiIndexHomeController::class, 'removesave']);
 
 Route::post('/submit', [ApiIndexHomeController::class, 'submit']);
+
+
