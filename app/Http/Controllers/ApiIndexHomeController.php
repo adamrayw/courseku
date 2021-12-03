@@ -144,7 +144,7 @@ class ApiIndexHomeController extends Controller
     }
 
     public function explore() {
-        $data = Tutorials::where('status', 'Release')->orderBy('created_at' ,'desc')->get();
+        $data = Tutorials::where('status', 'Release')->with(['comments', 'votes', 'saves'])->orderBy('created_at' ,'desc')->get();
 
         return response()->json(['message' => 'success', 'data' => $data], Response::HTTP_OK);
     }
