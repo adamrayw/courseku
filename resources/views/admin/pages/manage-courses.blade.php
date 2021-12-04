@@ -1,6 +1,6 @@
 @extends('admin.layouts.admin')
 
-@section('admin-title', 'Manage Users')
+@section('admin-title', 'Manage Courses')
 
 @section('admin-content')
 <section class="mt-12 mb-20 px-4 md:px-12 w-full ml-0 md:ml-64">

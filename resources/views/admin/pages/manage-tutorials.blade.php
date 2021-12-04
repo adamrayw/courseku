@@ -1,6 +1,6 @@
 @extends('admin.layouts.admin')
 
-@section('admin-title', 'Manage Tutorial')
+@section('admin-title', 'Manage Tutorials')
 
 @section('admin-content')
 <section class="mt-16 px-4 md:px-12 w-full ml-0 md:ml-64">
@@ -100,7 +100,7 @@
                                                         @csrf
                                                         <div class="my-4">
                                                             <h2 class="text-gray-600 font-semibold mb-1">Comment ID</h2>
-                                                            <input type="text" name="commentid" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="CommentID" value="{{$tutorial->comment_id}}">
+                                                            <input type="text" name="commentid" class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300" placeholder="CommentID" value="{{ $tutorial->id }}">
                                                         </div>
                                                         <div class="my-4">
                                                             <h2 class="text-gray-600 font-semibold mb-1">Course</h2>
