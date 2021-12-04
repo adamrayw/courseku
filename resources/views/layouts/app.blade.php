@@ -36,7 +36,7 @@
             visibility: visible;
         }
     </style>
-    <title>KURSUSIN - @yield('title')</title>
+    <title>COURSEKU - @yield('title')</title>
 </head>
 
 <body class="bg-white">
