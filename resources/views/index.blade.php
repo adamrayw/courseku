@@ -15,13 +15,13 @@
                     Tutorial</a>
             </div>
         </div>
-        <div class="flex justify-between items-center mt-10 px-4 md:px-0">
+        <div class="flex justify-between items-center mt-10 px-4 md:px-0" id="find-course">
             <h1 class="text-2xl md:text-2xl font-semibold text-gray-600">Apa yang ingin kamu pelajari? </h1>
             <a href="/programming" class="md:visible invisible text-blue-500 hover:text-blue-700 transition">Lihat lebih
                 banyak <i class="fas fa-chevron-right fa-lg ml-1"></i></a>
         </div>
         <div class="what-you-learn mb-20">
-            <div class="grid grid-cols-1 md:grid-cols-5 md:px-0 px-4 gap-4 py-6">
+            <div class="grid grid-cols-1 md:grid-cols-5 md:px-0 px-4 gap-4 py-6" >
                 @foreach ($courses as $course)
                     <a href="/learn/{{ $course->slug }}">
                         <div
@@ -38,7 +38,7 @@
                     <i class="fas fa-chevron-right fa-lg ml-1"></i></a>
             </div>
         </div>
-        <div class="mt-10 px-4 md:px-0" id="find-course">
+        <div class="mt-10 px-4 md:px-0" >
             <h1 class="text-2xl md:text-2xl font-semibold text-gray-600">Cari sesuai bidang kamu</h1>
         </div>
         <div class="what-you-learn mb-20">
@@ -59,7 +59,7 @@
         <div class="desc-banner flex justify-between items-center max-w-7xl mx-auto left-0 top-0 py-8 px-5 text-white">
             <div class="mr-4">
                 <h1 class="text-xl md:text-5xl font-bold">Belajar di mana aja <br>dalam genggaman.</h1>
-                <p class="text-xs mt-2 md:text-xl font-medium">Sekarang Courseku punya aplikasi nya.</p>
+                <p class="text-xs mt-4 md:text-xl font-medium">Sekarang Courseku punya aplikasi nya.</p>
                 <a href="https://dl.dropbox.com/s/a8w6nwbrpt00701/app.apk?dl=0"
                     class="inline-block text-center mt-4 text-sm bg-white py-2 px-6 rounded-md text-blue-500 hover:bg-blue-700 transition">
                     <i class="fab fa-android fa-lg"></i>
