@@ -57,21 +57,21 @@
     </section>
     <div class="app-banner bg-blue-500">
         <div class="desc-banner flex flex-col md:flex-row justify-around items-center max-w-7xl mx-auto left-0 top-0 py-8 px-5 text-white">
-            <div class="mr-4 text-center md:text-left mb-10 md:mb-0">
-                <h1 class="text-xl md:text-5xl font-bold">Belajar di mana aja <br>dalam genggaman.</h1>
-                <p class="text-xs mt-4 md:text-xl font-medium">Sekarang Courseku punya aplikasi nya.</p>
+            <div class="mr-4 text-center md:text-left mb-10 md:mb-0" >
+                <h1 class="text-xl md:text-5xl font-bold" data-aos="fade-up" data-aos-duration="1000">Belajar di mana aja <br>dalam genggaman.</h1>
+                <p class="text-xs mt-4 md:text-xl font-medium" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Sekarang Courseku punya aplikasi nya.</p>
                 <a href="https://dl.dropbox.com/s/a8w6nwbrpt00701/app.apk?dl=0"
-                    class="inline-block text-center mt-4 text-sm bg-white py-2 px-6 rounded-md text-blue-500 hover:bg-blue-700 transition">
+                    class="inline-block text-center mt-4 text-sm bg-white py-2 px-6 rounded-md text-blue-500 hover:bg-blue-700 transition" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                     <i class="fab fa-android fa-lg"></i>
                     <p>Android</p>
                 </a>
                 <a
-                    class="inline-block text-center mt-4 text-sm bg-white py-2 px-6 rounded-md text-blue-500 transition">
+                    class="inline-block text-center mt-4 text-sm bg-white py-2 px-6 rounded-md text-blue-500 transition" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                     <i class="fab fa-apple fa-lg"></i>
                     <p>IOS</p>
                 </a>
             </div>
-            <div class="mockup">
+            <div class="mockup" data-aos="flip-left" data-aos-duration="1600">
                 <img src="/img/mockup.png" alt="mockup" class="h-auto w-64">
             </div>
         </div>
