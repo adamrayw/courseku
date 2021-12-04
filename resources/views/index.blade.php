@@ -7,7 +7,7 @@
         <div class="flex justify-center text-center items-center mt-20 mb-28">
             <div class="px-4">
                 <h1 class="animate__animated animate__fadeInUp font-bold mb-2 text-gray-600 text-4xl">Selamat datang di
-                    Kursusin!</h1>
+                    Courseku!</h1>
                 <p class="animate__animated animate__fadeInUp animate__delay-1s text-gray-400 text-lg">Tempat terbaik untuk
                     mencari course pemrograman & design</p>
                 <a href="#find-course"
