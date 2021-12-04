@@ -55,15 +55,24 @@
             </div>
         </div>
     </section>
-    <div class="app-banner  bg-blue-500">
-        <div class="desc-banner flex justify-around items-center left-0 top-0 py-5 px-5 text-white">
-            <div>
-                <h1 class="text-xl md:text-5xl font-bold">Belajar di mana aja kapan aja!</h1>
+    <div class="app-banner bg-blue-500">
+        <div class="desc-banner flex justify-between items-center max-w-7xl mx-auto left-0 top-0 py-8 px-5 text-white">
+            <div class="mr-4">
+                <h1 class="text-xl md:text-5xl font-bold">Belajar di mana aja <br>dalam genggaman.</h1>
                 <p class="text-xs mt-2 md:text-xl font-medium">Sekarang Courseku punya aplikasi nya.</p>
-                <a href="#" class="inline-block mt-4 bg-white py-2 px-6 rounded-md text-blue-500">Download</a>
+                <a href="https://dl.dropbox.com/s/a8w6nwbrpt00701/app.apk?dl=0"
+                    class="inline-block text-center mt-4 text-sm bg-white py-2 px-6 rounded-md text-blue-500 hover:bg-blue-700 transition">
+                    <i class="fab fa-android fa-lg"></i>
+                    <p>Android</p>
+                </a>
+                <a
+                    class="inline-block text-center mt-4 text-sm bg-white py-2 px-6 rounded-md text-blue-500 transition">
+                    <i class="fab fa-apple fa-lg"></i>
+                    <p>IOS</p>
+                </a>
             </div>
             <div class="mockup">
-                <img src="/img/mockup.png" alt="mockup" width="200">
+                <img src="/img/mockup.png" alt="mockup" class="h-auto w-64">
             </div>
         </div>
     </div>
