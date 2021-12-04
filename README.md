@@ -1,31 +1,27 @@
 ## What is Courseku
 
-Courseku is a platform to find courses on programming and design, and make this is my big project.
+Courseku is a platform to find courses on programming and design.
 
 So many challenges and new things in building this platform. 
 
 ## Try (Project Completed)
 http://courseku.herokuapp.com/
 
-## Learning Laravel
+## Features
+On the user side :
+- User can give like
+- User can bookmark
+- User can give comment
+- User can submit/contribute
+- Users can also see what courses are liked, saved, and what courses have been submitted, on my profile page
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Courseku also have admin dashboard that manage all feature:
+- Dashboard, displays recently added courses, new users, recent comments.
+- Users, in the users menu, there is a menu for managing users and add new admin.
+- Courses, in the courses menu, there is a menu for managing courses, add new course, and add new category/field.
+- Tutorials, in the tutorials menu, there is a menu for managing tutorials and add new tutorial.
+- Comments, in the comments menu, there is a menu for managing comments.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+More features:
+- When the user has submitted, on my profile page, and in the submitted tab, there is information about whether the submitted course was approved or not.
+- If a user spams or comments with dirty or rude words, in courseku has a suspension feature, if the user is suspended, the user cannot comment.
