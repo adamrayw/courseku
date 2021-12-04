@@ -230,7 +230,11 @@ class AdminController extends Controller
 
     public function deleteTutorial($id)
     {
-        Tutorials::where('id', $id)->delete();
+        $tutor = Tutorials::findOrFail($id);
+        $tutor->votes()->delete();
+        $tutor->comments()->delete();
+        $tutor->saves()->delete();
+        $tutor->delete();
 
         return back()->with('successDelete', 'Tutorial deleted successfully!');
     }
