@@ -17,7 +17,7 @@
                             </span>
                         </div>
                         <input type="text" name="search" id="search"
-                            class="focus:ring-indigo-500 focus:border-indigo-500 block w-full px-10 py-4 sm:text-sm border-gray-300 rounded-md"
+                            class="focus:ring-indigo-500 border-2 block w-full px-10 py-4 sm:text-sm border-gray-300 rounded-md"
                             placeholder="Cari course...">
 
                     </div>
@@ -26,8 +26,8 @@
         </div>
         <div class="what-you-learn mb-20">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-6">
-                @if ($tutorials != null)
-                    @foreach ($tutorials as $tutorial)
+                @foreach ($tutorials as $tutorial)
+                    @if ($tutorial != null)
                         <a href="/course/{{ $tutorial->slug }}">
                             <div
                                 class="card relative bg-white border border-gray-200 text-left shadow-sm p-4 rounded-lg hover:shadow-lg transition">
@@ -53,10 +53,10 @@
                                     {{ $tutorial->type }} </p>
                             </div>
                         </a>
-                    @endforeach
-                @else
-                    <p>Not Found</p>
-                @endif
+                    @else
+                        <p>Not Found</p>
+                    @endif
+                @endforeach
             </div>
             {{ $tutorials->links() }}
         </div>
