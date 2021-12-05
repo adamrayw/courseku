@@ -14,9 +14,9 @@ class ExploreController extends Controller
         if($request->input('search') == '') {
             $tutorials = Tutorials::orderBy('created_at', 'desc')->with(['votes', 'comments'])->paginate(4);
         } else {
-            $tutorials = Tutorials::query()->where('name', 'LIKE', "%{$request->input('search')}%")->with(['votes', 'comments'])->paginate(4);
+            $tutorials = Tutorials::query()->where("name", "LIKE", "%{$request->input('search')}%")->with(['votes', 'comments'])->paginate(4);
         }
 
-        return view('pages.explore', compact(['tutorials', 'searchVal']));
+        return view('pages.explore', compact('tutorials'));
     }
 }
