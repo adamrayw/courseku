@@ -8,24 +8,32 @@
             <h1 class="font-bold mb-1 text-gray-600 text-4xl">Explore</h1>
         </div>
         <div>
-            <form action="#" method="GET">
-                <div
-                    class="flex text-gray-600 items-center mt-6 px-4 py-2 border-2 border-blue-500 shadow bg-white rounded-lg">
-                    <input type="text" name="search" id="search" class="w-full border-0" placeholder='Cari "Python Dasar"'
-                        value="{{ old('search') }}">
-                    <i class="fas fa-search"></i>
+            <form method="GET">
+                <div>
+                    <div class="mt-8 relative rounded-lg shadow">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <span class="text-gray-500 sm:text-sm">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </div>
+                        <input type="text" name="search" id="search"
+                            class="focus:ring-indigo-500 focus:border-indigo-500 block w-full px-10 py-4 sm:text-sm border-gray-300 rounded-md"
+                            placeholder="Cari course...">
+
+                    </div>
                 </div>
             </form>
         </div>
         <div class="what-you-learn mb-20">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-6">
-                @foreach ($tutorials as $tutorial)
-                    @if ($tutorial != '')
+                @if ($tutorials != null)
+                    @foreach ($tutorials as $tutorial)
                         <a href="/course/{{ $tutorial->slug }}">
                             <div
                                 class="card relative bg-white border border-gray-200 text-left shadow-sm p-4 rounded-lg hover:shadow-lg transition">
                                 <div class="mb-8">
-                                    <p class="ml-2 mb-1 pr-8 font-semibold text-xl text-gray-600">{{ $tutorial->name }}</p>
+                                    <p class="ml-2 mb-1 pr-8 font-semibold text-xl text-gray-600">{{ $tutorial->name }}
+                                    </p>
                                     <p class="ml-2 text-xs text-gray-500">{{ $tutorial->author }}</p>
                                 </div>
                                 <div class="flex justify-between items-center">
@@ -45,10 +53,10 @@
                                     {{ $tutorial->type }} </p>
                             </div>
                         </a>
-                    @else
-                        <p>Not Found</p>
-                    @endif
-                @endforeach
+                    @endforeach
+                @else
+                    <p>Not Found</p>
+                @endif
             </div>
             {{ $tutorials->links() }}
         </div>
