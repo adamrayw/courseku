@@ -10,6 +10,9 @@
             <a href="/" class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-blue-500 transition-all">
                 <span>Home</span>
             </a>
+            <a href="/explore" class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-blue-500 transition-all">
+                <span>Explore</span>
+            </a>
             <a href="/programming" class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-blue-500 transition-all">
                 <span>Programming</span>
             </a>
