@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TutorialsController;
 
@@ -32,6 +33,8 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [HomeController::class, 'index']);
+
+Route::get('/explore', [ExploreController::class, 'explore']);
 
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');;
 
