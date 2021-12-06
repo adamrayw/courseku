@@ -55,7 +55,7 @@
             </div>
         </div>
     </section>
-    <div class="app-banner bg-blue-500">
+    <div class="app-banner bg-blue-500" id="banner">
         <div class="desc-banner flex flex-col md:flex-row justify-around items-center max-w-7xl mx-auto left-0 top-0 py-8 px-5 text-white">
             <div class="mr-4 text-center md:text-left mb-10 md:mb-0" >
                 <h1 class="text-2xl md:text-5xl font-bold" data-aos="fade-up" data-aos-duration="1000">Belajar di mana aja <br>dalam genggaman.</h1>
