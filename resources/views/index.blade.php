@@ -10,7 +10,7 @@
                     Courseku!</h1>
                 <p class="animate__animated animate__fadeInUp animate__delay-1s text-gray-400 text-lg">Tempat terbaik untuk
                     mencari course pemrograman & design</p>
-                <a href="#find-course"
+                <a href="/explore"
                     class="animate__animated animate__fadeInUp animate__delay-2s inline-block font-semibold mt-6 rounded-lg no-underline text-white bg-blue-500 hover:bg-blue-700 transition-all px-6 py-3">Explore
                     Tutorial</a>
             </div>
