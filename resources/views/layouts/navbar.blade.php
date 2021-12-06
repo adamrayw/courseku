@@ -1,5 +1,5 @@
 <div class="text-center text-blue-700 p-2 text-xs md:text-sm bg-blue-200 border-t-2 border-b-2 border-blue-500">
-    <p>Sekarang courseku punya aplikasi nya, <a class="underline" href="#banner">Download Sekarang!</a></p>
+    <p>Sekarang courseku punya aplikasi nya, <a class="underline" href="http://courseku.herokuapp.com/home#banner">Download Sekarang!</a></p>
 </div>
 <nav class=" bg-white shadow p-3">
     <div class="max-w-7xl mx-auto flex items-center flex-wrap">
