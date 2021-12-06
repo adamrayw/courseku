@@ -7,7 +7,7 @@
                 <a href="https://www.instagram.com/courseku.id/" class="mr-4 mb-4 md:mb-0 hover:underline transition-all">Follow Us</a>
                 <a href="#" class="mr-4 mb-4 md:mb-0 hover:underline transition-all">Feedback</a>
                 <a href="http://roadmap.sh/" class="mr-4 mb-4 md:mb-0 hover:underline transition-all">Roadmap</a>
-                <a href="https://dl.dropbox.com/s/a8w6nwbrpt00701/app.apk?dl=0" class="mr-4 mb-4 md:mb-0 hover:underline transition-all">Our App</a>
+                <a href="http://courseku.herokuapp.com/home#banner" class="mr-4 mb-4 md:mb-0 hover:underline transition-all">Our App</a>
                 <a href="#" class="mr-4 mb-4 md:mb-0 hover:underline transition-all">About</a>
             </div>
             <div class="mt-4">
