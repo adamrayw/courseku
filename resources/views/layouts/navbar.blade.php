@@ -1,4 +1,4 @@
-<div class="text-center text-blue-800 p-2 text-xs md:text-sm bg-blue-300 border-t-2 border-b-2 border-blue-400">
+<div class="text-center text-blue-700 p-2 text-xs md:text-sm bg-blue-200 border-t-2 border-b-2 border-blue-500">
     <p>Sekarang courseku punya aplikasi nya, <a class="underline" href="#banner">Download Sekarang!</a></p>
 </div>
 <nav class=" bg-white shadow p-3">
