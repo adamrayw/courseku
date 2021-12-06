@@ -1,6 +1,6 @@
 <nav class="flex items-center bg-white shadow p-3 flex-wrap">
     <a href="/" class="p-2 mr-4 inline-flex items-center">
-        <span class="text-xl text-blue-500 font-bold uppercase tracking-wide"><img src="/img/logo_brand_crop.png" alt="logo_brand" width="40"></span>
+        <span class="text-xl text-blue-500 font-bold uppercase tracking-wide">COURSEKU</span>
     </a>
     <button class="text-gray-600 inline-flex p-3 hover:bg-gray-600 hover:text-white transition rounded-lg lg:hidden ml-auto outline-none nav-toggler" data-target="#navigation">
         <i class="fas fa-bars fa-lg"></i>
