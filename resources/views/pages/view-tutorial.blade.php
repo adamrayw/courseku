@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'View Tutorial')
+@section('title', 'View Course')
 
 @section('content')
 @foreach ($datas as $data)
