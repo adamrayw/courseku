@@ -48,7 +48,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex justify-between mt-4">
+                                <div class="flex justify-between items-center mt-4">
                                     <p class="text-xs text-gray-500">Disubmit oleh {{ $tutorial->submitted_by }}
                                     </p>
                                     <div class="flex justify-end items-center font-thin">
