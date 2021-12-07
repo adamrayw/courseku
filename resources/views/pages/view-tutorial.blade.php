@@ -7,16 +7,16 @@
     @foreach ($datas as $data)
         <section class="max-w-7xl mt-20 md:mx-auto mx-4 shadow-lg rounded-b-lg">
             <header class="text-left bg-blue-500 py-8 md:px-12 px-4  rounded-t-lg">
-                <h1 class="text-white font-semibold md:text-4xl text-xl">{{ $data->name }}</h1>
+                <h1 class="text-white font-semibold md:text-2xl text-xl">{{ $data->name }}</h1>
                 <div class="flex justify-between items-center mt-6">
                     <div class="flex items-center">
-                        <p class=" bg-white px-2 py-1 rounded-md md:text-base text-xs text-blue-500 mr-2">
+                        <p class=" bg-white px-2 py-1 rounded-md md:text-sm text-xs text-blue-500 mr-2">
                             {{ $data->type }} </p>
-                        <p class=" bg-white px-2 py-1 rounded-md md:text-base text-xs text-blue-500">
+                        <p class=" bg-white px-2 py-1 rounded-md md:text-sm text-xs text-blue-500">
                             {{ $data->level }} </p>
                     </div>
                     <div>
-                        <p class="text-white md:text-sm text-xs">Disubmit oleh {{ $data->submitted_by }}</p>
+                        <p class="text-white md:text-lg text-xs">Disubmit oleh {{ $data->submitted_by }}</p>
                     </div>
                 </div>
             </header>
