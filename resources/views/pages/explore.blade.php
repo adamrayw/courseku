@@ -31,26 +31,36 @@
                         <a href="/course/{{ $tutorial->slug }}">
                             <div
                                 class="card relative bg-white border border-gray-200 text-left shadow-sm p-4 rounded-lg hover:shadow-lg transition">
-                                <div class="mb-8">
-                                    <p class="ml-2 mb-1 pr-8 font-semibold text-xl text-gray-600">{{ $tutorial->name }}
+                                <div class="mb-4">
+                                    <p class="mb-1 font-semibold text-base text-gray-600">{{ $tutorial->name }}
                                     </p>
-                                    <p class="ml-2 text-xs text-gray-500">{{ $tutorial->author }}</p>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center">
-                                        <p class="text-xs ml-2 text-gray-500">Submitted by {{ $tutorial->submitted_by }}
-                                        </p>
+                                    <p class="text-xs text-gray-500">{{ $tutorial->author }}</p>
+                                    <div class="flex justify-between items-center mt-6">
+                                        <div class="flex items-center">
+                                            <p class=" bg-blue-500 px-2 py-1 rounded-md  text-xs text-white mr-2">
+                                                {{ $tutorial->type }} </p>
+                                            <p class=" bg-blue-500 px-2 py-1 rounded-md  text-xs text-white">
+                                                {{ $tutorial->level }} </p>
+                                        </div>
+                                        <div>
+
+
+                                        </div>
                                     </div>
-                                    <div class="flex items-center font-thin">
-                                        <p class="text-sm ml-2 text-gray-500"><i class="fas fa-thumbs-up mr-1"></i>
+                                </div>
+                                <div class="flex justify-between mt-4">
+                                    <p class="text-xs text-gray-500">Disubmit oleh {{ $tutorial->submitted_by }}
+                                    </p>
+                                    <div class="flex justify-end items-center font-thin">
+                                        <p class="text-sm text-gray-500"><i class="fas fa-thumbs-up mr-1"></i>
                                             {{ count($tutorial->votes) }}</p>
                                         <p class="text-sm ml-3 text-gray-500"><i class="fas fa-comment mr-1"></i>
                                             {{ count($tutorial->comments) }}</p>
                                     </div>
                                 </div>
-                                <p
+                                {{-- <p
                                     class="absolute right-0 top-0 bg-blue-500 px-2 py-1 rounded-bl-md rounded-tr-md text-sm text-white">
-                                    {{ $tutorial->type }} </p>
+                                    {{ $tutorial->type }} </p> --}}
                             </div>
                         </a>
                     @else
