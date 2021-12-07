@@ -71,7 +71,7 @@
                         x-transition:leave="transition ease duration-100 transform"
                         x-transition:leave-start="opacity-100 scale-100 translate-y-0"
                         x-transition:leave-end="opacity-0 scale-90 translate-y-1">
-                        <h1 class="text-center my-6 text-xl">Login to like, save, and comment this tutorial.</h1>
+                        <h1 class="text-center my-6 text-xl">Login to like, bookmark, and comment this tutorial.</h1>
                         <div class="text-center">
                             <button @click="showModal = !showModal"
                                 class="px-4 py-2 text-sm  bg-gray-600 rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-normal hover:bg-gray-700 focus:bg-indigo-50 focus:text-gray-200">Later</button>
@@ -108,7 +108,7 @@
                         x-transition:leave="transition ease duration-100 transform"
                         x-transition:leave-start="opacity-100 scale-100 translate-y-0"
                         x-transition:leave-end="opacity-0 scale-90 translate-y-1">
-                        <h1 class="text-center my-6 text-xl">Login to like, save, and comment this tutorial.</h1>
+                        <h1 class="text-center my-6 text-xl">Login to like, bookmark, and comment this tutorial.</h1>
                         <div class="text-center">
                             <button @click="showModal = !showModal"
                                 class="px-4 py-2 text-sm  bg-gray-600 rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-normal hover:bg-gray-700 focus:bg-indigo-50 focus:text-gray-200">Later</button>
