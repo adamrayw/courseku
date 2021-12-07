@@ -35,6 +35,7 @@
             transform: translate(0) scale(1);
             visibility: visible;
         }
+
     </style>
     <title>COURSEKU - @yield('title')</title>
 </head>
@@ -51,6 +52,10 @@
     <footer>
         @include('layouts.footer')
     </footer>
+    <script src="/js/particles.js-master/particles.js">
+    </script>
+    <script src="/js/particles.js-master/demo/js/app.js">
+    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/6678200964.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -58,7 +63,7 @@
         AOS.init({
             once: true,
         });
-      </script>
+    </script>
     <script>
         function Toggle() {
             var pass = document.getElementById('pass');
@@ -75,6 +80,7 @@
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10">
     </script>
+
     <x-livewire-alert::scripts />
 </body>
 
