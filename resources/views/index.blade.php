@@ -5,7 +5,7 @@
 @section('content')
     <section>
         <div
-            class="max-w-7xl mx-auto flex md:flex-row flex-col text-center md:text-left justify-between items-center pt-20 md:pb-28 pb-0 ">
+            class="max-w-7xl mx-auto flex md:flex-row flex-col text-center md:text-left justify-between items-center pt-20 md:pb-28 pb-24 ">
             <div class="px-4">
                 <h1 class="font-bold mb-2 text-gray-600 text-4xl">Selamat datang di
                     Courseku!</h1>
