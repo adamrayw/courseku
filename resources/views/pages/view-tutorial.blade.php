@@ -6,7 +6,7 @@
 
     @foreach ($datas as $data)
         <section class="max-w-7xl mt-20 md:mx-auto mx-4 shadow-lg rounded-b-lg">
-            <div class="relative text-left bg-blue-500  h-40 rounded-t-lg" id="particles-js">
+            <div class="relative text-left bg-blue-500 rounded-t-lg" id="particles-js">
                 <div class="absolute w-full py-8 md:px-12 px-4">
                     <h1 class="text-white font-semibold md:text-2xl text-xl">{{ $data->name }}</h1>
                     <div class="flex justify-between items-center mt-6">
