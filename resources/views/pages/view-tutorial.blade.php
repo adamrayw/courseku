@@ -45,7 +45,7 @@
                     <a class="md:inline-block block bg-blue-600 px-6 md:py-4 py-2 rounded-md md:text-xl text-base text-center font-semibold text-white hover:bg-blue-700 transition"
                     href="{{ $data->source_link }}">Mulai Belajar</a>
                 </div>
-                <hr class="mt-8">
+                <hr class="mt-4">
             </main>
         </section>
     @endforeach
