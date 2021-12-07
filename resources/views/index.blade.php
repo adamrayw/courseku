@@ -13,7 +13,7 @@
                     mencari course pemrograman & design</p>
                 <a href="/explore"
                     class="animate__delay-2s inline-block font-semibold mt-6 rounded-lg no-underline text-white bg-blue-500 hover:bg-blue-700 transition-all px-6 py-3">Explore
-                    Tutorial</a>
+                    Course</a>
             </div>
             <div class="md:visible invisible">
                 <img src="/img/hero.svg" alt="hero" width="260">
