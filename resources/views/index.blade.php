@@ -19,9 +19,7 @@
                 <img src="/img/hero.svg" alt="hero" width="260">
             </div>
         </div>
-        <div class="max-w-7xl mx-auto">
-            <hr>
-        </div>
+
     </section>
     <section class="max-w-7xl mx-auto md:px-0 px-4">
         <div class="flex justify-between items-center mt-20 px-4 md:px-0" id="find-course">
