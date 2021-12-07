@@ -5,7 +5,7 @@
 @section('content')
     <section>
         <div
-            class="max-w-7xl mx-auto flex md:flex-row flex-col text-center md:text-left justify-between items-center pt-20 md:pb-28 pb-24 ">
+            class="max-w-7xl mx-auto flex md:flex-row flex-col text-center md:text-left justify-between items-center pt-20 md:pb-28 pb-6 ">
             <div class="px-4">
                 <h1 class="font-bold mb-2 text-gray-600 text-4xl">Selamat datang di
                     Courseku!</h1>
@@ -14,6 +14,10 @@
                 <a href="/explore"
                     class="animate__delay-2s inline-block font-semibold mt-6 rounded-lg no-underline text-white bg-blue-500 hover:bg-blue-700 transition-all px-6 py-3">Explore
                     Course</a>
+                <div class="mt-10 animate-bounce">
+                    <a href="#find-course" class=" text-gray-500 mt-1"><i
+                            class="fas fa-arrow-down text-blue-500"></i></a>
+                </div>
             </div>
             <div class="md:visible invisible">
                 <img src="/img/hero.svg" alt="hero" width="260">
