@@ -17,7 +17,7 @@
                             </span>
                         </div>
                         <input type="text" name="search" id="search"
-                            class="focus:ring-blue-500 focus:border-blue-500 transition block w-full px-10 py-4 sm:text-sm border-gray-300 rounded-lg"
+                            class=" block w-full px-10 py-4 sm:text-sm border border-transparent rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                             placeholder="Cari course...">
 
                     </div>
