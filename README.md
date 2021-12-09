@@ -22,6 +22,6 @@ Courseku also have admin dashboard that manage all feature:
 - Tutorials, in the tutorials menu, there is a menu for managing tutorials and add new tutorial.
 - Comments, in the comments menu, there is a menu for managing comments.
 
-More features:
+Other features:
 - When the user has submitted, on my profile page, and in the submitted tab, there is information about whether the submitted course was approved or not.
 - If a user spams or comments with dirty or rude words, in courseku has a suspension feature, if the user is suspended, the user cannot comment.
