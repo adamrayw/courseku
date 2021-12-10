@@ -61,7 +61,7 @@
                         class="px-4 py-2 bg-blue-500 active:bg-blue-700 shadow-lg transition text-white rounded-md">POST</button>
                 </form>
                 @else
-                <h2 class="text-blue-500">You must <a class="underline semibold" href="/login">Login</a> to comment!</h2>
+                <h2 class="text-blue-500 text-center">You must <a class="underline semibold" href="/login">Login</a> to comment!</h2>
                 @endif
 
                 </div>
