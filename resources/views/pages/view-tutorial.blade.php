@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <main class="py-8 md:px-12 px-4">
+            <main class="py-6 md:px-12 px-4">
                 <div class="flex justify-between items-center">
                     <div class="author">
                         <h2 class="text-gray-600 font-semibold md:text-2xl text-base mb-1">Author</h2>
