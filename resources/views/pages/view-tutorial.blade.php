@@ -78,7 +78,7 @@
                                 x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300"
                                 x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
                                 <!-- Modal -->
-                                <div x-show="showModal" class="bg-white rounded-xl shadow-2xl p-6 w-full sm:w-5/12 mx-10"
+                                <div x-show="showModal" class="bg-white h-60 rounded-xl shadow-2xl p-6 w-full sm:w-5/12 mx-10"
                                     @click.away="showModal = false"
                                     x-transition:enter="transition ease duration-100 transform"
                                     x-transition:enter-start="opacity-0 scale-90 translate-y-1"
@@ -86,13 +86,31 @@
                                     x-transition:leave="transition ease duration-100 transform"
                                     x-transition:leave-start="opacity-100 scale-100 translate-y-0"
                                     x-transition:leave-end="opacity-0 scale-90 translate-y-1">
-                                    <h1 class="text-center my-6 text-xl">Login to like, save, and comment this tutorial.
-                                    </h1>
-                                    <div class="text-center">
-                                        <button @click="showModal = !showModal"
-                                            class="px-4 py-2 text-sm  bg-gray-600 rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-normal hover:bg-gray-700 focus:bg-indigo-50 focus:text-gray-200">Later</button>
-                                        <a href="/login"
-                                            class="px-4 py-2 text-sm bg-blue-600 rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-normal hover:bg-blue-700 focus:bg-indigo-50 focus:text-gray-200">Login</a>
+                                    <div class="mb-1 flex justify-between items-center">
+                                        <h1 class=" text-xl">Comments
+                                        </h1>
+                                        <div class="text-center">
+                                            <button @click="showModal = !showModal" class=""><i
+                                                    class="fas fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mt-4">
+                                        @foreach ($data->comments as $comm)
+                                            <div class="flex justify-between items-center">
+                                                <div class="flex items-center">
+                                                    <div
+                                                        class="flex justify-center items-center h-10 py-2 px-4 mr-3 text-white bg-gray-600 rounded-full">
+                                                        <p>{{ $comm->user->name[0] }}</p>
+                                                    </div>
+                                                    <div>
+                                                        <p class="font-medium text-gray-600">{{ $comm->user->name }}</p>
+                                                        <p class="text-sm text-gray-500">{{ $comm->comment }}</p>
+                                                    </div>
+                                                </div>
+                                                <p class="text-gray-400 font-light">{{ $comm->created_at->diffForHumans() }}</p>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
