@@ -80,6 +80,9 @@
                                 </div>
                                 <hr>
                                 <div class="mt-1 h-60 overflow-auto">
+                                    @if (count($data->comments) == 0)
+                                        <p class="text-center my-10 text-gray-500">No comments yet</p>
+                                    @endif
                                     @foreach ($data->comments as $comm)
                                         <div
                                             class="flex md:flex-row flex-col justify-between md:items-center items-start my-4">
