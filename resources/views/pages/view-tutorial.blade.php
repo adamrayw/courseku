@@ -79,7 +79,7 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="mt-4 h-60 overflow-auto">
+                                <div class="mt-1 h-60 overflow-auto">
                                     @foreach ($data->comments as $comm)
                                         <div
                                             class="flex md:flex-row flex-col justify-between md:items-center items-start my-4">
