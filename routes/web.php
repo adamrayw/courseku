@@ -28,6 +28,10 @@ Route::get('/edit-profile', [ProfileController::class, 'editProfile'])->middlewa
 
 Route::post('/edit-profile', [ProfileController::class, 'updateProfile'])->middleware('auth');
 
+Route::post('/delete-course', [ProfileController::class, 'deleteTutorial'])->middleware('auth');
+
+
+
 Route::get('/', function () {
     return redirect('/home');
 });
