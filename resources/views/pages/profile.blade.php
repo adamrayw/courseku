@@ -188,19 +188,17 @@
                         <div class="card">
                             <div>
                                 <div class="flex flex-col justify-start items-start mb-4">
-                                    <a href="/course/{{ $submit->slug }}" class="font-medium text-gray-600">
+                                    <a href="/course/{{ $submit->slug }}" class="font-medium text-gray-600 mb-2">
                                         {{ $submit->name }}</a>
                                     <div class="inline-block text-xs">
                                         @if ($submit->status == 'Draft')
                                             <div class="flex items-center">
                                                 <p
-                                                    class="inline-block bg-gray-200 text-gray-700 text-xs px-1 py-1 rounded-sm font-semibold">
+                                                    class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-sm font-semibold">
                                                     Under Review</p>
                                                 <i class="text-gray-400 mx-1">•</i>
-
-
                                                 <div x-data="{ showModal : false }">
-                                                    <button class="mx-1" @click="showModal = !showModal"><i
+                                                    <button class="mx-1 text-red-500" @click="showModal = !showModal"><i
                                                             class="fas fa-trash"></i></button>
                                                     <div x-show=" showModal"
                                                         class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0"
@@ -220,8 +218,9 @@
                                                             x-transition:leave="transition ease duration-100 transform"
                                                             x-transition:leave-start="opacity-100 scale-100 translate-y-0"
                                                             x-transition:leave-end="opacity-0 scale-90 translate-y-1">
-                                                            <h1 class="text-center my-6 text-xl">Apakah kamu yakin ingin
+                                                            <h1 class="text-center mt-6 mb-2 font-bold text-xl">Apakah kamu yakin ingin
                                                                 menghapusnya?</h1>
+                                                                <p class="text-gray-500 mb-6 text-center">Dengan menghapus, kamu akan kehilangan 100 Points.</p>
                                                             <div class="flex justify-center items-center">
                                                                 <button @click="showModal = !showModal"
                                                                     class="px-4 py-2 text-sm mx-1 bg-gray-600 rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-normal hover:bg-gray-700 focus:bg-indigo-50 focus:text-gray-200">Batal</button>
