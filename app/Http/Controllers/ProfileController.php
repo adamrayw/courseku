@@ -89,6 +89,6 @@ class ProfileController extends Controller
         $tutor->saves()->delete();
         $tutor->delete();
 
-        return back()->with('successDelete', 'Tutorial deleted successfully!');
+        return back()->with('successDelete', 'Course berhasil dihapus!');
     }
 }
