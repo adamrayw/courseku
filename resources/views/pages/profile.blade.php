@@ -77,7 +77,7 @@
                     </div>
                     <div class="mt-1 flex items-center">
                         <i class="fas fa-star fa-sm text-blue-600 mr-2"></i>
-                        <p class="text-gray-500">240 Points</p>
+                        <p class="text-gray-500">{{Auth()->user()->points}}</p>
                     </div>
                     <!-- <a href="#!" class="mt-2 inline-block text-center border-2 text-gray-500 text-sm border-gray-500 rounded-md px-6 py-2">Follow</a> -->
                 </div>
