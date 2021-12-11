@@ -4,6 +4,7 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ContributorController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\ProfileController;
@@ -35,6 +36,7 @@ Route::post('/delete-course', [ProfileController::class, 'deleteTutorial'])->mid
 Route::get('/', function () {
     return redirect('/home');
 });
+Route::get('/top-contributor', [ContributorController::class, 'contributor']);
 
 Route::get('/home', [HomeController::class, 'index']);
 
@@ -49,6 +51,7 @@ Route::get('/course/{slug}', [TutorialsController::class, 'show']);
 Route::post('/course/{slug}', [CommentController::class, 'store']);
 
 Route::get('/{category:slug}', [CoursesController::class, 'field']);
+
 
 
 // admin
