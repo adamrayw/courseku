@@ -26,6 +26,29 @@
             </div>
         </div>
     @endif
+    @if (session('successDelete'))
+        <div class="mb-2 alert alert-success" x-data="{cookies: true}" x-show="cookies">
+            <div class="bg-green-200 flex border-green-600 text-green-600 border-l-4 p-4" role="alert">
+                <div>
+                    <p class="font-bold">
+                        Success
+                    </p>
+                    <p>
+                        {{ session('successDelete') }}
+                    </p>
+                </div>
+                <div class="ml-auto">
+                    <p class="cursor-pointer" @click="cookies = false">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </p>
+                </div>
+            </div>
+        </div>
+    @endif
     <section class="my-20 max-w-3xl mx-4 md:mx-auto h-4/6">
         <div class="flex flex-col md:flex-row">
             <div class="flex items-start">
@@ -90,7 +113,7 @@
                                         </g>
                                     </g>
                                 </svg>
-                                <h1 class="mt-2 text-gray-600">No course liked.</h1>
+                                <h1 class="mt-2 text-gray-600">Tidak ada course yang dilike.</h1>
                             </div>
                         </div>
                     @endif
@@ -122,7 +145,7 @@
                                         </g>
                                     </g>
                                 </svg>
-                                <h1 class="mt-2 text-gray-600">No course bookmarked.</h1>
+                                <h1 class="mt-2 text-gray-600">Tidak ada course yang dibookmark.</h1>
                             </div>
                         </div>
                     @endif
@@ -138,7 +161,7 @@
                 </div>
                 <div class="p-4 bg-gray-50 space-y-2 h-60 overflow-auto" x-show.transition.in="active === 2">
                     @if (count($submits) == 0)
-                        <div class="flex justify-center items-center p-9 bg-gray-50 space-y-2 overflow-auto"
+                        <div class="flex justify-center items-center p-4 bg-gray-50 space-y-2 overflow-auto"
                             x-show.transition.in="active === 2">
                             <div class="flex flex-col justify-center items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
@@ -155,7 +178,8 @@
                                         </g>
                                     </g>
                                 </svg>
-                                <h1 class="mt-2 text-gray-600">You don't have submissions.</h1>
+                                <h1 class="mt-2 text-gray-600">Anda belum pernah mengirim course.</h1>
+                                <a href="/submit-tutorial" class="mt-2 text-gray-400 underline">Kirim course disini</a>
                             </div>
                         </div>
                     @endif
@@ -168,14 +192,52 @@
                                         {{ $submit->name }}</a>
                                     <div class="inline-block text-xs">
                                         @if ($submit->status == 'Draft')
-                                            <p
-                                                class="inline-block bg-gray-200 text-gray-700 text-xs px-1 py-1 rounded-sm font-semibold">
-                                                Under Review</p>
-                                            <i class="text-gray-400 mx-1">•</i>
-                                            <a href="/course/{{ $submit->slug }}"
-                                                class="inline-block text-sm py-1 capitalize text-gray-500 hover:text-gray-700">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
+                                            <div class="flex items-center">
+                                                <p
+                                                    class="inline-block bg-gray-200 text-gray-700 text-xs px-1 py-1 rounded-sm font-semibold">
+                                                    Under Review</p>
+                                                <i class="text-gray-400 mx-1">•</i>
+
+
+                                                <div x-data="{ showModal : false }">
+                                                    <button class="mx-1" @click="showModal = !showModal"><i
+                                                            class="fas fa-trash"></i></button>
+                                                    <div x-show=" showModal"
+                                                        class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0"
+                                                        x-transition:enter="transition ease duration-300"
+                                                        x-transition:enter-start="opacity-0"
+                                                        x-transition:enter-end="opacity-100"
+                                                        x-transition:leave="transition ease duration-300"
+                                                        x-transition:leave-start="opacity-100"
+                                                        x-transition:leave-end="opacity-0">
+                                                        <!-- Modal -->
+                                                        <div x-show="showModal"
+                                                            class="bg-white rounded-xl shadow-2xl p-6 w-full sm:w-5/12 mx-10"
+                                                            @click.away="showModal = false"
+                                                            x-transition:enter="transition ease duration-100 transform"
+                                                            x-transition:enter-start="opacity-0 scale-90 translate-y-1"
+                                                            x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                                                            x-transition:leave="transition ease duration-100 transform"
+                                                            x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+                                                            x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+                                                            <h1 class="text-center my-6 text-xl">Apakah kamu yakin ingin
+                                                                menghapusnya?</h1>
+                                                            <div class="flex justify-center items-center">
+                                                                <button @click="showModal = !showModal"
+                                                                    class="px-4 py-2 text-sm mx-1 bg-gray-600 rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-normal hover:bg-gray-700 focus:bg-indigo-50 focus:text-gray-200">Batal</button>
+                                                                <form action="/delete-course" method="post">
+                                                                    @csrf
+                                                                    <input type="hidden" name="id"
+                                                                        value="{{ $submit->id }}">
+                                                                    <button
+                                                                        class="px-4 py-2 text-sm mx-1 bg-red-600 rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-normal hover:bg-red-700 focus:bg-indigo-50 focus:text-gray-200">Ya,
+                                                                        yakin</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         @elseif ($submit->status == 'Release')
                                             <p
                                                 class="inline-block bg-green-100 text-green-700 text-xs px-1 py-1 rounded-sm font-semibold">
