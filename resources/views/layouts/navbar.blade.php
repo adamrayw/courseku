@@ -1,5 +1,6 @@
 <div class="text-center text-blue-700 p-3 text-xs md:text-sm bg-blue-200 border border-blue-500">
-    <p>Sekarang courseku punya aplikasi nya, <a class="underline" href="http://courseku.herokuapp.com/home#banner">Download Sekarang!</a></p>
+    <p>Sekarang courseku punya aplikasi nya, <a class="underline"
+            href="http://courseku.herokuapp.com/home#banner">Download Sekarang!</a></p>
 </div>
 <nav class=" bg-white shadow p-3">
     <div class="max-w-7xl mx-auto flex items-center flex-wrap">
@@ -24,14 +25,17 @@
                 </a>
                 <a href="/top-contributor"
                     class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-blue-500 transition-all">
-                    <span>Top Contributor</span>
+                    <div class="flex items-center">
+                        <span>Top Contributor</span>
+                        <div class="ml-2 top-0 right-0 text-xs text-white bg-blue-500 px-1 rounded-lg">New!</div>
+                    </div>
                 </a>
                 {{-- <a href="/design"
                     class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-blue-500 transition-all">
                     <span>Design</span>
                 </a> --}}
                 @if (Auth::check())
-                    <div x-data="{ dropdownOpen: false }" class="relative ml-auto">
+                    <div x-data="{ dropdownOpen: false }" class="relative md:ml-4 ml-auto">
                         <button @click="dropdownOpen = !dropdownOpen"
                             class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
                             <div class="flex justify-between items-center">
