@@ -111,6 +111,7 @@
                     <div class="text-red-500 text-sm">{{ $message }}</div>
                     @enderror
                 </div>
+                <p class="text-gray-400 font-light mb-1 text-xs">Dengan mengklik submit kamu sudah berkontribusi, dan mendapatkan 100 Points!</p>
                 <div class="mt-8 flex justify-between items-center">
                     <div x-data="{ showModal : false }">
                         <a @click="showModal = !showModal" class="text-lg mr-2 text-gray-600"><i class="fas fa-question-circle fa-lg"></i></a>
