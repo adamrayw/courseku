@@ -78,7 +78,7 @@
                 @else
                     <a href="/register"
                         class="lg:inline-flex text-center lg:w-auto w-full px-4 mt-2 md:mt-0 py-2 rounded text-white items-center justify-center bg-blue-500 hover:bg-blue-700 transition">
-                        <span>Sign Up</span>
+                        <span>Register</span>
                     </a>
                 @endif
             </div>
