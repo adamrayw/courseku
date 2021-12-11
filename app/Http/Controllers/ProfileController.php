@@ -81,4 +81,14 @@ class ProfileController extends Controller
 
         return redirect('/profile')->with('success', 'Profile updated successfully!');
     }
+
+    public function deleteTutorial(Request $request) {
+        $tutor = Tutorials::findOrFail($request->id);
+        $tutor->votes()->delete();
+        $tutor->comments()->delete();
+        $tutor->saves()->delete();
+        $tutor->delete();
+
+        return back()->with('successDelete', 'Tutorial deleted successfully!');
+    }
 }
