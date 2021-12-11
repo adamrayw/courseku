@@ -22,14 +22,14 @@
                     class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-blue-500 transition-all">
                     <span>Explore</span>
                 </a>
-                <a href="/programming"
+                <a href="/top-contributor"
                     class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-blue-500 transition-all">
-                    <span>Programming</span>
+                    <span>Top Contributor</span>
                 </a>
-                <a href="/design"
+                {{-- <a href="/design"
                     class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-blue-500 transition-all">
                     <span>Design</span>
-                </a>
+                </a> --}}
                 @if (Auth::check())
                     <div x-data="{ dropdownOpen: false }" class="relative ml-auto">
                         <button @click="dropdownOpen = !dropdownOpen"
