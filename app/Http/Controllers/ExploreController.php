@@ -12,7 +12,7 @@ class ExploreController extends Controller
         $searchVal = $request->input('search');
 
         if($request->input('search') == '') {
-            $tutorials = Tutorials::orderBy('created_at', 'desc')->with(['votes', 'comments'])->paginate(4);
+            $tutorials = Tutorials::where('status', 'Release')->orderBy('created_at', 'desc')->with(['votes', 'comments'])->paginate(4);
         } else {
             $tutorials = Tutorials::query()->where("name", "ILIKE", "%{$request->input('search')}%")->with(['votes', 'comments'])->paginate(4);
         }
