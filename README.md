@@ -22,7 +22,7 @@ On the user side :
 - User can give like.
 - User can bookmark.
 - User can give comment.
-- Users can also see what courses are liked, saved, and what courses have been submitted, on my profile page.
+- Users can also see what courses are liked, bookmarked, and what courses have been submitted, on my profile page.
 
 Courseku also have admin dashboard that manage all feature:
 - Dashboard, displays recently added courses, new users, recent comments.
