@@ -55,12 +55,6 @@ class ProfileController extends Controller
         $explodeUser = explode(' ', $validated['submitted_by']);
         $validated['submitted_by'] = $explodeUser[0];
 
-        $user = User::find($request->user_id)->value('points');
-        $updatePoints = $user + 100;        
-
-        User::where('id', $request->user_id)->update([
-            'points' => $updatePoints,
-        ]);
         Tutorials::create($validated);
 
         return back()->with('success', 'Thank you for submitting, your submission is under review.');
@@ -87,7 +81,8 @@ class ProfileController extends Controller
         return redirect('/profile')->with('success', 'Profile updated successfully!');
     }
 
-    public function deleteTutorial(Request $request) {
+    public function deleteTutorial(Request $request)
+    {
         $tutor = Tutorials::findOrFail($request->id);
         $tutor->votes()->delete();
         $tutor->comments()->delete();
