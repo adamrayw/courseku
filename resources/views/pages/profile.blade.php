@@ -85,18 +85,19 @@
             </div>
         </div>
         <div class="mt-4 " x-data="{active: 0}">
-            <div class="flex bg-gray-50 overflow-hidden">
-                <button class="px-4 py-2 border-b border-gray-200 text-gray-600 w-full" x-on:click.prevent="active = 0"
-                    x-bind:class="{'border-blue-600 ': active === 0}">Liked</button>
-                <button class="px-4 py-2 border-b border-gray-200 text-gray-600 w-full" x-on:click.prevent="active = 1"
-                    x-bind:class="{'border-blue-600 ': active === 1}">Bookmarked</button>
-                <button class="px-4 py-2 border-b border-gray-200 text-gray-600 w-full" x-on:click.prevent="active = 2"
-                    x-bind:class="{'border-blue-600': active === 2}">Submitted</button>
+            <div class="flex bg-blue-500 text-white overflow-hidden rounded-tr-lg rounded-tl-lg">
+                <button class="px-4 py-2 w-full" x-on:click.prevent="active = 0"
+                    x-bind:class="{'bg-blue-700 text-blue-500 ': active === 0}"><i class="fas fa-thumbs-up"></i></button>
+                <button class="px-4 py-2 w-full" x-on:click.prevent="active = 1"
+                    x-bind:class="{'bg-blue-700 text-blue-500 ': active === 1}"><i class="fas fa-bookmark"></i></button>
+                <button class="px-4 py-2 w-full" x-on:click.prevent="active = 2"
+                    x-bind:class="{'bg-blue-700 text-blue-500': active === 2}"><i class="fas fa-paper-plane"></i></button>
             </div>
             <div class="bg-gray-50">
-                <div class=" p-4 bg-gray-50 space-y-2 h-60 overflow-auto" x-show.transition.in="active === 0">
+                <div class="p-4 bg-white shadow rounded-bl rounded-br space-y-2 h-60 overflow-auto"
+                    x-show.transition.in="active === 0">
                     @if (count($votes) == 0)
-                        <div class="flex justify-center items-center p-9 bg-gray-50 space-y-2 overflow-auto"
+                        <div class="flex justify-center items-center p-9 bg-white space-y-2 overflow-auto"
                             x-show.transition.in="active === 0">
                             <div class="flex flex-col justify-center items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
@@ -126,9 +127,10 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="p-4 bg-gray-50 space-y-2 h-60 overflow-auto" x-show.transition.in="active === 1">
+                <div class="p-4 bg-white shadow rounded-bl rounded-br space-y-2 h-60 overflow-auto"
+                    x-show.transition.in="active === 1">
                     @if (count($saves) == 0)
-                        <div class="flex justify-center items-center p-9 bg-gray-50 space-y-2 overflow-auto"
+                        <div class="flex justify-center items-center p-9 bg-white space-y-2 overflow-auto"
                             x-show.transition.in="active === 1">
                             <div class="flex flex-col justify-center items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
@@ -159,9 +161,10 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="p-4 bg-gray-50 space-y-2 h-60 overflow-auto" x-show.transition.in="active === 2">
+                <div class="p-4 bg-white shadow rounded-bl rounded-br space-y-2 h-60 overflow-auto"
+                    x-show.transition.in="active === 2">
                     @if (count($submits) == 0)
-                        <div class="flex justify-center items-center p-4 bg-gray-50 space-y-2 overflow-auto"
+                        <div class="flex justify-center items-center p-4 bg-white space-y-2 overflow-auto"
                             x-show.transition.in="active === 2">
                             <div class="flex flex-col justify-center items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
@@ -189,8 +192,8 @@
                         <div class="card">
                             <div>
                                 <div class="flex flex-col justify-start items-start mb-4">
-                                    <a href="/course/{{ $submit->slug }}" class="font-medium text-gray-600 mb-2">
-                                        {{ $submit->name }}</a>
+                                    <h3 class="font-medium text-gray-600 mb-2">
+                                        {{ $submit->name }}</h3>
                                     <div class="inline-block text-xs">
                                         @if ($submit->status == 'Draft')
                                             <div class="flex items-center">
@@ -242,21 +245,21 @@
                                             </div>
                                         @elseif ($submit->status == 'Release')
                                             <p
-                                                class="inline-block bg-green-100 text-green-700 text-xs px-1 py-1 rounded-sm font-semibold">
+                                                class="inline-block bg-green-100 rounded-lg text-green-700 text-xs px-1 py-1 font-semibold">
                                                 Approved</p>
                                             <i class="text-gray-400 mx-1">•</i>
                                             <a href="/course/{{ $submit->slug }}"
                                                 class="inline-block text-sm  py-1 capitalize text-gray-500 hover:text-gray-700">
-                                                View
+                                                Lihat
                                             </a>
                                             <i class="text-gray-400 mx-1">•</i>
-                                            <p
-                                                class="inline-block text-sm py-1 capitalize text-gray-500 hover:text-gray-700">
-                                                <i class="fas fa-eye mr-1"></i> {{ $submit->views }} Views
+                                            <p class="inline-block text-sm pl-1 text-gray-500">
+                                                {{ $submit->views }}x dilihat
                                             </p>
                                         @endif
                                     </div>
                                 </div>
+                                <hr class="w-full text-gray-200">
                             </div>
                         </div>
                     @endforeach
