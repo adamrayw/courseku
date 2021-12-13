@@ -126,7 +126,8 @@
                         @enderror
                     </div>
                     <p class="text-gray-400 font-light mb-1 text-xs">Dengan mengklik submit kamu sudah berkontribusi, dan
-                        mendapatkan 100 Points!</p>
+                        mendapatkan 100 points, jika submission kamu di <span
+                            class="text-green-500 font-semibold">disetujui</span>.</p>
                     <div class="mt-8 flex justify-between items-center">
                         <div x-data="{ showModal : false }">
                             <a @click="showModal = !showModal" class="text-lg mr-2 text-gray-600"><i
@@ -138,7 +139,7 @@
                                 x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300"
                                 x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
                                 <!-- Modal -->
-                                <div x-show="showModal" class="bg-white rounded-xl shadow-2xl p-6 w-full sm:w-5/12 mx-10"
+                                <div x-show="showModal" class="bg-white rounded-xl shadow-2xl p-6 w-full sm:w-5/12 mx-5"
                                     @click.away="showModal = false"
                                     x-transition:enter="transition ease duration-100 transform"
                                     x-transition:enter-start="opacity-0 scale-90 translate-y-1"
@@ -146,37 +147,50 @@
                                     x-transition:leave="transition ease duration-100 transform"
                                     x-transition:leave-start="opacity-100 scale-100 translate-y-0"
                                     x-transition:leave-end="opacity-0 scale-90 translate-y-1">
-                                    <h1 class="text-2xl font-semibold">Peraturan</h1>
-                                    <hr class="mb-6 text-gray-300">
-                                    <ul class="list-decimal pl-4">
+                                    <h1 class="text-2xl font-semibold mb-4">Peraturan</h1>
+                                    <div class=" h-60 overflow-auto">
+                                        <ul class="list-decimal pl-4">
+                                            <li>
+                                                <p class="leading-relaxed">Nama course harus jelas.</p>
+                                            </li>
+                                            <li>
+                                                <p class="leading-relaxed">Deskripsi harus sesuai dengan course yang
+                                                    dikirimkan.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p class="leading-relaxed">Author adalah penulis atau creator video dari
+                                                    course
+                                                    tersebut.</p>
+                                            </li>
+                                            <li>
+                                                <p class="leading-relaxed">Pilih type, misal kalian dapat course tersebut
+                                                    dari
+                                                    youtube pilih type Video.</p>
+                                            </li>
+                                            <li>
+                                                <p class="leading-relaxed">Pilih level, sesuaikan dengan course.</p>
+                                            </li>
+                                            <li>
+                                                <p class="leading-relaxed">Pilih category, sesuaikan dengan course.</p>
+                                            </li>
+                                            <li>
+                                                <p class="leading-relaxed">Link sumber harus link asli, link tidak boleh
+                                                    diperpendek atau di shortlink, link boleh mengandung afiliasi.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <hr class="text-gray-200 my-2">
+                                    <ol class="list-disc pl-4">
                                         <li>
-                                            <p class="leading-relaxed">Nama course harus jelas.</p>
+                                            <p class="mt-2 text-blue-500">Kami berhak mengubah/menghapus jika terdapat
+                                                bagian yang tidak sesuai!</p>
                                         </li>
                                         <li>
-                                            <p class="leading-relaxed">Deskripsi harus sesuai dengan course yang dikirimkan.
-                                            </p>
+                                            <p class="mt-2 text-blue-500">Kamu juga bisa lihat status submission kamu di
+                                                Profil Saya.</p>
                                         </li>
-                                        <li>
-                                            <p class="leading-relaxed">Author adalah penulis atau creator video dari course
-                                                tersebut.</p>
-                                        </li>
-                                        <li>
-                                            <p class="leading-relaxed">Pilih type, misal kalian dapat course tersebut dari
-                                                youtube pilih type Video.</p>
-                                        </li>
-                                        <li>
-                                            <p class="leading-relaxed">Pilih level, sesuaikan dengan course.</p>
-                                        </li>
-                                        <li>
-                                            <p class="leading-relaxed">Pilih category, sesuaikan dengan course.</p>
-                                        </li>
-                                        <li>
-                                            <p class="leading-relaxed">Link sumber harus link asli, link tidak boleh
-                                                diperpendek atau di shortlink, link boleh mengandung afiliasi.</p>
-                                        </li>
-                                    </ul>
-                                    <p class="mt-2 text-red-500">Kami berhak mengubah/menghapus jika terdapat bagian yang
-                                        tidak sesuai!</p>
+                                    </ol>
                                 </div>
                             </div>
                         </div>
