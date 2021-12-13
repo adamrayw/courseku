@@ -8,12 +8,21 @@ So many challenges and new things in building this platform.
 http://courseku.herokuapp.com/
 
 ## Features
+Main Feature:
+- Explore, user can find course by search.
+- Top Contributor, for users who frequently contribute by submit course.
+- Login.
+- Register.
+- Forgot Password, user will receive a email for reset password.
+- Kirim Course, users can send courses, and will get 100 points.
+- Profil Saya, displays you a member since, your point count, and there are 3 tabs, namely liked, bookmarked, and submitted.
+- Edit Profil, for edit your name and email.
+
 On the user side :
-- User can give like
-- User can bookmark
-- User can give comment
-- User can submit/contribute
-- Users can also see what courses are liked, saved, and what courses have been submitted, on my profile page
+- User can give like.
+- User can bookmark.
+- User can give comment.
+- Users can also see what courses are liked, bookmarked, and what courses have been submitted, on my profile page.
 
 Courseku also have admin dashboard that manage all feature:
 - Dashboard, displays recently added courses, new users, recent comments.
