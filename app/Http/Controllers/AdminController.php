@@ -225,6 +225,14 @@ class AdminController extends Controller
                 'status' => $request->status,
             ]);
 
+
+        $user = User::find($request->user_id)->value('points');
+        $updatePoints = $user + 100;
+
+        User::where('id', $request->user_id)->update([
+            'points' => $updatePoints,
+        ]);
+
         return back()->with('updateTutorialSuccess', 'Tutorial updated successfully!');
     }
 
