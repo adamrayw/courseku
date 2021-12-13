@@ -10,7 +10,8 @@
                 <i class="fas fa-question-circle fa-3x mb-2 text-blue-500"></i>
                 <h1 class="text-center text-gray-500 text-2xl">Course belum tersedia.</h1>
                 <a href="/explore"
-                    class="animate__delay-2s inline-block font-semibold mt-6 rounded-lg no-underline text-white bg-blue-500 hover:bg-blue-700 transition-all px-6 py-2">Go to Explore</a>
+                    class="animate__delay-2s inline-block font-semibold mt-6 rounded-lg no-underline text-white bg-blue-500 hover:bg-blue-700 transition-all px-6 py-2">Go
+                    to Explore</a>
             </div>
         @else
             <section class="max-w-5xl my-20 md:mx-auto mx-4 shadow-lg rounded-b-lg">
@@ -46,7 +47,7 @@
                         <a class="md:inline-block block bg-blue-500 px-6 md:py-2 py-2 rounded-md md:text-lg text-base text-center font-semibold text-white hover:bg-blue-700 transition"
                             href="{{ $data->source_link }}">Mulai Belajar</a>
                     </div>
-                    <hr class="mt-4">
+                    <hr class="mt-4 text-gray-300">
                     <div class="mt-6">
 
                         <div x-data="{ showModal : false }">

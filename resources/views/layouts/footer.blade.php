@@ -1,13 +1,15 @@
-<hr class="mt-10">
+<hr class="mt-10 text-gray-300">
 <footer class=" p-4 max-w-7xl mx-auto">
     <div class="flex flex-col-reverse md:flex-row justify-between py-4">
         <div class="pr-8">
             <div class="flex flex-col md:flex-row text-gray-500">
                 <a href="/submit-tutorial" class="mr-4 mb-4 md:mb-0 hover:underline transition-all">Kirim Course</a>
-                <a href="https://www.instagram.com/courseku.id/" class="mr-4 mb-4 md:mb-0 hover:underline transition-all">Follow Us</a>
+                <a href="https://www.instagram.com/courseku.id/"
+                    class="mr-4 mb-4 md:mb-0 hover:underline transition-all">Follow Us</a>
                 <a href="#" class="mr-4 mb-4 md:mb-0 hover:underline transition-all">Feedback</a>
                 <a href="http://roadmap.sh/" class="mr-4 mb-4 md:mb-0 hover:underline transition-all">Roadmap</a>
-                <a href="http://courseku.herokuapp.com/home#banner" class="mr-4 mb-4 md:mb-0 hover:underline transition-all">Our App</a>
+                <a href="http://courseku.herokuapp.com/home#banner"
+                    class="mr-4 mb-4 md:mb-0 hover:underline transition-all">Our App</a>
                 <a href="#" class="mr-4 mb-4 md:mb-0 hover:underline transition-all">About</a>
             </div>
             <div class="mt-4">

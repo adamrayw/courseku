@@ -27,7 +27,7 @@
                     class="lg:inline-flex lg:w-auto w-full px-4 py-2 rounded text-gray-400 items-center justify-center hover:text-blue-500 transition-all">
                     <div class="flex items-center">
                         <span>Top Contributor</span>
-                        <div class="ml-2 top-0 right-0 text-xs text-white bg-blue-500 px-1 rounded-lg">New!</div>
+                        <div class="ml-2 top-0 right-0 text-xs text-white bg-blue-500 px-1 py-0.5 rounded-lg">New!</div>
                     </div>
                 </a>
                 {{-- <a href="/design"
@@ -52,7 +52,7 @@
                             <p class="block px-4 py-2 text-sm capitalize text-blue-500 font-semibold">
                                 Hi, {{ Auth()->user()->name }}
                             </p>
-                            <hr class="mb-1">
+                            <hr class="mb-1 text-gray-300">
 
                             <!-- SUBMIT TUTORiAL -->
 
