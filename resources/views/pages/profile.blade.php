@@ -198,8 +198,8 @@
                                         @if ($submit->status == 'Draft')
                                             <div class="flex items-center">
                                                 <p
-                                                    class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-sm font-semibold">
-                                                    Under Review</p>
+                                                    class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-lg font-semibold">
+                                                    Sedang ditinjau</p>
                                                 <i class="text-gray-400 mx-1">•</i>
                                                 <div x-data="{ showModal : false }">
                                                     <button class="mx-1 text-red-500" @click="showModal = !showModal"><i
@@ -214,7 +214,7 @@
                                                         x-transition:leave-end="opacity-0">
                                                         <!-- Modal -->
                                                         <div x-show="showModal"
-                                                            class="bg-white rounded-xl shadow-2xl p-6 w-full sm:w-5/12 mx-10"
+                                                            class="bg-white rounded-xl shadow-2xl px-6 pb-6 w-full sm:w-5/12 mx-4"
                                                             @click.away="showModal = false"
                                                             x-transition:enter="transition ease duration-100 transform"
                                                             x-transition:enter-start="opacity-0 scale-90 translate-y-1"
@@ -225,9 +225,7 @@
                                                             <h1 class="text-center mt-6 mb-2 font-bold text-xl">Apakah kamu
                                                                 yakin ingin
                                                                 menghapusnya?</h1>
-                                                            <p class="text-gray-500 mb-6 text-center">Dengan menghapus, kamu
-                                                                akan kehilangan 100 Points.</p>
-                                                            <div class="flex justify-center items-center">
+                                                            <div class="flex justify-center items-center mt-6">
                                                                 <button @click="showModal = !showModal"
                                                                     class="px-4 py-2 text-sm mx-1 bg-gray-600 rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-normal hover:bg-gray-700 focus:bg-indigo-50 focus:text-gray-200">Batal</button>
                                                                 <form action="/delete-course" method="post">
@@ -246,14 +244,14 @@
                                         @elseif ($submit->status == 'Release')
                                             <p
                                                 class="inline-block bg-green-100 rounded-lg text-green-700 text-xs px-1 py-1 font-semibold">
-                                                Approved</p>
+                                                Disetujui</p>
                                             <i class="text-gray-400 mx-1">•</i>
                                             <a href="/course/{{ $submit->slug }}"
                                                 class="inline-block text-sm  py-1 capitalize text-gray-500 hover:text-gray-700">
                                                 Lihat
                                             </a>
                                             <i class="text-gray-400 mx-1">•</i>
-                                            <p class="inline-block text-sm pl-1 text-gray-500">
+                                            <p class="inline-block text-sm text-gray-500">
                                                 {{ $submit->views }}x dilihat
                                             </p>
                                         @endif
