@@ -77,7 +77,7 @@
                     </div>
                     <div class="mt-1 flex items-center">
                         <i class="fas fa-star fa-sm text-blue-600 mr-2"></i>
-                        <p class="text-gray-500">{{Auth()->user()->points}} Points</p>
+                        <p class="text-gray-500">{{ Auth()->user()->points }} Points</p>
                     </div>
                     <!-- <a href="#!" class="mt-2 inline-block text-center border-2 text-gray-500 text-sm border-gray-500 rounded-md px-6 py-2">Follow</a> -->
                 </div>
@@ -113,7 +113,7 @@
                                         </g>
                                     </g>
                                 </svg>
-                                <h1 class="mt-2 text-gray-600">Tidak ada course yang dilike.</h1>
+                                <h1 class="text-gray-600 text-center">Tidak ada course yang dilike.</h1>
                             </div>
                         </div>
                     @endif
@@ -145,7 +145,7 @@
                                         </g>
                                     </g>
                                 </svg>
-                                <h1 class="mt-2 text-gray-600">Tidak ada course yang dibookmark.</h1>
+                                <h1 class="text-gray-600 text-center">Tidak ada course yang dibookmark.</h1>
                             </div>
                         </div>
                     @endif
@@ -178,8 +178,9 @@
                                         </g>
                                     </g>
                                 </svg>
-                                <h1 class="mt-2 text-gray-600">Anda belum pernah mengirim course.</h1>
-                                <a href="/submit-tutorial" class="mt-2 text-gray-400 underline">Kirim course disini</a>
+                                <h1 class=" text-gray-600 text-center">Anda belum pernah mengirim course.</h1>
+                                <a href="/submit-tutorial" class="mt-1 text-gray-400 underline text-center">Kirim course
+                                    disini</a>
                             </div>
                         </div>
                     @endif
@@ -218,9 +219,11 @@
                                                             x-transition:leave="transition ease duration-100 transform"
                                                             x-transition:leave-start="opacity-100 scale-100 translate-y-0"
                                                             x-transition:leave-end="opacity-0 scale-90 translate-y-1">
-                                                            <h1 class="text-center mt-6 mb-2 font-bold text-xl">Apakah kamu yakin ingin
+                                                            <h1 class="text-center mt-6 mb-2 font-bold text-xl">Apakah kamu
+                                                                yakin ingin
                                                                 menghapusnya?</h1>
-                                                                <p class="text-gray-500 mb-6 text-center">Dengan menghapus, kamu akan kehilangan 100 Points.</p>
+                                                            <p class="text-gray-500 mb-6 text-center">Dengan menghapus, kamu
+                                                                akan kehilangan 100 Points.</p>
                                                             <div class="flex justify-center items-center">
                                                                 <button @click="showModal = !showModal"
                                                                     class="px-4 py-2 text-sm mx-1 bg-gray-600 rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-normal hover:bg-gray-700 focus:bg-indigo-50 focus:text-gray-200">Batal</button>
