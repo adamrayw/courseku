@@ -81,14 +81,13 @@
                                     x-transition:leave-start="opacity-100 scale-100 translate-y-0"
                                     x-transition:leave-end="opacity-0 scale-90 translate-y-1">
                                     <div class="mb-1 flex justify-between items-center">
-                                        <h1 class=" text-xl">Comments
+                                        <h1 class="text-right text-xl">Comments
                                         </h1>
                                         <div class="text-center">
                                             <button @click="showModal = !showModal" class=""><i
                                                     class="fas fa-times"></i></button>
                                         </div>
                                     </div>
-                                    <hr>
                                     <div class="mt-1 h-60 overflow-auto">
                                         @if (count($data->comments) == 0)
                                             <p class="text-center my-10 text-gray-500">No comments yet</p>
@@ -113,7 +112,7 @@
                                                     {{ $comm->created_at->diffForHumans() }}
                                                 </p>
                                             </div>
-                                            <hr>
+                                            <hr class="text-gray-200">
                                         @endforeach
                                     </div>
                                     <div class="mt-6">
