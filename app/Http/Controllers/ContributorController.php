@@ -9,9 +9,8 @@ class ContributorController extends Controller
 {
     public function contributor()
     {
-        $user = User::orderBy('points', 'desc')->get();
-        dd($user);
+        $users = User::orderBy('points', 'desc')->limit(5)->get();
 
-        return view('pages.top-contributor', compact('user'));
+        return view('pages.top-contributor', compact('users'));
     }
 }
