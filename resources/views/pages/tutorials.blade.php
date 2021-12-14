@@ -52,7 +52,8 @@
             @if (count($tutorials) == 0)
                 <div class="p-6 rounded-md shadow-md md:w-1/3 w-full mx-auto">
                     <h5 class="text-xl font-semibold text-center text-gray-600">Course tidak tersedia</h5>
-                    <p class="mt-1 text-center text-gray-500 text-xs">Bantu kami mencari course untuk {{ $slug }}
+                    <p class="mt-1 text-center text-gray-500 text-xs">Bantu kami mencari course untuk
+                        {{ Str::lower($$name_course) }}
                     </p>
                     <a href="/submit-tutorial" type="submit"
                         class="mt-6 bg-blue-500 text-white px-6 py-2 text-sm rounded-md hover:bg-blue-800 transition">Kirim
