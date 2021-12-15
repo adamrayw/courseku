@@ -15,8 +15,9 @@
             </div>
         @else
             <section class="max-w-5xl my-20 md:mx-auto mx-4 shadow-lg rounded-b-lg">
-                <div class="relative text-left bg-blue-500 md:h-36 h-40 rounded-t-lg" id="particles-js">
-                    <div class="absolute w-full py-8 md:px-12 px-4">
+                <div class="relative flex justify-center items-center text-left bg-blue-500 py-8 md:h-44 h-fit rounded-t-lg"
+                    id="particles-js">
+                    <div class="absolute w-full md:px-12 px-4">
                         <h1 class="text-white font-semibold md:text-2xl text-xl">{{ $data->name }}</h1>
                         <div class="flex justify-between items-center mt-6">
                             <div class="flex items-center">
