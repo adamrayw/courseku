@@ -60,7 +60,6 @@
                     <p class="mt-1 text-gray-500 text-sm">Member Since :
                         {{ Auth()->user()->created_at->toFormattedDateString() }}</p>
                 </div>
-
             </div>
             <div class="md:ml-auto">
                 <div class="mt-2 md:mt-0">
@@ -84,7 +83,7 @@
                 <!-- <p class="text-gray-500 text-md font-semibold">{{-- '@'.Auth()->user()->username --}}</p> -->
             </div>
         </div>
-        <div class="mt-4 " x-data="{active: 0}">
+        <div class="mt-8 " x-data="{active: 0}">
             <div class="flex bg-blue-500 text-white overflow-hidden rounded-tr-lg rounded-tl-lg">
                 <button class="px-4 py-2 w-full" x-on:click.prevent="active = 0"
                     x-bind:class="{'bg-blue-700 text-blue-500 ': active === 0}"><i class="fas fa-thumbs-up"></i></button>
