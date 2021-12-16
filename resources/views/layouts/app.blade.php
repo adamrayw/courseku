@@ -37,11 +37,11 @@
             visibility: visible;
         }
 
-        .carousel-cell {
+        /* .carousel-cell {
             width: 40%;
             height: 160px;
             margin-right: 10px;
-        }
+        } */
 
     </style>
     <title>COURSEKU - @yield('title')</title>
