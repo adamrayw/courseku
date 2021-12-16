@@ -4,6 +4,11 @@ module.exports = {
     './resources/**/*.js',
     './resources/**/*.vue',
   ],
+  content: [
+    "./resources/**/*.blade.php",
+    "./resources/**/*.js",
+    "./resources/**/*.vue",
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -11,5 +16,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }
