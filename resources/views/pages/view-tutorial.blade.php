@@ -148,24 +148,18 @@
                     </main>
                 </section>
                 <!-- Slider main container -->
-                <div>
+                <div class="w-full">
                     <h1 class="text-xl text-gray-600 font-semibold mb-4">Course lainnya</h1>
-                    <div class="swiper max-w-4xl">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            @foreach ($randomCourse as $random)
-                                <div class="swiper-slide">
-                                    <div class="shadow h-40 rounded-lg bg-blue-500 px-6 py-4 text-gray-600">
-                                        <h2 class="text-lg line-clamp-2 font-semibold text-white">
-                                            {{ $random->name }}
-                                        </h2>
-                                        <p class="text-xs font-light mt-1">{{ $random->author }}</p>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-
+                    <div class="main-carousel" data-flickity='{ "cellAlign": "left", "wrapAround" :
+                                    true, "prevNextButtons" : false, "lazyLoad" : 2 }'>
+                        @foreach ($randomCourse as $random)
+                            <div class="carousel-cell max-w-4xl shadow h-40 rounded-lg bg-blue-500 px-6 py-4 text-gray-600">
+                                <h2 class="text-lg line-clamp-2 font-semibold text-white">
+                                    {{ $random->name }}
+                                </h2>
+                                <p class="text-xs text-white font-light mt-1">{{ $random->author }}</p>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
