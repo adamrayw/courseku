@@ -14,7 +14,7 @@
                 <a href="/explore"
                     class="animate__delay-2s inline-block font-semibold mt-6 rounded-lg no-underline text-white bg-blue-500 hover:bg-blue-700 transition-all px-6 py-3">Explore
                     Course</a>
-                <div class="mt-10 md:invisibe visible animate-bounce">
+                <div class="mt-10 md:invisilbe visible animate-bounce">
                     <a href="#find-course" class=" text-gray-500 mt-1"><i class="fas fa-arrow-down text-blue-500"></i></a>
                 </div>
             </div>
