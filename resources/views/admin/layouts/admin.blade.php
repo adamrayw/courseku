@@ -11,6 +11,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
+        [x-cloak] {
+            display: none !important;
+        }
+
         html {
             font-family: 'Poppins', sans-serif;
         }
@@ -32,6 +36,7 @@
             transform: translate(0) scale(1);
             visibility: visible;
         }
+
     </style>
     <title>@yield('admin-title')</title>
 
@@ -42,7 +47,8 @@
         @include('admin.navbar.admin-navbar')
         @yield('admin-content')
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
             $(".nav-toggler").each(function(_, navToggler) {
