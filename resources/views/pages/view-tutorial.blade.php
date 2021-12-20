@@ -16,7 +16,7 @@
         @else
             <div class="max-w-4xl my-20 md:px-4 px-0 md:mx-auto mx-4 grid grid-cols-1 gap-y-6 justify-items-start">
                 <section class="md:col-span-2 w-full md:mx-auto shadow-lg rounded-b-lg">
-                    <div class="relative flex justify-center items-center text-left bg-blue-500 py-8 md:h-44 h-fit rounded-t-lg"
+                    <div class="relative flex justify-center items-center text-left bg-blue-500 md:h-44 h-fit rounded-t-lg"
                         id="particles-js">
                         <div class="absolute w-full md:px-12 px-4">
                             <h1 class="text-white font-semibold md:text-2xl text-xl">{{ $data->name }}</h1>
@@ -152,7 +152,7 @@
                     <h1 class="text-xl text-gray-600 font-semibold mb-4">Course lainnya</h1>
                     <div class="main-carousel"
                         data-flickity='{ "cellAlign": "left", "wrapAround" :
-                                                                                            true, "prevNextButtons" : false, "lazyLoad" : 2 }'>
+                                                                                                                    true, "prevNextButtons" : false, "lazyLoad" : 2 }'>
                         @foreach ($randomCourse as $random)
                             <a class="carousel-cell md:w-96 w-full shadow h-28 mr-5 rounded-lg bg-blue-500 px-6 py-4 text-gray-600"
                                 href="/course/{{ $random->slug }}">
