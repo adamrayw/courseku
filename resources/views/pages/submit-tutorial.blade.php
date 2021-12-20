@@ -129,7 +129,7 @@
                         mendapatkan 100 points, jika submission kamu di <span
                             class="text-green-500 font-semibold">disetujui</span>.</p>
                     <div class="mt-8 flex justify-between items-center">
-                        <div x-data="{ showModal : false }">
+                        <div x-data="{ showModal : false }" x-cloak>
                             <a @click="showModal = !showModal" class="text-lg mr-2 text-gray-600"><i
                                     class="fas fa-question-circle fa-lg"></i></a>
 
