@@ -17,21 +17,24 @@ use Symfony\Component\HttpFoundation\Response;
 class ApiIndexHomeController extends Controller
 {
 
-    public function carousel_artikel() {
+    public function carousel_artikel()
+    {
         $data = [
-            'artikel' => Tutorials::where('type', 'Artikel')->orderBy('created_at', 'desc')->limit(4)->get(),
+            'artikel' => Tutorials::where('type', 'Artikel')->where('status', 'Release')->orderBy('created_at', 'desc')->limit(4)->get(),
         ];
 
         return response()->json($data, Response::HTTP_OK);
     }
 
-    public function index() {
+    public function index()
+    {
         $indexProgramming = Course::where('category_id', 1)->where('status', 'Release')->limit(8)->get();
 
         return response()->json($indexProgramming, Response::HTTP_OK);
     }
 
-    public function fields() {
+    public function fields()
+    {
         $field = Category::all();
 
         return response()->json($field, Response::HTTP_OK);
@@ -49,7 +52,8 @@ class ApiIndexHomeController extends Controller
         return response()->json($data, response::HTTP_OK);
     }
 
-    public function course($slug) {
+    public function course($slug)
+    {
 
         $data = [
             Tutorials::where('slug', $slug)->increment('views'),
@@ -57,10 +61,10 @@ class ApiIndexHomeController extends Controller
         ];
 
         return response()->json($data, response::HTTP_OK);
-
     }
 
-    public function field($slug) {
+    public function field($slug)
+    {
         $data = [
             'field' => Category::where('slug', $slug)->with('course')->get()
         ];
@@ -68,55 +72,63 @@ class ApiIndexHomeController extends Controller
         return response()->json($data, Response::HTTP_OK);
     }
 
-    public function profileData($id) {
+    public function profileData($id)
+    {
         $result = [
             'user' => User::where('id', $id)->get(),
             'liked' => Voters::where('user_id', $id)->with('tutorial')->get(),
-            'bookmarked' =>Save::where('user_id', $id)->with('tutorials')->get(),
+            'bookmarked' => Save::where('user_id', $id)->with('tutorials')->get(),
             'submitted' => Tutorials::where('user_id', $id)->get(),
         ];
 
-        return response()->json(['message'=>'Success','data'=> $result], Response::HTTP_OK);
+        return response()->json(['message' => 'Success', 'data' => $result], Response::HTTP_OK);
     }
 
-    public function storevote(Request $request) {
+    public function storevote(Request $request)
+    {
         $vote = Voters::create($request->all());
 
-        return response()->json(['message'=>'success', 'data' => $vote], Response::HTTP_OK);
+        return response()->json(['message' => 'success', 'data' => $vote], Response::HTTP_OK);
     }
 
-    public function removevote($tid, $uid) {
+    public function removevote($tid, $uid)
+    {
         $removevote = Voters::where('user_id', $uid)->where('tutorials_id', $tid)->delete();
 
-        return response()->json(['message'=>'success remove vote', 'data' => null], Response::HTTP_OK);
+        return response()->json(['message' => 'success remove vote', 'data' => null], Response::HTTP_OK);
     }
 
-    public function storesave(Request $request) {
+    public function storesave(Request $request)
+    {
         $vote = Save::create($request->all());
 
-        return response()->json(['message'=>'success', 'data' => $vote], Response::HTTP_OK);
+        return response()->json(['message' => 'success', 'data' => $vote], Response::HTTP_OK);
     }
 
-    public function removesave($tid, $uid) {
+    public function removesave($tid, $uid)
+    {
         $removevote = Save::where('user_id', $uid)->where('tutorials_id', $tid)->delete();
 
-        return response()->json(['message'=>'success remove vote', 'data' => null], Response::HTTP_OK);
+        return response()->json(['message' => 'success remove vote', 'data' => null], Response::HTTP_OK);
     }
 
-    public function comment(Request $request) {
+    public function comment(Request $request)
+    {
 
         Comment::create($request->all());
 
         return response()->json(['message' => 'Success'], Response::HTTP_OK);
     }
 
-    public function language() {
+    public function language()
+    {
         $data = Course::all();
 
         return response()->json($data, Response::HTTP_OK);
     }
 
-    public function submit(Request $request) {
+    public function submit(Request $request)
+    {
         $validated = $request->validate([
             'user_id' => 'required',
             'course_id' => 'required',
@@ -143,8 +155,9 @@ class ApiIndexHomeController extends Controller
         return response()->json(['message' => 'Submit berhasil', 'data' => $validated], Response::HTTP_OK);
     }
 
-    public function explore() {
-        $data = Tutorials::where('status', 'Release')->with(['comments', 'votes', 'saves'])->orderBy('created_at' ,'desc')->get();
+    public function explore()
+    {
+        $data = Tutorials::where('status', 'Release')->with(['comments', 'votes', 'saves'])->orderBy('created_at', 'desc')->get();
 
         return response()->json(['message' => 'success', 'data' => $data], Response::HTTP_OK);
     }
