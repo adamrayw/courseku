@@ -35,7 +35,7 @@
                     <span>Design</span>
                 </a> --}}
                 @if (Auth::check())
-                    <div x-data="{ dropdownOpen: false }" class="relative md:ml-4 ml-auto">
+                    <div x-data="{ dropdownOpen: false }" class="relative md:ml-4 ml-auto" x-cloak>
                         <button @click="dropdownOpen = !dropdownOpen"
                             class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
                             <div class="flex justify-between items-center">
