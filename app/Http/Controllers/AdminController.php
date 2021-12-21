@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Admin;
+use App\Models\AppVersion;
 use App\Models\Course;
 use App\Models\Comment;
 use App\Models\Category;
@@ -29,6 +30,8 @@ class AdminController extends Controller
         // get comments
         $comments = Comment::orderBy('created_at', 'desc')->with(['user', 'tutorial'])->get();
 
+        $appversion = AppVersion::all();
+
 
         return view(
             'admin/admin-dashboard',
@@ -38,7 +41,8 @@ class AdminController extends Controller
                     'users',
                     'tutorials',
                     'courses',
-                    'comments'
+                    'comments',
+                    'appversion'
                 ]
             )
         );
@@ -256,5 +260,15 @@ class AdminController extends Controller
         Comment::where('id', $id)->delete();
 
         return back()->with('successDelete', 'Comment deleted successfully!');
+    }
+
+    public function updateVersion(Request $request)
+    {
+        $appversion = $request->newversion;
+        AppVersion::where('id', 1)->update([
+            'version' => $appversion
+        ]);
+
+        return back();
     }
 }
