@@ -5,6 +5,7 @@ use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
+
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::view('/login', 'admin.login')->middleware('guest:admin')->name('login');
 
@@ -20,7 +21,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         ->middleware('auth:admin')
         ->name('logout');
 
+
     Route::get('/home', [AdminController::class, 'home'])->middleware('auth:admin')->name('home');
+
+    Route::post('/updateversion', [AdminController::class, 'updateVersion'])->middleware('auth:admin');
 
     Route::get('/add-admin', [AdminController::class, 'viewAdmin'])->middleware('auth:admin');
 
