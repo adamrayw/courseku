@@ -105,7 +105,9 @@
         <div class="card bg-white rounded-md shadow p-4 text-gray-600">
             <h2 class="font-bold text-xl">App Version</h2>
             <hr class="my-2">
-            <p class="mb-6">Versi saat ini : {{ $appversion[0]->version }}</p>
+            <p class="mb-6">Versi saat ini :
+                {{ $appversion[0]->version }}
+            </p>
 
             <form action="/admin/updateversion" method="post">
                 @csrf
