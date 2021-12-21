@@ -34,13 +34,14 @@
                     </thead>
                     <tbody>
                         @foreach ($tutorials as $tutorial)
-                        <tr>
+                            <tr>
 
-                            <td class="border border-gray-400 p-2"><a href="/course/{{ $tutorial->slug }}">{{ $tutorial->name }}</a></td>
-                            <td class="border border-gray-400 p-2">{{ $tutorial->author }}</td>
-                            <td class="border border-gray-400 p-2">{{ $tutorial->views }}</td>
+                                <td class="border border-gray-400 p-2"><a
+                                        href="/course/{{ $tutorial->slug }}">{{ $tutorial->name }}</a></td>
+                                <td class="border border-gray-400 p-2">{{ $tutorial->author }}</td>
+                                <td class="border border-gray-400 p-2">{{ $tutorial->views }}</td>
 
-                        </tr>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -59,11 +60,12 @@
                 </thead>
                 <tbody>
                     @foreach ($users as $user)
-                    <tr>
-                        <td class="pb-2">{{ $loop->iteration }}.</td>
-                        <td class="pb-2">{{ $user->name }}</td>
-                        <td class="pb-2 text-right text-sm text-gray-400">{{ $user->created_at->diffForHumans() }}</td>
-                    </tr>
+                        <tr>
+                            <td class="pb-2">{{ $loop->iteration }}.</td>
+                            <td class="pb-2">{{ $user->name }}</td>
+                            <td class="pb-2 text-right text-sm text-gray-400">{{ $user->created_at->diffForHumans() }}
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
@@ -86,11 +88,14 @@
                     </thead>
                     <tbody>
                         @foreach ($comments as $comment)
-                        <tr>
-                            <td class="pb-2">{{ $loop->iteration }}.</td>
-                            <td class="pb-2">{{ $comment->comment }} <a class="text-xs text-gray-400" href="/course/{{ $comment->tutorial->slug }}">In {{ $comment->tutorial->name }}</a></td>
-                            <td class="pb-2 text-right text-sm text-gray-400">{{ $comment->created_at->diffForHumans() }}</td>
-                        </tr>
+                            <tr>
+                                <td class="pb-2">{{ $loop->iteration }}.</td>
+                                <td class="pb-2">{{ $comment->comment }} <a class="text-xs text-gray-400"
+                                        href="/course/{{ $comment->tutorial->slug }}">In
+                                        {{ $comment->tutorial->name }}</a></td>
+                                <td class="pb-2 text-right text-sm text-gray-400">
+                                    {{ $comment->created_at->diffForHumans() }}</td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -98,8 +103,19 @@
         </div>
 
         <div class="card bg-white rounded-md shadow p-4 text-gray-600">
-            <!-- <h2 class="font-bold text-xl">Latest Comments</h2>
-            <hr class="my-2"> -->
+            <h2 class="font-bold text-xl">App Version</h2>
+            <hr class="my-2">
+            <p class="mb-6">Versi saat ini : {{ $appversion[0]->version }}</p>
+
+            <form action="/admin/updateversion" method="post">
+                @csrf
+                <div class="mb-2">
+                    <input type="text" class=" px-2 py-1 border border-gray-400 rounded-lg" name="newversion"
+                        id="newversion" placeholder="Ketik versi baru">
+                </div>
+                <button class="bg-blue-500 px-6 py-2 text-sm text-white rounded-lg hover:bg-blue-700 transition"
+                    type="submit">Update</button>
+            </form>
         </div>
     </div>
 </section>
