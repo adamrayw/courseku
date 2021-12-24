@@ -21,7 +21,7 @@
 
                     <div class="form-group">
                         <input id="email" type="email"
-                            class="h-12 border w-full font-xs text-gray-500 app border-gray-300 p-2 my-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-300"
+                            class="h-12 border border-transparent rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition w-full font-xs text-gray-500 app border-gray-300 p-2 mt-4 mb-2 rounded-md focus:outline-none"
                             name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
                             placeholder=" Email">
 
