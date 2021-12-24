@@ -89,7 +89,7 @@
                     Version 2.0.0</p>
             </div>
             <div class="mockup" data-aos="flip-left" data-aos-duration="1600">
-                <img src="/img/mockup_home.png" alt="mockup" class="h-auto w-60">
+                <img src="/img/mockup.png" alt="mockup" class="h-auto w-60">
             </div>
         </div>
     </div>
