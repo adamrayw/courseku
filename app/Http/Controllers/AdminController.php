@@ -92,9 +92,9 @@ class AdminController extends Controller
         return back()->with('success', 'Course added successfully!');
     }
 
-    public function deleteCourse($id)
+    public function deleteCourse(Request $request)
     {
-        Course::where('id', $id)->delete();
+        Course::where('id', $request->id)->delete();
 
         return back()->with('successDelete', 'Course deleted successfully!');
     }
@@ -111,9 +111,9 @@ class AdminController extends Controller
         return back()->with('updateSuccess', 'User updated successfully!');
     }
 
-    public function deleteUser($id)
+    public function deleteUser(Request $request)
     {
-        User::where('id', $id)->delete();
+        User::where('id', $request->id)->delete();
 
         return back()->with('successDelete', 'User deleted successfully!');
     }
@@ -244,9 +244,9 @@ class AdminController extends Controller
         return back()->with('updateTutorialSuccess', 'Tutorial updated successfully!');
     }
 
-    public function deleteTutorial($id)
+    public function deleteTutorial(Request $request)
     {
-        $tutor = Tutorials::findOrFail($id);
+        $tutor = Tutorials::findOrFail($request->id);
         $tutor->votes()->delete();
         $tutor->comments()->delete();
         $tutor->saves()->delete();
@@ -255,9 +255,9 @@ class AdminController extends Controller
         return back()->with('successDelete', 'Tutorial deleted successfully!');
     }
 
-    public function deleteComment($id)
+    public function deleteComment(Request $request)
     {
-        Comment::where('id', $id)->delete();
+        Comment::where('id', $request->id)->delete();
 
         return back()->with('successDelete', 'Comment deleted successfully!');
     }
