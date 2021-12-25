@@ -185,17 +185,56 @@
                                                     </div>
                                                 </div>
                                                 <div class="mx-2"></div>
-                                                <a href="/admin/manage-users/{{ $user->id }}"
-                                                    onclick="confirm('Are you sure to delete?')"
-                                                    class="flex justify-center items-center text-red-500">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                    </svg>
-                                                    Delete
-                                                </a>
+
+                                                <div x-data="{ showModal : false }" x-cloak class="flex items-center">
+                                                    <button @click="showModal = !showModal">
+                                                        <div class="flex items-center text-red-500">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                            </svg>
+                                                            <p class="ml-1">Delete</p>
+                                                        </div>
+                                                    </button>
+
+                                                    <div x-show=" showModal"
+                                                        class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0"
+                                                        x-transition:enter="transition ease duration-300"
+                                                        x-transition:enter-start="opacity-0"
+                                                        x-transition:enter-end="opacity-100"
+                                                        x-transition:leave="transition ease duration-300"
+                                                        x-transition:leave-start="opacity-100"
+                                                        x-transition:leave-end="opacity-0">
+                                                        <!-- Modal -->
+                                                        <div x-show="showModal"
+                                                            class="bg-white rounded-xl shadow-2xl px-6 pb-6 w-full sm:w-5/12 mx-4"
+                                                            @click.away="showModal = false"
+                                                            x-transition:enter="transition ease duration-100 transform"
+                                                            x-transition:enter-start="opacity-0 scale-90 translate-y-1"
+                                                            x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                                                            x-transition:leave="transition ease duration-100 transform"
+                                                            x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+                                                            x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+                                                            <h1 class="text-center mt-6 mb-2 font-bold text-xl">Apakah kamu
+                                                                yakin ingin
+                                                                menghapusnya?</h1>
+                                                            <div class="flex justify-center items-center mt-6">
+                                                                <button @click="showModal = !showModal"
+                                                                    class="px-4 py-2 text-sm mx-1 bg-gray-600 rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-normal hover:bg-gray-700 focus:bg-indigo-50 focus:text-gray-200">Batal</button>
+                                                                <form action="/admin/manage-users" method="post">
+                                                                    @csrf
+                                                                    <input type="hidden" name="id"
+                                                                        value="{{ $user->id }}">
+                                                                    <button
+                                                                        class="px-4 py-2 text-sm mx-1 bg-red-600 rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-100 focus:outline-none focus:ring-0 font-normal hover:bg-red-700 focus:bg-indigo-50 focus:text-gray-200">Ya,
+                                                                        yakin</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </td>
