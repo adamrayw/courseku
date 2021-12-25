@@ -32,7 +32,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/manage-users', [AdminController::class, 'manageUsers'])->middleware('auth:admin');
 
-    Route::get('/manage-users/{id}', [AdminController::class, 'deleteUser'])->middleware('auth:admin');
+    Route::post('/manage-users', [AdminController::class, 'deleteUser'])->middleware('auth:admin');
 
     Route::post('/manage-courses/user/{id}', [AdminController::class, 'editUser'])->middleware('auth:admin');
 
@@ -54,15 +54,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::post('/add-category/post', [AdminController::class, 'storeCategory'])->middleware('auth:admin');
 
-    Route::get('/manage-courses/{id}', [AdminController::class, 'deleteCourse'])->middleware('auth:admin');
+    Route::post('/manage-courses', [AdminController::class, 'deleteCourse'])->middleware('auth:admin');
 
     Route::post('/manage-courses/category', [AdminController::class, 'updateCategory'])->middleware('auth:admin');
 
     Route::post('/manage-courses/course', [AdminController::class, 'updateCourse'])->middleware('auth:admin');
 
-    Route::get('/manage-tutorials/{id}', [AdminController::class, 'deleteTutorial'])->middleware('auth:admin');
+    Route::post('/manage-tutorials', [AdminController::class, 'deleteTutorial'])->middleware('auth:admin');
 
     Route::post('/manage-tutorials/{id}', [AdminController::class, 'updateTutorial'])->middleware('auth:admin');
 
-    Route::get('/manage-comments/{id}', [AdminController::class, 'deleteComment'])->middleware('auth:admin');
+    Route::post('/manage-comments', [AdminController::class, 'deleteComment'])->middleware('auth:admin');
 });
