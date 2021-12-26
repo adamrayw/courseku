@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'View Course')
+@section('title', 'Detail Course')
 
 @section('content')
 
@@ -152,7 +152,7 @@
                     <h1 class="text-xl text-gray-600 font-semibold mb-4">Course lainnya</h1>
                     <div class="main-carousel"
                         data-flickity='{ "cellAlign": "left", "wrapAround" :
-                                                                                                                    true, "prevNextButtons" : false, "lazyLoad" : 2 }'>
+                                                                                                                        true, "prevNextButtons" : false, "lazyLoad" : 2 }'>
                         @foreach ($randomCourse as $random)
                             <a class="carousel-cell md:w-96 w-full shadow h-28 mr-5 rounded-lg bg-blue-500 px-6 py-4 text-gray-600"
                                 href="/course/{{ $random->slug }}">
