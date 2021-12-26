@@ -152,15 +152,15 @@
                     <h1 class="text-xl text-gray-600 font-semibold mb-4">Course lainnya</h1>
                     <div class="main-carousel"
                         data-flickity='{ "cellAlign": "left", "wrapAround" :
-                                                                                                                        true, "prevNextButtons" : false, "lazyLoad" : 2 }'>
+                                                                                                                                                                                            true, "prevNextButtons" : false, "lazyLoad" : 2 }'>
                         @foreach ($randomCourse as $random)
-                            <a class="carousel-cell md:w-96 w-full shadow h-28 mr-5 rounded-lg bg-blue-500 px-6 py-4 text-gray-600"
+                            <a class="carousel-cell md:w-96 w-full border border-gray-300 h-28 my-4 mr-5 rounded-lg bg-white hover:bg-gray-100 transition px-6 py-4 text-gray-600"
                                 href="/course/{{ $random->slug }}">
                                 <div class="">
-                                    <h2 class="text-lg line-clamp-2 font-semibold text-white">
+                                    <h2 class="text-lg line-clamp-2 font-semibold text-gray-600">
                                         {{ $random->name }}
                                     </h2>
-                                    <p class="text-xs text-white font-light mt-1">{{ $random->author }}</p>
+                                    <p class="text-xs text-gray-400 font-light mt-1">{{ $random->author }}</p>
                                 </div>
                             </a>
                         @endforeach
