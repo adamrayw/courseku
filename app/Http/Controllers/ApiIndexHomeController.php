@@ -37,7 +37,7 @@ class ApiIndexHomeController extends Controller
     {
         $field = Category::all();
 
-        return response()->json($field, Response::HTTP_OK);
+        return response()->json(['result' => $field], Response::HTTP_OK);
     }
 
     public function show(Course $course)
