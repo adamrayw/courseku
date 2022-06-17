@@ -30,7 +30,7 @@ class ApiIndexHomeController extends Controller
     {
         $indexProgramming = Course::where('category_id', 1)->where('status', 'Release')->limit(8)->get();
 
-        return response()->json($indexProgramming, Response::HTTP_OK);
+        return response()->json(['result' => $indexProgramming], Response::HTTP_OK);
     }
 
     public function fields()
