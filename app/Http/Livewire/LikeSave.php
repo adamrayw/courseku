@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Save;
 use App\Models\Voters;
 use Livewire\Component;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class LikeSave extends Component
@@ -31,7 +32,7 @@ class LikeSave extends Component
 
     public function storevote()
     {
-        $this->alert('success', 'Liked!', [
+        Alert::success('success', 'Liked!', [
             'position' =>  'bottom-end',
             'timer' =>  '2000',
             'toast' =>  true,
@@ -62,7 +63,7 @@ class LikeSave extends Component
 
     public function storesave()
     {
-        $this->alert('success', 'Bookmarked!', [
+        Alert::success('success', 'Bookmarked!', [
             'position' =>  'bottom-end',
             'timer' =>  '2000',
             'toast' =>  true,
