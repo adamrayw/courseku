@@ -13,7 +13,7 @@ class HomeController extends Controller
     {
         return view('index', [
             'fields' => Category::where('status', 'Release')->get(),
-            'courses' => Course::where('category_id', 1)->where('status', 'Release')->limit(5)->get(),
+            'courses' => Course::where('status', 'Release')->limit(5)->get(),
         ]);
     }
 }
