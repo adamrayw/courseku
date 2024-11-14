@@ -120,21 +120,26 @@
                                         </div>
                                         <div class="mt-6">
                                             @if (Auth::user())
-                                                <form method="POST">
-                                                    @csrf
-                                                    <input type="hidden" name="users_id" value="{{ Auth::user()->id }}">
-                                                    <input type="hidden" name="tutorials_id" value="{{ $data->id }}">
-                                                    <div>
-                                                        <textarea type="text"
-                                                            class="w-full mb-2 text-xs inline-block border border-transparent px-4 py-2 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-                                                            name="comment" placeholder="Ketik Komentar..."
-                                                            required></textarea>
-                                                    </div>
-                                                    <div class="text-right ">
-                                                        <button type="submit"
-                                                            class="px-4 py-2 md:textt-base text-sm bg-blue-500 active:bg-blue-700 shadow-lg transition text-white rounded-md">POST</button>
-                                                    </div>
-                                                </form>
+                                                @if (Auth::user()->status == "Suspended")
+                                                    <h2 class="text-blue-500 text-center">You are <a class="underline semibold"
+                                                            href="/logout">Suspended</a> to comment!</h2>
+                                                @else
+                                                    <form method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="users_id" value="{{ Auth::user()->id }}">
+                                                        <input type="hidden" name="tutorials_id" value="{{ $data->id }}">
+                                                        <div>
+                                                            <textarea type="text"
+                                                                class="w-full mb-2 text-xs inline-block border border-transparent px-4 py-2 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                                                                name="comment" placeholder="Ketik Komentar..."
+                                                                required></textarea>
+                                                        </div>
+                                                        <div class="text-right ">
+                                                            <button type="submit"
+                                                                class="px-4 py-2 md:textt-base text-sm bg-blue-500 active:bg-blue-700 shadow-lg transition text-white rounded-md">POST</button>
+                                                        </div>
+                                                    </form>
+                                                @endif
                                             @else
                                                 <h2 class="text-blue-500 text-center">You must <a class="underline semibold"
                                                         href="/login">Login</a>
